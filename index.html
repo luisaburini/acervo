@@ -11,5 +11,20 @@
     <button onclick="onSearched()">Buscar</button>
     <div id="grid-container" class="grid-container"></div>
     <script src="./js/spreadsheet.js"></script>
+    <script>
+        function onSearched() {
+        var x = document.getElementById("searchbox").value;
+        document.getElementById("searchbox").value = ""
+        for (let i=0; i<fields.length;i++) {
+            console.log(name[i]);
+            if (fields[i].toLowerCase().includes(x) || names[i].toLowerCase().includes(x) || 
+            doctypes[i].toLowerCase().includes(x) || authors[i].toLowerCase().includes(x) || 
+            dates[i].toLowerCase().includes(x) || places[i].toLowerCase().includes(x)) {
+                console.log("Create new image")
+                createNewImage(hlinks[i], names[i])
+            }
+        }
+     }
+    </script>
 </body>
 </html>

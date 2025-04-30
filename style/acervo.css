@@ -1,0 +1,98 @@
+body {
+    background-color: #f3e3d7;
+}
+
+#header {
+    font-family: CreatorDisplayLight;
+    text-align: center;
+    font-size: 20vh;
+    color: #8e0f1d;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 5vh;
+    row-gap: 5vw;
+    column-gap: 5vh;
+}
+
+#searchbox {
+    background-color: #fae0ca;
+    margin-left: 5vh;
+    border: 2px double  #cf807a;
+    border-radius: 8px;
+    color: #8e0f1d;
+    font-size: 3vh;
+    font-family: CreatorDisplayRegular;
+}
+
+button {
+    outline: none;
+    color: #6d1703;
+    margin: 2vh;
+    padding: 0.2em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    background-color: #fae0ca;
+    border: 2px double  #cf807a;
+    border-radius: 8px;
+    box-shadow: 0 0 0 4px #fae0ca, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    transition: .1s ease-in-out, .4s color;
+    font-family: CreatorDisplayRegular;
+    font-size: 2.5vh;
+}
+  
+button:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 4px #cf807a, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail {
+    object-fit: cover;
+    padding-left: 10vh;
+    padding-top: 3vh;
+    width: 25vh;
+    height: 25vh;
+}
+
+.attribute{
+    font-family: CreatorDisplayBlack;
+    color: #8e0f1d;
+    font-size: 2vh;
+    margin: 1vh;
+}
+  
+.description {
+    font-family: CreatorDisplayMediumItalic;
+    font-size: 2vh;
+    color: #63405c;
+    margin: 1vh;
+}
+
+.card {
+    background-color: #fae0ca;
+    border: 2px dashed #c65a11;
+    border-radius: 15px;
+}
+
+@font-face {
+    font-family: CreatorDisplayMediumItalic;
+    src: url(./fonts/CreatoDisplay-MediumItalic.otf);
+}
+
+@font-face {
+    font-family: CreatorDisplayRegular;
+    src: url(./fonts/CreatoDisplay-Regular.otf);
+}
+
+@font-face {
+    font-family: CreatorDisplayLight;
+    src: url(./fonts/CreatoDisplay-Light.otf);
+}
+
+@font-face {
+    font-family: CreatorDisplayBlack;
+    src: url(./fonts/CreatoDisplay-Black.otf);
+}
+

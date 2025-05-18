@@ -62,9 +62,9 @@ function loadImages() {
 
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
-            console.log(rowData.c[ind].v)
-            console.log(ele)
-            console.log(ind)
+            console.log("rowData.c[ind].v = ", rowData.c[ind].v)
+            console.log("ele = ", ele)
+            console.log("ind = ", ind)
           }    
       })
       })

@@ -53,9 +53,17 @@ function loadImages() {
     })
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
+        var imagemColA = "";
+        var idColC = "";
+        var categoriaColD = "";
+        var anoColE = "";
+        var decadaColF = "";
+        var regiaoColG = "";
+
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
             console.log(rowData.c[ind].v)
+            console.log(ele)
             console.log(ind)
           }    
       })

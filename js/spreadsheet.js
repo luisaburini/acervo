@@ -19,44 +19,6 @@ class ImgMetadata {
 
 }
 
-
-
-// var fields = [
-//     "Filme",
-//     "Fotografia"
-// ]
-
-// var names = [
-//     "Spectros - algum nome nenhum rosto",
-//     "Fazenda da Prefeitura em Guaratiba"
-// ]
-
-// var doctypes = [
-//     "Documentário",
-//     "Fotografia"
-// ]
-
-// var authors = [
-//     "Ciro Lubliner",
-//     "Augusto Malta"
-// ]
-
-// var dates = [
-//     "20/12/2024",
-//     "1/11/1928"
-// ]
-
-// var places = [
-//     "Sorocaba, SP, São Paulo",
-//     "Fazenda da Prefeitura de Guaratiba, RJ, Rio de Janeiro"
-// ]
-
-// var hlinks = [
-//     "https://live.staticflickr.com/65535/54232250160_c844033733_b.jpg",
-//     "https://live.staticflickr.com/65535/54232284053_7845082b27_b.jpg",
-// ]
-
-
 var img1 = new ImgMetadata("2024", "2020", "Sorocaba, SP, São Paulo", "Ciro Lubliner", "Filme", 
     "Spectros - algum nome nenhum rosto é um curta-metragem sobre a história das rádios livres foi exibido gratuitamente na Sala Ponto MIS, no Centro Cultural Brasital, em São Roque (SP)",
     "Video", "Arquivo digital", "1920x1080", "jpg", "sp001", 
@@ -68,6 +30,43 @@ var img2 = new ImgMetadata("1928", "1920", "Fazenda da Prefeitura de Guaratiba, 
 
 var data = [img1, img2]
 
+const sheetId = '1gENPiJwJxPRm4GC1XcMnbSeXhuZkgxIaZ-TtQSwqKc8';
+const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
+const sheetName = 'metadados';
+
+function loadImages() {
+  console.log("INIT")
+  const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P")
+  const url = `${base}&sheet=${sheetName}&tq=${query}`
+
+
+  fetch(url)
+  .then(res => res.text())
+  .then(rep => {
+    //Apaga textos adicionais e extrai so o JSON:
+    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+    var colz = []
+    //Extrai nome das colunas
+    jsonData.table.cols.forEach((heading) => {
+      let column = heading.label;
+      colz.push(column)
+    })
+    //Extrai dados das linhas
+    jsonData.table.rows.forEach((rowData) => {
+        colz.forEach((ele, ind) => {
+          if (rowData.c[ind] != null) {
+            console.log(rowData.c[ind].v)
+            console.log(ind)
+          }    
+      })
+      })
+
+    })
+}
+
+
+
+
 init()
 
 function clear(grid) {
@@ -77,20 +76,21 @@ function clear(grid) {
 }
 
 function init() {
-    var grid = document.getElementById('grid-container')
-    clear(grid)
+    loadImages();
+    var grid = document.getElementById('grid-container');
+    clear(grid);
     for (let i=0;i<data.length;i++) {
-        createNewImage(data[i], grid)
+        createNewImage(data[i], grid);
     }
 }
 
 function onSearched() {
-    var grid = document.getElementById('grid-container')
-    clear(grid)
+    var grid = document.getElementById('grid-container');
+    clear(grid);
 
-    var searchBox = document.getElementById("searchbox")
+    var searchBox = document.getElementById("searchbox");
     var toSearch = searchBox.value;
-    searchBox.value = ""
+    searchBox.value = "";
     
     
     for (let i=0; i<data.length;i++) {

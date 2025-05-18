@@ -33,6 +33,22 @@ var data = [img1, img2]
 const sheetId = '1gENPiJwJxPRm4GC1XcMnbSeXhuZkgxIaZ-TtQSwqKc8';
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
 const sheetName = 'metadados';
+const ColunaA = "Imagem"
+const ColunaB = "Sequência"
+const ColunaC = "Código identificador"
+const ColunaD = "Categoria"
+const ColunaE = "Ano"
+const ColunaF = "Década"
+const ColunaG = "Bairro/Região"
+const ColunaH = "Autoria"
+const ColunaI = "Fonte Original"
+const ColunaJ = "Tema"
+const ColunaK = "Estado de Conservação"
+const ColunaL = "Descrição"
+const ColunaM = "Resolução"
+const ColunaN = "Formato"
+const ColunaO = "Palavras-chave"
+const ColunaP = "Link"
 
 function loadImages() {
   console.log("INIT")
@@ -59,14 +75,67 @@ function loadImages() {
         var anoColE = "";
         var decadaColF = "";
         var regiaoColG = "";
+        var autoriaColH = "";
+        var fonteOriginalColI = "";
+        var temaColJ = "";
+        var estadoColK = "";
+        var descColL = "";
+        var resolucaoColM = "";
+        var formatoColN = "";
+        var palavraChaveColO = "";
+        var linkColP = "";
 
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
             console.log("rowData.c[ind].v = ", rowData.c[ind].v)
             console.log("ele = ", ele)
             console.log("ind = ", ind)
+            if (ele == ColunaA) {
+                imagemColA = rowData.c[ind].v
+            } else if (ele == ColunaB) {
+                console.log("Seq ", rowData.c[ind].v)
+            } else if (ele == ColunaC) {
+                idColC = rowData.c[ind].v
+            } else if (ele == ColunaD) {
+                categoriaColD = rowData.c[ind].v
+            } else if (ele == ColunaE) {
+                anoColE = rowData.c[ind].v
+            } else if (ele == ColunaF) {
+                decadaColF = rowData.c[ind].v
+            } else if (ele == ColunaG) {
+                regiaoColG = rowData.c[ind].v
+            } else if (ele == ColunaH) {
+                autoriaColH = rowData.c[ind].v
+            } else if (ele == ColunaI) {
+                fonteOriginalColI = rowData.c[ind].v
+            } else if (ele == ColunaJ) {
+                temaColJ = rowData.c[ind].v
+            } else if (ele == ColunaK) {
+                estadoColK = rowData.c[ind].v
+            } else if (ele == ColunaL) {
+                descColL = rowData.c[ind].v
+            } else if (ele == ColunaM) {
+                resolucaoColM = rowData.c[ind].v
+            } else if (ele == ColunaN) {
+                formatoColN = rowData.c[ind].v
+            } else if (ele == ColunaO) {
+                palavraChaveColO = rowData.c[ind].v
+            } else if (ele == ColunaP) {
+                linkColP = rowData.c[ind].v
+            } 
           }    
       })
+
+      if (linkColP != "") {
+        console.log("Imagem nova!")
+        img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
+                              categoriaColD, descColL, fonteOriginalColI,
+                              estadoColK, resolucaoColM, formatoColN, idColC,
+                              palavraChaveColO, linkColP)
+        data.push(img)
+      }
+
+
       })
 
     })

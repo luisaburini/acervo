@@ -218,14 +218,22 @@ function createNewImage(imgMetaData, grid) {
     regionAttr.innerText = "Bairro/Região";
     let region = document.createElement("p");
     region.className = "description";
-    region.innerText = imgMetaData.category;
+    region.innerText = imgMetaData.region;
 
     let sourceAttr = document.createElement("p");
     sourceAttr.className = "attribute";
     sourceAttr.innerText = "Fonte Original";
     let source = document.createElement("p");
     source.className = "description";
-    source.innerText = imgMetaData.category;
+    source.innerText = imgMetaData.source;
+
+    let keywordsAttr = document.createElement("p");
+    keywordsAttr.className = "attribute";
+    keywordsAttr.innerText = "Palavras-chave";
+    let keywords = document.createElement("p");
+    keywords.className = "description";
+    keywords.innerText = imgMetaData.keywords;
+
 
     let div = document.createElement('div');
     div.className = "card";

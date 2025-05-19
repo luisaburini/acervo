@@ -19,16 +19,7 @@ class ImgMetadata {
 
 }
 
-var img1 = new ImgMetadata("2024", "2020", "Sorocaba, SP, São Paulo", "Ciro Lubliner", "Filme", 
-    "Spectros - algum nome nenhum rosto é um curta-metragem sobre a história das rádios livres foi exibido gratuitamente na Sala Ponto MIS, no Centro Cultural Brasital, em São Roque (SP)",
-    "Video", "Arquivo digital", "1920x1080", "jpg", "sp001", 
-    "radio;livre;", "https://live.staticflickr.com/65535/54232250160_c844033733_b.jpg")
-var img2 = new ImgMetadata("1928", "1920", "Fazenda da Prefeitura de Guaratiba, RJ, Rio de Janeiro",
-"Augusto Malta", "Fotografia", "Faz. da Pres. - Guaratiba", "Coleção Instituto Moreira Salles",
-"Foto física antiga", "Restaurada","800x600", "rj002", "dominio;publico;guaratiba;rj", 
-"https://live.staticflickr.com/65535/54232284053_7845082b27_b.jpg")
-
-var data = [img1, img2]
+var data = []
 
 const sheetId = '1gENPiJwJxPRm4GC1XcMnbSeXhuZkgxIaZ-TtQSwqKc8';
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
@@ -132,6 +123,7 @@ function loadImages() {
                               categoriaColD, descColL, fonteOriginalColI,
                               estadoColK, resolucaoColM, formatoColN, idColC,
                               palavraChaveColO, linkColP)
+        linkColP = ""
         data.push(img)
       }
       })

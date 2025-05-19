@@ -179,75 +179,105 @@ function onSearched() {
  }
 
 function createNewImage(imgMetaData, grid) {
+    let div = document.createElement('div');
+    div.className = "card";
+
     let img = document.createElement('img');
     img.className = "thumbnail";
     img.src = imgMetaData.hlink;
     img.alt = imgMetaData.keywords;
     img.title = imgMetaData.description;
-
-    let descAttr = document.createElement("p");
-    descAttr.className = "attribute";
-    descAttr.innerText = "Descrição";
-    let desc = document.createElement("p");
-    desc.className = "description";
-    desc.innerText = imgMetaData.description;
-
-    let yearAttr = document.createElement("p");
-    yearAttr.className = "attribute";
-    yearAttr.innerText = "Ano";
-    let year = document.createElement("p");
-    year.className = "description";
-    year.innerText = imgMetaData.year;
-
-    let authorAttr = document.createElement("p");
-    authorAttr.className = "attribute";
-    authorAttr.innerText = "Autoria";
-    let author = document.createElement("p");
-    author.className = "description";
-    author.innerText = imgMetaData.author;
-
-    let categoryAttr = document.createElement("p");
-    categoryAttr.className = "attribute";
-    categoryAttr.innerText = "Categoria";
-    let category = document.createElement("p");
-    category.className = "description";
-    category.innerText = imgMetaData.category;
-
-    let regionAttr = document.createElement("p");
-    regionAttr.className = "attribute";
-    regionAttr.innerText = "Bairro/Região";
-    let region = document.createElement("p");
-    region.className = "description";
-    region.innerText = imgMetaData.region;
-
-    let sourceAttr = document.createElement("p");
-    sourceAttr.className = "attribute";
-    sourceAttr.innerText = "Fonte Original";
-    let source = document.createElement("p");
-    source.className = "description";
-    source.innerText = imgMetaData.source;
-
-    let keywordsAttr = document.createElement("p");
-    keywordsAttr.className = "attribute";
-    keywordsAttr.innerText = "Palavras-chave";
-    let keywords = document.createElement("p");
-    keywords.className = "description";
-    keywords.innerText = imgMetaData.keywords;
-
-
-    let div = document.createElement('div');
-    div.className = "card";
+    img.onclick = showFull
     div.appendChild(img);
-    div.appendChild(descAttr);
-    div.appendChild(desc);
-    div.appendChild(yearAttr);
-    div.appendChild(year);
-    div.appendChild(authorAttr);
-    div.appendChild(author);
-    div.appendChild(categoryAttr);
-    div.appendChild(category);
-    div.appendChild(sourceAttr);
-    div.appendChild(source)
+    
+    if (imgMetaData.description != "") {
+        let descAttr = document.createElement("p");
+        descAttr.className = "attribute";
+        descAttr.innerText = "Descrição";
+        div.appendChild(descAttr);
+        let desc = document.createElement("p");
+        desc.className = "description";
+        desc.innerText = imgMetaData.description;
+        div.appendChild(desc);
+    }
+
+    if (imgMetaData.year != "") {
+        let yearAttr = document.createElement("p");
+        yearAttr.className = "attribute";
+        yearAttr.innerText = "Ano";
+        div.appendChild(yearAttr);
+        let year = document.createElement("p");
+        year.className = "description";
+        year.innerText = imgMetaData.year;
+        div.appendChild(year);
+    }
+
+    if (imgMetaData.author != "") {
+        let authorAttr = document.createElement("p");
+        authorAttr.className = "attribute";
+        authorAttr.innerText = "Autoria";
+        div.appendChild(authorAttr);
+        let author = document.createElement("p");
+        author.className = "description";
+        author.innerText = imgMetaData.author;
+        div.appendChild(author);
+    }
+
+    if (imgMetaData.category != "") {
+        let categoryAttr = document.createElement("p");
+        categoryAttr.className = "attribute";
+        categoryAttr.innerText = "Categoria";
+        div.appendChild(categoryAttr);
+        let category = document.createElement("p");
+        category.className = "description";
+        category.innerText = imgMetaData.category;
+        div.appendChild(category);
+    }
+
+    if (imgMetaData.region != "" ) {
+        let regionAttr = document.createElement("p");
+        regionAttr.className = "attribute";
+        regionAttr.innerText = "Bairro/Região";
+        div.appendChild(regionAttr);
+        let region = document.createElement("p");
+        region.className = "description";
+        region.innerText = imgMetaData.region;
+        div.appendChild(region);
+    }
+
+    if (imgMetaData.source != "") {
+        let sourceAttr = document.createElement("p");
+        sourceAttr.className = "attribute";
+        sourceAttr.innerText = "Fonte Original";
+        div.appendChild(sourceAttr);
+        let source = document.createElement("p");
+        source.className = "description";
+        source.innerText = imgMetaData.source;
+        div.appendChild(source);
+    }
+
+    if (imgMetaData.keywords != "") {
+        let keywordsAttr = document.createElement("p");
+        keywordsAttr.className = "attribute";
+        keywordsAttr.innerText = "Palavras-chave";
+        div.appendChild(keywordsAttr);
+        let keywords = document.createElement("p");
+        keywords.className = "description";
+        keywords.innerText = imgMetaData.keywords;
+        div.appendChild(keywords);
+    }
 
     grid.appendChild(div);
+}
+
+function showFull() {
+    on()
+}
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
 }

@@ -1,5 +1,6 @@
 body {
     background-color: #f3e3d7;
+    width: 100vw;
 }
 
 #header {
@@ -12,9 +13,9 @@ body {
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 5vh;
-    row-gap: 5vw;
-    column-gap: 5vh;
+    margin: 2vh;
+    row-gap: 2vw;
+    column-gap: 2vh;
 }
 
 #searchbox {

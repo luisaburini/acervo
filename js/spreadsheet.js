@@ -77,7 +77,7 @@ function loadImages() {
         var linkColP = "";
 
         colz.forEach((ele, ind) => {
-          if (rowData.c[ind] != null) {
+          if (rowData.c[ind] != null && rowData.c[ind].v != null) {
             if (ele == ColunaA) {
                 imagemColA = rowData.c[ind].v
             } else if (ele == ColunaB) {
@@ -206,6 +206,20 @@ function createNewImage(imgMetaData, grid) {
     author.className = "description";
     author.innerText = imgMetaData.author;
 
+    let categoryAttr = document.createElement("p");
+    categoryAttr.className = "attribute";
+    categoryAttr.innerText = "Categoria";
+    let category = document.createElement("p");
+    category.className = "description";
+    category.innerText = imgMetaData.category;
+
+    let sourceAttr = document.createElement("p");
+    sourceAttr.className = "attribute";
+    sourceAttr.innerText = "Categoria";
+    let source = document.createElement("p");
+    source.className = "description";
+    source.innerText = imgMetaData.category;
+
     let div = document.createElement('div');
     div.className = "card";
     div.appendChild(img);
@@ -215,6 +229,10 @@ function createNewImage(imgMetaData, grid) {
     div.appendChild(year);
     div.appendChild(authorAttr);
     div.appendChild(author);
+    div.appendChild(categoryAttr);
+    div.appendChild(category);
+    div.appendChild(sourceAttr);
+    div.appendChild(source)
 
     grid.appendChild(div);
 }

@@ -170,17 +170,52 @@ function onSearched() {
     
     
     for (let i=0; i<data.length;i++) {
-        if (data[i].year.toLowerCase().includes(toSearch) ||
-            data[i].decade.toLowerCase().includes(toSearch) || 
-            data[i].region.toLowerCase().includes(toSearch) || 
-            data[i].author.toLowerCase().includes(toSearch) || 
-            data[i].category.toLowerCase().includes(toSearch) ||
-            data[i].description.toLowerCase().includes(toSearch) ||
-            data[i].source.toLowerCase().includes(toSearch) ||
-            data[i].preservation.toLowerCase().includes(toSearch) ||
-            data[i].resolution.toLowerCase().includes(toSearch) ||
-            data[i].format.toLowerCase().includes(toSearch) || 
-            data[i].id.toLowerCase().includes(toSearch) ||
+        let year = data[i].year;
+        let hasYear = year != null;
+        let foundYear = hasYear ? year.toLowerCase().includes(toSearch) : false;
+        let decade = data[i].decade;
+        let hasDecade = decade != null;
+        let foundDecade = hasDecade ? decade.toLowerCase().includes(toSearch) : false;
+        let region = data[i].region;
+        let hasRegion = region != null;
+        let foundRegion = hasRegion ? region.toLowerCase().includes(toSearch) : false;
+        let author = data[i].author;
+        let hasAuthor = author != null;
+        let foundAuthor = hasAuthor? author.toLowerCase().includes(toSearch) : false;
+        let category = data[i].category;
+        let hasCategory = category != null;
+        let foundCategory = hasCategory ? category.toLowerCase().includes(toSearch) : false;
+        let desc = data[i].description;
+        let hasDesc = desc != null;
+        let foundDesc = hasDesc ? desc.toLowerCase().includes(toSearch) : false;
+        let source = data[i].source;
+        let hasSource = source != null;
+        let foundSource = hasSource ? source.toLowerCase().includes(toSearch) : false;
+        let preserv = data[i].preservation;
+        let hasPreserv = preserv != null;
+        let foundPreserv = hasPreserv? preserv.toLowerCase().includes(toSearch) : false;
+        let res = data[i].resolution
+        let hasRes = res != null;
+        let foundRes = hasRes? res.toLowerCase().includes(toSearch) : false;
+        let format = data[i].format;
+        let hasFormat = format != null;
+        let foundFormat = hasFormat? format.toLowerCase().includes(toSearch) : false;
+        let id = data[i].id
+        let hasID = id != null;
+        let foundID = hasID ? id.toLowerCase().includes(toSearch) : false;
+
+
+        if (foundYear ||
+            foundDecade || 
+            foundRegion || 
+            foundAuthor || 
+            foundCategory ||
+            foundDesc ||
+            foundSource ||
+            foundPreserv ||
+            foundRes ||
+            foundFormat || 
+            foundID ||
             hasKeywords(data[i].keywords.toLowerCase(), toSearch)) {
             createNewImage(data[i], grid);
         }

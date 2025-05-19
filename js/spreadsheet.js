@@ -87,9 +87,6 @@ function loadImages() {
 
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null) {
-            console.log("rowData.c[ind].v = ", rowData.c[ind].v)
-            console.log("ele = ", ele)
-            console.log("ind = ", ind)
             if (ele == ColunaA) {
                 imagemColA = rowData.c[ind].v
             } else if (ele == ColunaB) {
@@ -127,8 +124,11 @@ function loadImages() {
       })
 
       if (linkColP != "") {
-        console.log("Imagem nova!")
-        img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
+        console.log("Imagem nova!",anoColE, " ", decadaColF, " ", regiaoColG, " ", autoriaColH, " ", 
+                              categoriaColD, " ", descColL, " ", fonteOriginalColI, " ",
+                              estadoColK, " ", resolucaoColM, " ", formatoColN, " ", idColC, " ",
+                              palavraChaveColO, " ", linkColP)
+        var img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
                               categoriaColD, descColL, fonteOriginalColI,
                               estadoColK, resolucaoColM, formatoColN, idColC,
                               palavraChaveColO, linkColP)

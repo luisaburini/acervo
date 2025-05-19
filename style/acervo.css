@@ -91,6 +91,14 @@ button:active {
   cursor: pointer; /* Add a pointer on hover */
 }
 
+#overlayImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
 @font-face {
     font-family: CreatorDisplayMediumItalic;
     src: url(./fonts/CreatoDisplay-MediumItalic.otf);

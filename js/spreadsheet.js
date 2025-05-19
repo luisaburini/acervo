@@ -134,10 +134,13 @@ function loadImages() {
                               palavraChaveColO, linkColP)
         data.push(img)
       }
-
-
       })
-
+    var grid = document.getElementById('grid-container');
+    clear(grid);
+    console.log("Data array length ", data.length)
+    for (let i=0;i<data.length;i++) {
+        createNewImage(data[i], grid);
+    }
     })
 }
 
@@ -154,12 +157,6 @@ function clear(grid) {
 
 function init() {
     loadImages();
-    var grid = document.getElementById('grid-container');
-    clear(grid);
-    console.log("Data array length ", data.length)
-    for (let i=0;i<data.length;i++) {
-        createNewImage(data[i], grid);
-    }
 }
 
 function onSearched() {

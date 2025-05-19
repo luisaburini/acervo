@@ -286,8 +286,9 @@ function showFull(link) {
 }
 
 function on(link) {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("overlayImg").src = link;
+    let overlay = document.getElementById("overlay");
+    overlay.style.display = "block";
+    overlay.getElementById("overlayImg").src = link;
 }
 
 function off() {

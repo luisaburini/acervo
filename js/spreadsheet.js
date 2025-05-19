@@ -323,7 +323,7 @@ function showFull(link) {
 function on(link) {
     let overlay = document.getElementById("overlay");
     overlay.style.display = "block";
-    overlay.getElementById("overlayImg").src = link;
+    overlay.getElementsByClassName("overlayImg")[0].src = link;
 }
 
 function off() {

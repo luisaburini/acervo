@@ -151,6 +151,16 @@ function init() {
     loadImages();
 }
 
+function hasKeywords(attr, toSearch){
+    var keywords = attr.split(";");
+    for (let j=0; j<keywords.length; j++) {
+        if(keywords[j].includes(toSearch)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function onSearched() {
     var grid = document.getElementById('grid-container');
     clear(grid);
@@ -161,6 +171,9 @@ function onSearched() {
     
     
     for (let i=0; i<data.length;i++) {
+
+
+
         if (data[i].year.toLowerCase().includes(toSearch) ||
             data[i].decade.toLowerCase().includes(toSearch) || 
             data[i].region.toLowerCase().includes(toSearch) || 
@@ -171,8 +184,8 @@ function onSearched() {
             data[i].preservation.toLowerCase().includes(toSearch) ||
             data[i].resolution.toLowerCase().includes(toSearch) ||
             data[i].format.toLowerCase().includes(toSearch) || 
-            data[i].id.toLowerCase().includes(toSearch || 
-            data[i].keywords.toLowerCase().includes(toSearch))) {
+            data[i].id.toLowerCase().includes(toSearch) ||
+            hasKeywords(data[i].keywords.toLowerCase(), toSearch)) {
             createNewImage(data[i], grid);
         }
     }

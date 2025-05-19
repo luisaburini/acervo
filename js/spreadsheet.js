@@ -213,9 +213,16 @@ function createNewImage(imgMetaData, grid) {
     category.className = "description";
     category.innerText = imgMetaData.category;
 
+    let regionAttr = document.createElement("p");
+    regionAttr.className = "attribute";
+    regionAttr.innerText = "Bairro/Região";
+    let region = document.createElement("p");
+    region.className = "description";
+    region.innerText = imgMetaData.category;
+
     let sourceAttr = document.createElement("p");
     sourceAttr.className = "attribute";
-    sourceAttr.innerText = "Categoria";
+    sourceAttr.innerText = "Fonte Original";
     let source = document.createElement("p");
     source.className = "description";
     source.innerText = imgMetaData.category;

@@ -2,23 +2,23 @@ class ImgMetadata {
     constructor(year, decade, region, author, category,
          description, source, preservation, resolution,
          format, id, keywords, hlink) {
-        this.year = year;
-        this.decade = decade;
-        this.region = region;
-        this.author = author;
-        this.category = category;
-        this.description = description;
-        this.source = source;
-        this.preservation = preservation;
-        this.resolution = resolution;
-        this.format = format;
-        this.id = id;
-        this.keywords = keywords;
-        this.hlink = hlink;
-    }
+             this.year = year;
+             this.decade = decade;
+             this.region = region;
+             this.author = author;
+             this.category = category;
+             this.description = description;
+             this.source = source;
+             this.preservation = preservation;
+             this.resolution = resolution;
+             this.format = format;
+             this.id = id;
+             this.keywords = keywords;
+             this.hlink = hlink;
+            }
 
-}
-
+        }
+        
 var data = []
 
 const sheetId = '1gENPiJwJxPRm4GC1XcMnbSeXhuZkgxIaZ-TtQSwqKc8';
@@ -41,19 +41,25 @@ const ColunaN = "Formato"
 const ColunaO = "Palavras-chave"
 const ColunaP = "Link"
 
+init()
+
+function init() {
+    loadImages();
+}
+
 function loadImages() {
-  console.log("INIT")
-  const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P")
-  const url = `${base}&sheet=${sheetName}&tq=${query}`
-
-
-  fetch(url)
-  .then(res => res.text())
-  .then(rep => {
-    //Apaga textos adicionais e extrai so o JSON:
-    const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-    var colz = []
-    //Extrai nome das colunas
+    console.log("INIT")
+    const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P")
+    const url = `${base}&sheet=${sheetName}&tq=${query}`
+    
+    
+    fetch(url)
+    .then(res => res.text())
+    .then(rep => {
+        //Apaga textos adicionais e extrai so o JSON:
+        const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+        var colz = []
+        //Extrai nome das colunas
     jsonData.table.cols.forEach((heading) => {
       let column = heading.label;
       colz.push(column)
@@ -137,23 +143,16 @@ function loadImages() {
 }
 
 
-
-
-init()
-
 function clear(grid) {
     while (grid.firstChild) {
         grid.removeChild(grid.lastChild);
     }
 }
 
-function init() {
-    loadImages();
-}
-
 function hasKeywords(attr, toSearch){
     var keywords = attr.split(";");
     for (let j=0; j<keywords.length; j++) {
+        console.log(keywords[j])
         if(keywords[j].includes(toSearch)) {
             return true;
         }
@@ -166,14 +165,11 @@ function onSearched() {
     clear(grid);
 
     var searchBox = document.getElementById("searchbox");
-    var toSearch = searchBox.value;
+    var toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
     searchBox.value = "";
     
     
     for (let i=0; i<data.length;i++) {
-
-
-
         if (data[i].year.toLowerCase().includes(toSearch) ||
             data[i].decade.toLowerCase().includes(toSearch) || 
             data[i].region.toLowerCase().includes(toSearch) || 
@@ -200,7 +196,9 @@ function createNewImage(imgMetaData, grid) {
     img.src = imgMetaData.hlink;
     img.alt = imgMetaData.keywords;
     img.title = imgMetaData.description;
-    img.onclick = showFull
+    img.onclick = function() {
+        showFull(imgMetaData.hlink)
+    }
     div.appendChild(img);
     
     if (imgMetaData.description != "") {
@@ -283,12 +281,13 @@ function createNewImage(imgMetaData, grid) {
     grid.appendChild(div);
 }
 
-function showFull() {
-    on()
+function showFull(link) {
+    on(link)
 }
 
-function on() {
+function on(link) {
   document.getElementById("overlay").style.display = "block";
+  document.getElementById("overlayImg").src = link;
 }
 
 function off() {

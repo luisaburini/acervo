@@ -91,7 +91,7 @@ button:active {
   cursor: pointer; /* Add a pointer on hover */
 }
 
-#overlayImg {
+.overlayImg {
   position: absolute;
   top: 50%;
   left: 50%;

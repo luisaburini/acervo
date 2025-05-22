@@ -170,18 +170,21 @@ function onSearched() {
     
     
     for (let i=0; i<data.length;i++) {
+        let region = data[i].region;
+        console.log(region)
+        let hasRegion = region != null;
+        let foundRegion = hasRegion ? region.toLowerCase().includes(toSearch) : false;
+        let author = data[i].author;
+        console.log(author)
+        let hasAuthor = author != null;
+        let foundAuthor = hasAuthor? author.toLowerCase().includes(toSearch) : false;
         let year = data[i].year;
+        console.log(year)
         let hasYear = year != null;
         let foundYear = hasYear ? year.toLowerCase().includes(toSearch) : false;
         let decade = data[i].decade;
         let hasDecade = decade != null;
         let foundDecade = hasDecade ? decade.toLowerCase().includes(toSearch) : false;
-        let region = data[i].region;
-        let hasRegion = region != null;
-        let foundRegion = hasRegion ? region.toLowerCase().includes(toSearch) : false;
-        let author = data[i].author;
-        let hasAuthor = author != null;
-        let foundAuthor = hasAuthor? author.toLowerCase().includes(toSearch) : false;
         let category = data[i].category;
         let hasCategory = category != null;
         let foundCategory = hasCategory ? category.toLowerCase().includes(toSearch) : false;

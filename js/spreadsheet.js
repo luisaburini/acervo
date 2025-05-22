@@ -85,37 +85,37 @@ function loadImages() {
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null && rowData.c[ind].v != null) {
             if (ele == ColunaA) {
-                imagemColA = rowData.c[ind].v
+                imagemColA = String(rowData.c[ind].v)
             } else if (ele == ColunaB) {
                 console.log("Seq ", rowData.c[ind].v)
             } else if (ele == ColunaC) {
-                idColC = rowData.c[ind].v
+                idColC = String(rowData.c[ind].v)
             } else if (ele == ColunaD) {
-                categoriaColD = rowData.c[ind].v
+                categoriaColD = String(rowData.c[ind].v)
             } else if (ele == ColunaE) {
-                anoColE = rowData.c[ind].v
+                anoColE = String(rowData.c[ind].v)
             } else if (ele == ColunaF) {
-                decadaColF = rowData.c[ind].v
+                decadaColF = String(rowData.c[ind].v)
             } else if (ele == ColunaG) {
-                regiaoColG = rowData.c[ind].v
+                regiaoColG = String(rowData.c[ind].v)
             } else if (ele == ColunaH) {
-                autoriaColH = rowData.c[ind].v
+                autoriaColH = String(rowData.c[ind].v)
             } else if (ele == ColunaI) {
-                fonteOriginalColI = rowData.c[ind].v
+                fonteOriginalColI = String(rowData.c[ind].v)
             } else if (ele == ColunaJ) {
-                temaColJ = rowData.c[ind].v
+                temaColJ = String(rowData.c[ind].v)
             } else if (ele == ColunaK) {
-                estadoColK = rowData.c[ind].v
+                estadoColK = String(rowData.c[ind].v)
             } else if (ele == ColunaL) {
-                descColL = rowData.c[ind].v
+                descColL = String(rowData.c[ind].v)
             } else if (ele == ColunaM) {
-                resolucaoColM = rowData.c[ind].v
+                resolucaoColM = String(rowData.c[ind].v)
             } else if (ele == ColunaN) {
-                formatoColN = rowData.c[ind].v
+                formatoColN = String(rowData.c[ind].v)
             } else if (ele == ColunaO) {
-                palavraChaveColO = rowData.c[ind].v
+                palavraChaveColO = String(rowData.c[ind].v)
             } else if (ele == ColunaP) {
-                linkColP = rowData.c[ind].v
+                linkColP = String(rowData.c[ind].v)
             } 
           }    
       })
@@ -181,7 +181,7 @@ function onSearched() {
         let year = data[i].year;
         console.log(year)
         let hasYear = year != null;
-        let foundYear = hasYear ? year.toLowerCase().includes(toSearch) : false;
+        let foundYear = hasYear ? String(year).toLowerCase().includes(toSearch) : false;
         let decade = data[i].decade;
         let hasDecade = decade != null;
         let foundDecade = hasDecade ? decade.toLowerCase().includes(toSearch) : false;

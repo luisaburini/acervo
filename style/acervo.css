@@ -10,6 +10,14 @@ body {
     color: #8e0f1d;
 }
 
+#outer-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin: 1vh;
+    row-gap: 1vw;
+    column-gap: 1vh;
+}
+
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

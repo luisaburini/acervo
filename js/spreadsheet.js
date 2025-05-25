@@ -42,8 +42,12 @@ const ColunaO = "Palavras-chave"
 const ColunaP = "Link"
 
 
-var data = []
-var allKeywords = []
+var data = [];
+var allKeywords = [];
+var allYears = [];
+var allDecades = [];
+var allCategories = [];
+
 init()
 
 function init() {
@@ -96,34 +100,39 @@ function loadImages() {
                 idColC = String(rowData.c[ind].v)
             } else if (ele == ColunaD) {
                 categoriaColD = String(rowData.c[ind].v)
+                allCategories.push(categoriaColD);
+                allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e))
             } else if (ele == ColunaE) {
-                anoColE = String(rowData.c[ind].v)
+                anoColE = String(rowData.c[ind].v);
+                allYears.push(anoColE);
+                allYears = allYears.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaF) {
-                decadaColF = String(rowData.c[ind].v)
+                decadaColF = String(rowData.c[ind].v);
+                allDecades.push(decadaColF);
+                allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaG) {
-                regiaoColG = String(rowData.c[ind].v)
+                regiaoColG = String(rowData.c[ind].v);
             } else if (ele == ColunaH) {
-                autoriaColH = String(rowData.c[ind].v)
+                autoriaColH = String(rowData.c[ind].v);
             } else if (ele == ColunaI) {
-                fonteOriginalColI = String(rowData.c[ind].v)
+                fonteOriginalColI = String(rowData.c[ind].v);
             } else if (ele == ColunaJ) {
-                temaColJ = String(rowData.c[ind].v)
+                temaColJ = String(rowData.c[ind].v);
             } else if (ele == ColunaK) {
-                estadoColK = String(rowData.c[ind].v)
+                estadoColK = String(rowData.c[ind].v);
             } else if (ele == ColunaL) {
-                descColL = String(rowData.c[ind].v)
+                descColL = String(rowData.c[ind].v);
             } else if (ele == ColunaM) {
-                resolucaoColM = String(rowData.c[ind].v)
+                resolucaoColM = String(rowData.c[ind].v);
             } else if (ele == ColunaN) {
-                formatoColN = String(rowData.c[ind].v)
+                formatoColN = String(rowData.c[ind].v);
             } else if (ele == ColunaO) {
-                var kwds = String(rowData.c[ind].v).split(separator)
+                palavraChaveColO = String(rowData.c[ind].v);
+                var kwds = String(rowData.c[ind].v).split(separator);
                 for (let k = 0; k < kwds; k++){
                     allKeywords.push(k);
                 }
-                
-                allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e))
-                palavraChaveColO = String(rowData.c[ind].v);
+                allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaP) {
                 linkColP = String(rowData.c[ind].v)
             } 
@@ -157,17 +166,104 @@ function loadImages() {
 function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar")
 
+    // Adiciona categoria
+    let categoryHeader = document.createElement('p');
+    categoryHeader.className = "attribute";
+    categoryHeader.innerText = "Categorias"
+    sidebar.appendChild(categoryHeader);
+    for (let i=0; i<allCategories.length; i++){
+        var radioInput = document.createElement('input');
+        radioInput.type = "radio";
+        radioInput.value = allCategories[i];
+        radioInput.name = "categories";
+        radioInput.onclick = function() {
+            var searchBox = document.getElementById("searchbox");
+            searchBox.innerHTML = allCategories[i];
+            onSearched()
+        };
+        sidebar.appendChild(radioInput)
+        var label = document.createElement("label")
+        label.innerText = allCategories[i];
+        label.className = "sidebaritem"
+        sidebar.appendChild(label)
+    }
+
+    // Adiciona ano
+    let yearHeader = document.createElement('p');
+    yearHeader.className = "attribute";
+    yearHeader.innerText = "Ano"
+    sidebar.appendChild(yearHeader);
+    for (let i=0; i<allYears.length; i++){
+        var radioInput = document.createElement('input');
+        radioInput.type = "radio";
+        radioInput.value = allYears[i];
+        radioInput.name = "years";
+        radioInput.onclick = function() {
+            var searchBox = document.getElementById("searchbox");
+            searchBox.innerHTML = allYears[i];
+            onSearched()
+        };
+        sidebar.appendChild(radioInput)
+        var label = document.createElement("label")
+        label.innerText = allYears[i];
+        label.className = "sidebaritem"
+        sidebar.appendChild(label)
+    }
+
+    // Adiciona decada
+    let decadeHeader = document.createElement('p');
+    decadeHeader.className = "attribute";
+    decadeHeader.innerText = "Década"
+    sidebar.appendChild(decadeHeader);
+    for (let i=0; i<allDecades.length; i++){
+        var radioInput = document.createElement('input');
+        radioInput.type = "radio";
+        radioInput.value = allDecades[i];
+        radioInput.name = "decades";
+        radioInput.onclick = function() {
+            var searchBox = document.getElementById("searchbox");
+            searchBox.innerHTML = allYears[i];
+            onSearched()
+        };
+        sidebar.appendChild(radioInput)
+        var label = document.createElement("label")
+        label.innerText = allYears[i];
+        label.className = "sidebaritem"
+        sidebar.appendChild(label)
+    }
+
+    // Adiciona palavras-chave
+    let keywordsHeader = document.createElement('p');
+    keywordsHeader.className = "attribute";
+    keywordsHeader.innerText = "Palavras-chave"
+    sidebar.appendChild(keywordsHeader);
     for (let i=0; i<allKeywords.length; i++){
-        var hlink = document.createElement('p');
-        hlink.innerText = allKeywords[i];
-        hlink.className = "sidebaritem";
-        hlink.onclick = function() {
+        var radioInput = document.createElement('input');
+        radioInput.type = "radio";
+        radioInput.value = allKeywords[i];
+        radioInput.name = "keywords";
+        radioInput.onclick = function() {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allKeywords[i];
             onSearched()
         };
-        sidebar.appendChild(hlink)
+        sidebar.appendChild(radioInput)
+        var label = document.createElement("label")
+        label.innerText = allKeywords[i];
+        label.className = "sidebaritem"
+        sidebar.appendChild(label)
     }
+
+    let clearButton = document.createElement("button");
+    clearButton.innerText = "Limpar";
+    clearButton.onclick = function() {
+        clear(grid);
+        console.log("Data array length ", data.length)
+        for (let i=0;i<data.length;i++) {
+            createNewImage(data[i], grid);
+        }
+    }
+    sidebar.appendChild(clearButton);
 }
 
 function clear(grid) {

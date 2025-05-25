@@ -18,6 +18,26 @@ body {
     column-gap: 1vh;
 }
 
+#sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1vh;
+    row-gap: 1vw;
+    column-gap: 1vh;
+}
+
+.sidebaritem{
+    outline: none;
+    background-color: #6d1703;
+    margin: 2vh;
+    padding: 0.2em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    color: #fae0ca;
+    font-family: CreatorDisplayRegular;
+    font-size: 2.5vh;
+}
+
 #searchbox {
     background-color: #fae0ca;
     margin-left: 5vh;

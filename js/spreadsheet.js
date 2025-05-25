@@ -19,7 +19,7 @@ class ImgMetadata {
 
         }
         
-var data = []
+
 
 const sheetId = '1gENPiJwJxPRm4GC1XcMnbSeXhuZkgxIaZ-TtQSwqKc8';
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
@@ -41,6 +41,9 @@ const ColunaN = "Formato"
 const ColunaO = "Palavras-chave"
 const ColunaP = "Link"
 
+
+var data = []
+var allKeywords = []
 init()
 
 function init() {
@@ -48,6 +51,7 @@ function init() {
 }
 
 function loadImages() {
+
     console.log("INIT")
     const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P")
     const url = `${base}&sheet=${sheetName}&tq=${query}`
@@ -113,7 +117,10 @@ function loadImages() {
             } else if (ele == ColunaN) {
                 formatoColN = String(rowData.c[ind].v)
             } else if (ele == ColunaO) {
-                palavraChaveColO = String(rowData.c[ind].v)
+                var kwds = String(rowData.c[ind].v).split(";")
+                allKeywords.push(kwds);
+                allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e))
+                palavraChaveColO = String(rowData.c[ind].v);
             } else if (ele == ColunaP) {
                 linkColP = String(rowData.c[ind].v)
             } 
@@ -133,7 +140,9 @@ function loadImages() {
         data.push(img)
       }
       })
-    var grid = document.getElementById('grid-container');
+    
+    populateSidebar(allKeywords);
+      var grid = document.getElementById('grid-container');
     clear(grid);
     console.log("Data array length ", data.length)
     for (let i=0;i<data.length;i++) {
@@ -142,6 +151,23 @@ function loadImages() {
     })
 }
 
+function populateSidebar(allKeywords) {
+    let sidebar = document.getElementById("sidebar")
+    
+    allKeywords.push("centro")
+
+    for (let i=0; i<allKeywords.length; i++){
+        var hlink = document.createElement('p');
+        hlink.innerText = allKeywords[i];
+        hlink.className = "sidebaritem";
+        hlink.onclick = function() {
+            var searchBox = document.getElementById("searchbox");
+            searchBox.innerHTML = allKeywords[i];
+            onSearched()
+        };
+        sidebar.appendChild(hlink)
+    }
+}
 
 function clear(grid) {
     while (grid.firstChild) {

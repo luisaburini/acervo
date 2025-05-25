@@ -176,7 +176,7 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allCategories[i];
         radioInput.name = "categories";
-        radioInput.onclick = function() {
+        radioInput.onsubmit = function() {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allCategories[i];
             onSearched()
@@ -184,7 +184,7 @@ function populateSidebar(allKeywords) {
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allCategories[i];
-        label.className = "sidebaritem"
+        label.className = "description"
         sidebar.appendChild(label)
     }
 
@@ -198,7 +198,7 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allYears[i];
         radioInput.name = "years";
-        radioInput.onclick = function() {
+        radioInput.onsubmit = function() {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allYears[i];
             onSearched()
@@ -206,7 +206,7 @@ function populateSidebar(allKeywords) {
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allYears[i];
-        label.className = "sidebaritem"
+        label.className = "description"
         sidebar.appendChild(label)
     }
 
@@ -220,7 +220,7 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allDecades[i];
         radioInput.name = "decades";
-        radioInput.onclick = function() {
+        radioInput.onsubmit = function() {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allYears[i];
             onSearched()
@@ -228,7 +228,7 @@ function populateSidebar(allKeywords) {
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allYears[i];
-        label.className = "sidebaritem"
+        label.className = "description"
         sidebar.appendChild(label)
     }
 
@@ -242,7 +242,7 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allKeywords[i];
         radioInput.name = "keywords";
-        radioInput.onclick = function() {
+        radioInput.onsubmit = function() {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allKeywords[i];
             onSearched()
@@ -250,13 +250,13 @@ function populateSidebar(allKeywords) {
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allKeywords[i];
-        label.className = "sidebaritem"
+        label.className = "description"
         sidebar.appendChild(label)
     }
 
     let clearButton = document.createElement("button");
     clearButton.innerText = "Limpar";
-    clearButton.onclick = function() {
+    clearButton.onsubmit = function() {
         clear(grid);
         console.log("Data array length ", data.length)
         for (let i=0;i<data.length;i++) {

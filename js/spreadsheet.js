@@ -117,7 +117,8 @@ function loadImages() {
             } else if (ele == ColunaN) {
                 formatoColN = String(rowData.c[ind].v)
             } else if (ele == ColunaO) {
-                var kwds = String(rowData.c[ind].v).split(";")
+                var kwds = String(rowData.c[ind].v).split(separator)
+                for (let k = 0; k < kwds; )
                 allKeywords.push(kwds);
                 allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e))
                 palavraChaveColO = String(rowData.c[ind].v);
@@ -153,8 +154,6 @@ function loadImages() {
 
 function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar")
-    
-    allKeywords.push("centro")
 
     for (let i=0; i<allKeywords.length; i++){
         var hlink = document.createElement('p');
@@ -175,8 +174,10 @@ function clear(grid) {
     }
 }
 
+const separator = ","
+
 function hasKeywords(attr, toSearch){
-    var keywords = attr.split(";");
+    var keywords = attr.split(separator);
     for (let j=0; j<keywords.length; j++) {
         console.log(keywords[j])
         if(keywords[j].includes(toSearch)) {

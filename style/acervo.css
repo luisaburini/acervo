@@ -6,13 +6,13 @@ body {
 #header {
     font-family: CreatorDisplayLight;
     text-align: center;
-    font-size: 20vh;
+    font-size: 10vh;
     color: #8e0f1d;
 }
 
 #outer-container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
     margin: 1vh;
     row-gap: 1vw;
     column-gap: 1vh;

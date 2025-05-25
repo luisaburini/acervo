@@ -118,8 +118,10 @@ function loadImages() {
                 formatoColN = String(rowData.c[ind].v)
             } else if (ele == ColunaO) {
                 var kwds = String(rowData.c[ind].v).split(separator)
-                for (let k = 0; k < kwds; )
-                allKeywords.push(kwds);
+                for (let k = 0; k < kwds; k++){
+                    allKeywords.push(k);
+                }
+                
                 allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e))
                 palavraChaveColO = String(rowData.c[ind].v);
             } else if (ele == ColunaP) {

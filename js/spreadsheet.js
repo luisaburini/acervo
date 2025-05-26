@@ -172,6 +172,9 @@ function populateSidebar(allKeywords) {
     categoryHeader.innerText = "Categorias"
     sidebar.appendChild(categoryHeader);
     for (let i=0; i<allCategories.length; i++){
+        var label = document.createElement("label")
+        label.innerText = allCategories[i];
+        label.className = "description"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allCategories[i];
@@ -183,10 +186,7 @@ function populateSidebar(allKeywords) {
                 onSearched()
             }
         });
-        sidebar.appendChild(radioInput)
-        var label = document.createElement("label")
-        label.innerText = allCategories[i];
-        label.className = "description"
+        label.appendChild(radioInput)
         sidebar.appendChild(label)
     }
 
@@ -196,6 +196,9 @@ function populateSidebar(allKeywords) {
     yearHeader.innerText = "Ano"
     sidebar.appendChild(yearHeader);
     for (let i=0; i<allYears.length; i++){
+        var label = document.createElement("label")
+        label.innerText = allYears[i];
+        label.className = "description"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allYears[i];
@@ -205,10 +208,7 @@ function populateSidebar(allKeywords) {
             searchBox.innerHTML = allYears[i];
             onSearched()
         });
-        sidebar.appendChild(radioInput)
-        var label = document.createElement("label")
-        label.innerText = allYears[i];
-        label.className = "description"
+        label.appendChild(radioInput)
         sidebar.appendChild(label)
     }
 
@@ -218,6 +218,9 @@ function populateSidebar(allKeywords) {
     decadeHeader.innerText = "Década"
     sidebar.appendChild(decadeHeader);
     for (let i=0; i<allDecades.length; i++){
+        var label = document.createElement("label")
+        label.innerText = allYears[i];
+        label.className = "description"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allDecades[i];
@@ -227,10 +230,7 @@ function populateSidebar(allKeywords) {
             searchBox.innerHTML = allYears[i];
             onSearched()
         });
-        sidebar.appendChild(radioInput)
-        var label = document.createElement("label")
-        label.innerText = allYears[i];
-        label.className = "description"
+        label.appendChild(radioInput)
         sidebar.appendChild(label)
     }
 
@@ -240,6 +240,9 @@ function populateSidebar(allKeywords) {
     keywordsHeader.innerText = "Palavras-chave"
     sidebar.appendChild(keywordsHeader);
     for (let i=0; i<allKeywords.length; i++){
+        var label = document.createElement("label")
+        label.innerText = allKeywords[i];
+        label.className = "description"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allKeywords[i];
@@ -249,10 +252,7 @@ function populateSidebar(allKeywords) {
             searchBox.innerHTML = allKeywords[i];
             onSearched()
         });
-        sidebar.appendChild(radioInput)
-        var label = document.createElement("label")
-        label.innerText = allKeywords[i];
-        label.className = "description"
+        label.appendChild(radioInput)
         sidebar.appendChild(label)
     }
 

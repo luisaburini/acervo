@@ -174,7 +174,7 @@ function populateSidebar(allKeywords) {
     for (let i=0; i<allCategories.length; i++){
         var label = document.createElement("label")
         label.innerText = allCategories[i];
-        label.className = "description"
+        label.className = "container"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allCategories[i];
@@ -187,6 +187,9 @@ function populateSidebar(allKeywords) {
             }
         });
         label.appendChild(radioInput)
+        var span = document.createElement("span");
+        span.className = "checkmark"
+        label.appendChild(span)
         sidebar.appendChild(label)
     }
 
@@ -198,7 +201,7 @@ function populateSidebar(allKeywords) {
     for (let i=0; i<allYears.length; i++){
         var label = document.createElement("label")
         label.innerText = allYears[i];
-        label.className = "description"
+        label.className = "container"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allYears[i];
@@ -209,6 +212,9 @@ function populateSidebar(allKeywords) {
             onSearched()
         });
         label.appendChild(radioInput)
+        var span = document.createElement("span");
+        span.className = "checkmark"
+        label.appendChild(span)
         sidebar.appendChild(label)
     }
 
@@ -220,7 +226,7 @@ function populateSidebar(allKeywords) {
     for (let i=0; i<allDecades.length; i++){
         var label = document.createElement("label")
         label.innerText = allYears[i];
-        label.className = "description"
+        label.className = "container"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allDecades[i];
@@ -231,6 +237,9 @@ function populateSidebar(allKeywords) {
             onSearched()
         });
         label.appendChild(radioInput)
+        var span = document.createElement("span");
+        span.className = "checkmark"
+        label.appendChild(span)
         sidebar.appendChild(label)
     }
 
@@ -242,7 +251,7 @@ function populateSidebar(allKeywords) {
     for (let i=0; i<allKeywords.length; i++){
         var label = document.createElement("label")
         label.innerText = allKeywords[i];
-        label.className = "description"
+        label.className = "container"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allKeywords[i];
@@ -253,6 +262,9 @@ function populateSidebar(allKeywords) {
             onSearched()
         });
         label.appendChild(radioInput)
+        var span = document.createElement("span");
+        span.className = "checkmark"
+        label.appendChild(span)
         sidebar.appendChild(label)
     }
 

@@ -176,11 +176,13 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allCategories[i];
         radioInput.name = "categories";
-        radioInput.onsubmit = function() {
-            var searchBox = document.getElementById("searchbox");
-            searchBox.innerHTML = allCategories[i];
-            onSearched()
-        };
+        radioInput.addEventListener('change', function (e) {
+            if (this.checked) {
+                var searchBox = document.getElementById("searchbox");
+                searchBox.innerHTML = allCategories[i];
+                onSearched()
+            }
+        });
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allCategories[i];
@@ -198,11 +200,11 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allYears[i];
         radioInput.name = "years";
-        radioInput.onsubmit = function() {
+        radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allYears[i];
             onSearched()
-        };
+        });
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allYears[i];
@@ -220,11 +222,11 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allDecades[i];
         radioInput.name = "decades";
-        radioInput.onsubmit = function() {
+        radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allYears[i];
             onSearched()
-        };
+        });
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allYears[i];
@@ -242,11 +244,11 @@ function populateSidebar(allKeywords) {
         radioInput.type = "radio";
         radioInput.value = allKeywords[i];
         radioInput.name = "keywords";
-        radioInput.onsubmit = function() {
+        radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allKeywords[i];
             onSearched()
-        };
+        });
         sidebar.appendChild(radioInput)
         var label = document.createElement("label")
         label.innerText = allKeywords[i];
@@ -256,7 +258,7 @@ function populateSidebar(allKeywords) {
 
     let clearButton = document.createElement("button");
     clearButton.innerText = "Limpar";
-    clearButton.onsubmit = function() {
+    clearButton.onclick = function() {
         clear(grid);
         console.log("Data array length ", data.length)
         for (let i=0;i<data.length;i++) {

@@ -79,7 +79,7 @@ button:active {
 
 .thumbnail {
     object-fit: cover;
-    padding-left: 5vw;
+    padding-left: 2vw;
     padding-top: 3vh;
     width: 15vw;
     height: 15vw;

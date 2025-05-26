@@ -12,7 +12,7 @@ body {
 
 #outer-container {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 7fr;
     margin: 1vh;
     row-gap: 1vw;
     column-gap: 1vh;
@@ -79,10 +79,10 @@ button:active {
 
 .thumbnail {
     object-fit: cover;
-    padding-left: 10vh;
+    padding-left: 5vw;
     padding-top: 3vh;
-    width: 25vh;
-    height: 25vh;
+    width: 15vw;
+    height: 15vw;
 }
 
 .attribute{

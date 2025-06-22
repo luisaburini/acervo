@@ -177,6 +177,7 @@ function populateSidebar(allKeywords) {
     let categoryDiv = document.createElement('div');
     categoryDiv.className = "dropdown-menu"
     categoryHeader.appendChild(categoryDiv)
+    allCategories.sort();
     for (let i=0; i<allCategories.length; i++){
         var label = document.createElement("label")
         label.innerText = allCategories[i];
@@ -209,6 +210,7 @@ function populateSidebar(allKeywords) {
     let yearDiv = document.createElement('div');
     yearDiv.className = "dropdown-menu";
     yearHeader.appendChild(yearDiv);
+    allYears.sort();
     for (let i=0; i<allYears.length; i++){
         var label = document.createElement("label")
         label.innerText = allYears[i];
@@ -239,6 +241,7 @@ function populateSidebar(allKeywords) {
     let decadeDiv = document.createElement('div');
     decadeDiv.className = "dropdown-menu";
     decadeHeader.appendChild(decadeDiv);
+    allDecades.sort();
     for (let i=0; i<allDecades.length; i++){
         var label = document.createElement("label")
         label.innerText = allDecades[i];
@@ -269,6 +272,7 @@ function populateSidebar(allKeywords) {
     let keywordsDiv = document.createElement('div');
     keywordsDiv.className = "dropdown-menu";
     keywordsHeader.appendChild(keywordsDiv);
+    allKeywords.sort();
     for (let i=0; i<allKeywords.length; i++){
         console.log("Keywords ", allKeywords[i])
         var label = document.createElement("label")
@@ -302,6 +306,7 @@ function clear(grid) {
 const separator = ";"
 
 function hasKeywords(attr, toSearch){
+    console.log("Attr keyword ", attr)
     var keywords = attr.split(separator);
     for (let j=0; j<keywords.length; j++) {
         console.log("Keywords:", keywords[j])

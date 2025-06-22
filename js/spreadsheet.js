@@ -225,7 +225,7 @@ function populateSidebar(allKeywords) {
     sidebar.appendChild(decadeHeader);
     for (let i=0; i<allDecades.length; i++){
         var label = document.createElement("label")
-        label.innerText = allYears[i];
+        label.innerText = allDecades[i];
         label.className = "container"
         var radioInput = document.createElement('input');
         radioInput.type = "radio";
@@ -233,8 +233,8 @@ function populateSidebar(allKeywords) {
         radioInput.name = "decades";
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
-            searchBox.innerHTML = allYears[i];
-            searchBox.value = allYears[i];
+            searchBox.innerHTML = allDecades[i];
+            searchBox.value = allDecades[i];
             onSearched()
         });
         label.appendChild(radioInput)

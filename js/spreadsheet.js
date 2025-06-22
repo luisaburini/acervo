@@ -162,8 +162,6 @@ function loadImages() {
 }
 
 function removeAccents(word) {
-    console.log("word lower case ", word.toLowerCase());
-    console.log("word lower case no accent ", word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
     return word.toLowerCase();
 };
 
@@ -273,9 +271,7 @@ function populateSidebar(allKeywords) {
     keywordsDiv.className = "dropdown-menu";
     keywordsHeader.appendChild(keywordsDiv);
     allKeywords.sort();
-    console.log(allKeywords)
     for (let i=0; i<allKeywords.length; i++){
-        console.log("Keywords ", allKeywords[i])
         var label = document.createElement("label")
         label.innerText = allKeywords[i];
         label.className = "container"
@@ -307,10 +303,8 @@ function clear(grid) {
 const separator = ";"
 
 function hasKeywords(attr, toSearch){
-    console.log("Attr keyword ", attr)
     var keywords = attr.split(separator);
     for (let j=0; j<keywords.length; j++) {
-        console.log("Keywords:", keywords[j])
         if(keywords[j].normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(toSearch.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))) {
             return true;
         }
@@ -326,18 +320,14 @@ function onSearched() {
     var toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
     searchBox.value = "";
     
-    
     for (let i=0; i<data.length;i++) {
         let region = data[i].region;
-        console.log("region ", region)
         let hasRegion = region != null;
         let foundRegion = hasRegion ? region.toLowerCase().includes(toSearch) : false;
         let author = data[i].author;
-        console.log("author ", author)
         let hasAuthor = author != null;
         let foundAuthor = hasAuthor? author.toLowerCase().includes(toSearch) : false;
         let year = data[i].year;
-        console.log("year ", year)
         let hasYear = year != null;
         let foundYear = hasYear ? String(year).toLowerCase().includes(toSearch) : false;
         let decade = data[i].decade;

@@ -127,8 +127,8 @@ function loadImages() {
             } else if (ele == ColunaO) {
                 palavraChaveColO = String(rowData.c[ind].v);
                 var kwds = String(rowData.c[ind].v).split(separator);
-                for (let k = 0; k < kwds; k++){
-                    allKeywords.push(k);
+                for (let k = 0; k < kwds.length; k++){
+                    allKeywords.push(kwds[k]);
                 }
                 allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaP) {
@@ -273,6 +273,7 @@ function populateSidebar(allKeywords) {
     keywordsDiv.className = "dropdown-menu";
     keywordsHeader.appendChild(keywordsDiv);
     allKeywords.sort();
+    console.log(allKeywords)
     for (let i=0; i<allKeywords.length; i++){
         console.log("Keywords ", allKeywords[i])
         var label = document.createElement("label")

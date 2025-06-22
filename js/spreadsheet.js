@@ -55,11 +55,9 @@ function init() {
 }
 
 function loadImages() {
-
     console.log("INIT")
     const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P")
     const url = `${base}&sheet=${sheetName}&tq=${query}`
-    
     
     fetch(url)
     .then(res => res.text())
@@ -183,6 +181,7 @@ function populateSidebar(allKeywords) {
             if (this.checked) {
                 var searchBox = document.getElementById("searchbox");
                 searchBox.innerHTML = allCategories[i];
+                searchBox.value = allCategories[i];
                 onSearched()
             }
         });
@@ -209,6 +208,7 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allYears[i];
+            searchBox.value = allYears[i];
             onSearched()
         });
         label.appendChild(radioInput)
@@ -234,6 +234,7 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allYears[i];
+            searchBox.value = allYears[i];
             onSearched()
         });
         label.appendChild(radioInput)
@@ -259,6 +260,7 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allKeywords[i];
+            searchBox.value = allKeywords[i];
             onSearched()
         });
         label.appendChild(radioInput)

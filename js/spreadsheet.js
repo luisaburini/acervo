@@ -299,7 +299,7 @@ function clear(grid) {
     }
 }
 
-const separator = ","
+const separator = ";"
 
 function hasKeywords(attr, toSearch){
     var keywords = attr.split(separator);

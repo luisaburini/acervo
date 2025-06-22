@@ -50,7 +50,7 @@ body {
 
 /* The container */
 .container {
-  display: none;
+  display: block;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;

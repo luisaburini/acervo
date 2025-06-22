@@ -172,7 +172,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona categoria
     let categoryDiv = document.createElement('div')
-    let categoryHeader = document.createElement('p');
+    let categoryHeader = document.createElement('div');
     categoryHeader.className = "attribute";
     categoryHeader.innerText = "Categorias"
     categoryHeader.appendChild(categoryDiv)
@@ -203,7 +203,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona ano
     let yearDiv = document.createElement('div');
-    let yearHeader = document.createElement('p');
+    let yearHeader = document.createElement('div');
     yearHeader.className = "attribute";
     yearHeader.innerText = "Ano"
     yearHeader.appendChild(yearDiv);
@@ -232,7 +232,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona decada
     let decadaDiv = document.createElement('div');
-    let decadeHeader = document.createElement('p');
+    let decadeHeader = document.createElement('div');
     decadeHeader.className = "attribute";
     decadeHeader.innerText = "Década"
     decadaHeader.appendChild(decadaDiv);
@@ -261,7 +261,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona palavras-chave
     let keywordsDiv = document.createElement('div');
-    let keywordsHeader = document.createElement('p');
+    let keywordsHeader = document.createElement('div');
     keywordsHeader.className = "attribute";
     keywordsHeader.innerText = "Palavras-chave"
     keywordsHeader.appendChild(keywordsDiv);

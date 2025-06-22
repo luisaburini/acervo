@@ -175,7 +175,7 @@ function populateSidebar(allKeywords) {
     let categoryHeader = document.createElement('p');
     categoryHeader.className = "attribute";
     categoryHeader.innerText = "Categorias"
-    categoryDiv.appendChild(categoryHeader);
+    categoryHeader.appendChild(categoryDiv)
     for (let i=0; i<allCategories.length; i++){
         var label = document.createElement("label")
         label.innerText = allCategories[i];
@@ -199,14 +199,14 @@ function populateSidebar(allKeywords) {
         label.appendChild(span)
         categoryDiv.appendChild(label)
     }
-    sidebar.appendChild(categoryDiv);
+    sidebar.appendChild(categoryHeader);
 
     // Adiciona ano
     let yearDiv = document.createElement('div');
     let yearHeader = document.createElement('p');
     yearHeader.className = "attribute";
     yearHeader.innerText = "Ano"
-    yearDiv.appendChild(yearHeader);
+    yearHeader.appendChild(yearDiv);
     for (let i=0; i<allYears.length; i++){
         var label = document.createElement("label")
         label.innerText = allYears[i];
@@ -228,14 +228,14 @@ function populateSidebar(allKeywords) {
         label.appendChild(span)
         yearDiv.appendChild(label)
     }
-    sidebar.appendChild(yearDiv);
+    sidebar.appendChild(yearHeader);
 
     // Adiciona decada
     let decadaDiv = document.createElement('div');
     let decadeHeader = document.createElement('p');
     decadeHeader.className = "attribute";
     decadeHeader.innerText = "Década"
-    decadaDiv.appendChild(decadeHeader);
+    decadaHeader.appendChild(decadaDiv);
     for (let i=0; i<allDecades.length; i++){
         var label = document.createElement("label")
         label.innerText = allDecades[i];
@@ -257,14 +257,14 @@ function populateSidebar(allKeywords) {
         label.appendChild(span)
         decadaDiv.appendChild(label)
     }
-    sidebar.appendChild(decadaDiv);
+    sidebar.appendChild(decadeHeader);
 
     // Adiciona palavras-chave
     let keywordsDiv = document.createElement('div');
     let keywordsHeader = document.createElement('p');
     keywordsHeader.className = "attribute";
     keywordsHeader.innerText = "Palavras-chave"
-    keywordsDiv.appendChild(keywordsHeader);
+    keywordsHeader.appendChild(keywordsDiv);
     for (let i=0; i<allKeywords.length; i++){
         var label = document.createElement("label")
         label.innerText = allKeywords[i];
@@ -286,7 +286,7 @@ function populateSidebar(allKeywords) {
         label.appendChild(span)
         keywordsDiv.appendChild(label)
     }
-    sidebar.appendChild(keywordsDiv);
+    sidebar.appendChild(keywordsHeader);
 
     let clearButton = document.createElement("button");
     clearButton.innerText = "Limpar";

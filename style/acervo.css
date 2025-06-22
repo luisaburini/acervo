@@ -78,7 +78,7 @@ body {
     display: none;
     position: absolute;
     background-color: #cf807a;
-    margin-left: 45px;
+    margin-left: -45px;
     width: 160px;
     border-radius: 5px;
     z-index: 1;
@@ -115,7 +115,7 @@ body {
 
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #8e0f1d;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */

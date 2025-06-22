@@ -177,6 +177,9 @@ function populateSidebar(allKeywords) {
     let categoryDiv = document.createElement('div');
     categoryDiv.className = "dropdown-menu"
     categoryHeader.appendChild(categoryDiv)
+    allCategories.sort(function (a, b) {
+        return ('' + a.attr).localeCompare(b.attr);
+    })
     for (let i=0; i<allCategories.length; i++){
         var label = document.createElement("label")
         label.innerText = allCategories[i];
@@ -209,6 +212,9 @@ function populateSidebar(allKeywords) {
     let yearDiv = document.createElement('div');
     yearDiv.className = "dropdown-menu";
     yearHeader.appendChild(yearDiv);
+    allYears.sort(function (a, b) {
+        return ('' + a.attr).localeCompare(b.attr);
+    })
     for (let i=0; i<allYears.length; i++){
         var label = document.createElement("label")
         label.innerText = allYears[i];
@@ -239,6 +245,9 @@ function populateSidebar(allKeywords) {
     let decadeDiv = document.createElement('div');
     decadeDiv.className = "dropdown-menu";
     decadeHeader.appendChild(decadeDiv);
+    allDecades.sort(function (a, b) {
+        return ('' + a.attr).localeCompare(b.attr);
+    })
     for (let i=0; i<allDecades.length; i++){
         var label = document.createElement("label")
         label.innerText = allDecades[i];
@@ -263,12 +272,15 @@ function populateSidebar(allKeywords) {
     sidebar.appendChild(decadeHeader);
 
     // Adiciona palavras-chave
-    let keywordsDiv = document.createElement('div');
-    keywordsDiv.className = "dropdown-menu";
     let keywordsHeader = document.createElement('div');
     keywordsHeader.className = "attribute";
     keywordsHeader.innerText = "Palavras-chave"
+    let keywordsDiv = document.createElement('div');
+    keywordsDiv.className = "dropdown-menu";
     keywordsHeader.appendChild(keywordsDiv);
+    allKeywords.sort(function (a, b) {
+        return ('' + a.attr).localeCompare(b.attr);
+    })
     for (let i=0; i<allKeywords.length; i++){
         var label = document.createElement("label")
         label.innerText = allKeywords[i];

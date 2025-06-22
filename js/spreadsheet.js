@@ -161,6 +161,10 @@ function loadImages() {
     })
 }
 
+function removeAccents(word) {
+  return word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+};
+
 function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar")
 
@@ -180,8 +184,9 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             if (this.checked) {
                 var searchBox = document.getElementById("searchbox");
-                searchBox.innerHTML = allCategories[i];
-                searchBox.value = allCategories[i];
+                var noAccent = removeAccents(allCategories[i]);
+                searchBox.innerHTML = noAccent;
+                searchBox.value = noAccent;
                 onSearched()
             }
         });
@@ -207,8 +212,9 @@ function populateSidebar(allKeywords) {
         radioInput.name = "years";
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
-            searchBox.innerHTML = allYears[i];
-            searchBox.value = allYears[i];
+            var noAccent = removeAccents(allYears[i]);
+            searchBox.innerHTML = noAccent;
+            searchBox.value = noAccent;
             onSearched()
         });
         label.appendChild(radioInput)
@@ -233,8 +239,9 @@ function populateSidebar(allKeywords) {
         radioInput.name = "decades";
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
-            searchBox.innerHTML = allDecades[i];
-            searchBox.value = allDecades[i];
+            var noAccent = removeAccents(allDecades[i]);
+            searchBox.innerHTML = noAccent;
+            searchBox.value = noAccent;
             onSearched()
         });
         label.appendChild(radioInput)
@@ -259,8 +266,9 @@ function populateSidebar(allKeywords) {
         radioInput.name = "keywords";
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
-            searchBox.innerHTML = allKeywords[i];
-            searchBox.value = allKeywords[i];
+            var noAccent = removeAccents(allKeywords[i]);
+            searchBox.innerHTML = noAccent;
+            searchBox.value = noAccent;
             onSearched()
         });
         label.appendChild(radioInput)

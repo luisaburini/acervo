@@ -27,11 +27,33 @@ body {
 }
 
 #sidebar {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 1vh;
-    row-gap: 1vw;
-    column-gap: 1vh;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    position: fixed;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
 }
 
 .sidebaritem{

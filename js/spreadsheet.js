@@ -279,9 +279,8 @@ function populateSidebar(allKeywords) {
         radioInput.name = "keywords";
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
-            var noAccent = removeAccents(allKeywords[i]);
-            searchBox.innerHTML = noAccent;
-            searchBox.value = noAccent;
+            searchBox.innerHTML = allKeywords[i];
+            searchBox.value = allKeywords[i];
             onSearched()
         });
         label.appendChild(radioInput)

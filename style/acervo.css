@@ -75,7 +75,8 @@ body {
 }
 
 .dropdown-menu label {
-    padding: 2px 5px;
+    padding-left: 15px;
+    padding-top: 10px;
     text-decoration: none;
     display: block;
 }

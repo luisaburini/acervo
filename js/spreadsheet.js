@@ -171,10 +171,11 @@ function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar")
 
     // Adiciona categoria
+    let categoryDiv = document.createElement('div')
     let categoryHeader = document.createElement('p');
     categoryHeader.className = "attribute";
     categoryHeader.innerText = "Categorias"
-    sidebar.appendChild(categoryHeader);
+    categoryDiv.appendChild(categoryHeader);
     for (let i=0; i<allCategories.length; i++){
         var label = document.createElement("label")
         label.innerText = allCategories[i];
@@ -196,14 +197,16 @@ function populateSidebar(allKeywords) {
         var span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
-        sidebar.appendChild(label)
+        categoryDiv.appendChild(label)
     }
+    sidebar.appendChild(categoryDiv);
 
     // Adiciona ano
+    let yearDiv = document.createElement('div');
     let yearHeader = document.createElement('p');
     yearHeader.className = "attribute";
     yearHeader.innerText = "Ano"
-    sidebar.appendChild(yearHeader);
+    yearDiv.appendChild(yearHeader);
     for (let i=0; i<allYears.length; i++){
         var label = document.createElement("label")
         label.innerText = allYears[i];
@@ -223,14 +226,16 @@ function populateSidebar(allKeywords) {
         var span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
-        sidebar.appendChild(label)
+        yearDiv.appendChild(label)
     }
+    sidebar.appendChild(yearDiv);
 
     // Adiciona decada
+    let decadaDiv = document.createElement('div');
     let decadeHeader = document.createElement('p');
     decadeHeader.className = "attribute";
     decadeHeader.innerText = "Década"
-    sidebar.appendChild(decadeHeader);
+    decadaDiv.appendChild(decadeHeader);
     for (let i=0; i<allDecades.length; i++){
         var label = document.createElement("label")
         label.innerText = allDecades[i];
@@ -250,14 +255,16 @@ function populateSidebar(allKeywords) {
         var span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
-        sidebar.appendChild(label)
+        decadaDiv.appendChild(label)
     }
+    sidebar.appendChild(decadaDiv);
 
     // Adiciona palavras-chave
+    let keywordsDiv = document.createElement('div');
     let keywordsHeader = document.createElement('p');
     keywordsHeader.className = "attribute";
     keywordsHeader.innerText = "Palavras-chave"
-    sidebar.appendChild(keywordsHeader);
+    keywordsDiv.appendChild(keywordsHeader);
     for (let i=0; i<allKeywords.length; i++){
         var label = document.createElement("label")
         label.innerText = allKeywords[i];
@@ -277,8 +284,9 @@ function populateSidebar(allKeywords) {
         var span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
-        sidebar.appendChild(label)
+        keywordsDiv.appendChild(label)
     }
+    sidebar.appendChild(keywordsDiv);
 
     let clearButton = document.createElement("button");
     clearButton.innerText = "Limpar";

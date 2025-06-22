@@ -270,6 +270,7 @@ function populateSidebar(allKeywords) {
     keywordsDiv.className = "dropdown-menu";
     keywordsHeader.appendChild(keywordsDiv);
     for (let i=0; i<allKeywords.length; i++){
+        console.log("Keywords ", allKeywords[i])
         var label = document.createElement("label")
         label.innerText = allKeywords[i];
         label.className = "container"

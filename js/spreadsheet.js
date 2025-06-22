@@ -175,7 +175,7 @@ function populateSidebar(allKeywords) {
     categoryHeader.innerText = "Categorias"
     sidebar.appendChild(categoryHeader);
     for (let i=0; i<allCategories.length; i++){
-        var label = document.createElement("span")
+        var label = document.createElement("label")
         label.innerText = allCategories[i];
         label.className = "container"
         var radioInput = document.createElement('input');
@@ -204,7 +204,7 @@ function populateSidebar(allKeywords) {
     yearHeader.innerText = "Ano"
     sidebar.appendChild(yearHeader);
     for (let i=0; i<allYears.length; i++){
-        var label = document.createElement("span")
+        var label = document.createElement("label")
         label.innerText = allYears[i];
         label.className = "container"
         var radioInput = document.createElement('input');
@@ -231,7 +231,7 @@ function populateSidebar(allKeywords) {
     decadeHeader.innerText = "Década"
     sidebar.appendChild(decadeHeader);
     for (let i=0; i<allDecades.length; i++){
-        var label = document.createElement("span")
+        var label = document.createElement("label")
         label.innerText = allDecades[i];
         label.className = "container"
         var radioInput = document.createElement('input');
@@ -258,7 +258,7 @@ function populateSidebar(allKeywords) {
     keywordsHeader.innerText = "Palavras-chave"
     sidebar.appendChild(keywordsHeader);
     for (let i=0; i<allKeywords.length; i++){
-        var label = document.createElement("span")
+        var label = document.createElement("label")
         label.innerText = allKeywords[i];
         label.className = "container"
         var radioInput = document.createElement('input');

@@ -13,17 +13,18 @@ body {
 #outer-container {
     display: grid;
     grid-template-rows: 1fr 7fr;
-    margin: 1vh;
-    row-gap: 1vw;
-    column-gap: 1vh;
+    margin: 0;
+    row-gap: 0;
+    column-gap: 0;
 }
 
 #grid-container {
+    text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 1vh;
-    row-gap: 1vw;
-    column-gap: 1vh;
+    margin: 0;
+    row-gap: 0;
+    column-gap: 0;
 }
 
 #sidebar {

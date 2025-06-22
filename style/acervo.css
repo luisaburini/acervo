@@ -182,6 +182,14 @@ button:active {
     border-radius: 15px;
 }
 
+.cardattribute{
+    font-family: CreatorDisplayBlack;
+    color: #8e0f1d;
+    height: 4vh;
+    font-size: 2vh;
+    margin: 1vh;
+}
+
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */

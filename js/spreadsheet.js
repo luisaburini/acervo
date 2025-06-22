@@ -399,7 +399,7 @@ function createNewImage(imgMetaData, grid) {
     
     if (imgMetaData.description != "") {
         let descAttr = document.createElement("p");
-        descAttr.className = "attribute";
+        descAttr.className = "cardattribute";
         descAttr.innerText = "Descrição";
         div.appendChild(descAttr);
         let desc = document.createElement("p");
@@ -410,7 +410,7 @@ function createNewImage(imgMetaData, grid) {
 
     if (imgMetaData.year != "") {
         let yearAttr = document.createElement("p");
-        yearAttr.className = "attribute";
+        yearAttr.className = "cardattribute";
         yearAttr.innerText = "Ano";
         div.appendChild(yearAttr);
         let year = document.createElement("p");
@@ -421,7 +421,7 @@ function createNewImage(imgMetaData, grid) {
 
     if (imgMetaData.author != "") {
         let authorAttr = document.createElement("p");
-        authorAttr.className = "attribute";
+        authorAttr.className = "cardattribute";
         authorAttr.innerText = "Autoria";
         div.appendChild(authorAttr);
         let author = document.createElement("p");
@@ -432,7 +432,7 @@ function createNewImage(imgMetaData, grid) {
 
     if (imgMetaData.category != "") {
         let categoryAttr = document.createElement("p");
-        categoryAttr.className = "attribute";
+        categoryAttr.className = "cardattribute";
         categoryAttr.innerText = "Categoria";
         div.appendChild(categoryAttr);
         let category = document.createElement("p");
@@ -443,7 +443,7 @@ function createNewImage(imgMetaData, grid) {
 
     if (imgMetaData.region != "" ) {
         let regionAttr = document.createElement("p");
-        regionAttr.className = "attribute";
+        regionAttr.className = "cardattribute";
         regionAttr.innerText = "Bairro/Região";
         div.appendChild(regionAttr);
         let region = document.createElement("p");
@@ -454,7 +454,7 @@ function createNewImage(imgMetaData, grid) {
 
     if (imgMetaData.source != "") {
         let sourceAttr = document.createElement("p");
-        sourceAttr.className = "attribute";
+        sourceAttr.className = "cardattribute";
         sourceAttr.innerText = "Fonte Original";
         div.appendChild(sourceAttr);
         let source = document.createElement("p");
@@ -465,7 +465,7 @@ function createNewImage(imgMetaData, grid) {
 
     if (imgMetaData.keywords != "") {
         let keywordsAttr = document.createElement("p");
-        keywordsAttr.className = "attribute";
+        keywordsAttr.className = "cardattribute";
         keywordsAttr.innerText = "Palavras-chave";
         div.appendChild(keywordsAttr);
         let keywords = document.createElement("p");

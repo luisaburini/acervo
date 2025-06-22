@@ -162,9 +162,9 @@ function loadImages() {
 }
 
 function removeAccents(word) {
-    console.log(word)
-    console.log(word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
-    return word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    console.log("word lower case ", word.toLowerCase());
+    console.log("word lower case no accent ", word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
+    return word.toLowerCase();
 };
 
 function populateSidebar(allKeywords) {
@@ -284,7 +284,6 @@ function populateSidebar(allKeywords) {
     clearButton.innerText = "Limpar";
     clearButton.onclick = function() {
         clear(grid);
-        console.log("Data array length ", data.length)
         for (let i=0;i<data.length;i++) {
             createNewImage(data[i], grid);
         }
@@ -303,7 +302,7 @@ const separator = ","
 function hasKeywords(attr, toSearch){
     var keywords = attr.split(separator);
     for (let j=0; j<keywords.length; j++) {
-        console.log(keywords[j])
+        console.log("Keywords:", keywords[j])
         if(keywords[j].includes(toSearch)) {
             return true;
         }
@@ -322,15 +321,15 @@ function onSearched() {
     
     for (let i=0; i<data.length;i++) {
         let region = data[i].region;
-        console.log(region)
+        console.log("region ", region)
         let hasRegion = region != null;
         let foundRegion = hasRegion ? region.toLowerCase().includes(toSearch) : false;
         let author = data[i].author;
-        console.log(author)
+        console.log("author ", author)
         let hasAuthor = author != null;
         let foundAuthor = hasAuthor? author.toLowerCase().includes(toSearch) : false;
         let year = data[i].year;
-        console.log(year)
+        console.log("year ", year)
         let hasYear = year != null;
         let foundYear = hasYear ? String(year).toLowerCase().includes(toSearch) : false;
         let decade = data[i].decade;

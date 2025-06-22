@@ -186,6 +186,7 @@ function populateSidebar(allKeywords) {
             if (this.checked) {
                 var searchBox = document.getElementById("searchbox");
                 var noAccent = removeAccents(allCategories[i]);
+                searchBox.innerHTML = noAccent;
                 searchBox.value = noAccent;
                 onSearched();
             }
@@ -213,6 +214,7 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             var noAccent = removeAccents(allYears[i]);
+            searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });
@@ -239,6 +241,7 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             var noAccent = removeAccents(allDecades[i]);
+            searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });
@@ -265,6 +268,7 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             var noAccent = removeAccents(allKeywords[i]);
+            searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });

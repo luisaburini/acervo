@@ -13,6 +13,7 @@ body {
 #outer-container {
     display: grid;
     grid-template-columns: 1fr 7fr;
+    grid-template-rows: 1fr;
     margin: 1vh;
     row-gap: 1vw;
     column-gap: 1vh;
@@ -61,6 +62,11 @@ body {
   user-select: none;
   font-family: CreatorDisplayRegular;
 }
+
+.container:hover {
+  display: block;
+}
+
 
 /* Hide the browser's default radio button */
 .container input {

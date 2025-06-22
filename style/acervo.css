@@ -12,8 +12,7 @@ body {
 
 #outer-container {
     display: grid;
-    grid-template-columns: 1fr 7fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 7fr;
     margin: 1vh;
     row-gap: 1vw;
     column-gap: 1vh;
@@ -29,7 +28,7 @@ body {
 
 #sidebar {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 0;
     padding: 0;
     row-gap: 0;
@@ -80,7 +79,6 @@ body {
     position: absolute;
     background-color: #cf807a;
     width: 160px;
-    margin-left: -45px;
     border-radius: 5px;
     z-index: 1;
 }

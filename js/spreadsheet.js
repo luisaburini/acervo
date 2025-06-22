@@ -171,11 +171,11 @@ function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar")
 
     // Adiciona categoria
-    let categoryDiv = document.createElement('div');
-    categoryDiv.className = "dropdown-menu"
     let categoryHeader = document.createElement('div');
     categoryHeader.className = "attribute";
     categoryHeader.innerText = "Categorias"
+    let categoryDiv = document.createElement('div');
+    categoryDiv.className = "dropdown-menu"
     categoryHeader.appendChild(categoryDiv)
     for (let i=0; i<allCategories.length; i++){
         var label = document.createElement("label")
@@ -203,11 +203,11 @@ function populateSidebar(allKeywords) {
     sidebar.appendChild(categoryHeader);
 
     // Adiciona ano
-    let yearDiv = document.createElement('div');
-    yearDiv.className = "dropdown-menu";
     let yearHeader = document.createElement('div');
     yearHeader.className = "attribute";
     yearHeader.innerText = "Ano"
+    let yearDiv = document.createElement('div');
+    yearDiv.className = "dropdown-menu";
     yearHeader.appendChild(yearDiv);
     for (let i=0; i<allYears.length; i++){
         var label = document.createElement("label")
@@ -233,12 +233,12 @@ function populateSidebar(allKeywords) {
     sidebar.appendChild(yearHeader);
 
     // Adiciona decada
-    let decadaDiv = document.createElement('div');
-    decadaDiv.className = "dropdown-menu";
     let decadeHeader = document.createElement('div');
     decadeHeader.className = "attribute";
     decadeHeader.innerText = "Década"
-    decadaHeader.appendChild(decadaDiv);
+    let decadeDiv = document.createElement('div');
+    decadeDiv.className = "dropdown-menu";
+    decadeHeader.appendChild(decadeDiv);
     for (let i=0; i<allDecades.length; i++){
         var label = document.createElement("label")
         label.innerText = allDecades[i];
@@ -258,7 +258,7 @@ function populateSidebar(allKeywords) {
         var span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
-        decadaDiv.appendChild(label)
+        decadeDiv.appendChild(label)
     }
     sidebar.appendChild(decadeHeader);
 

@@ -303,7 +303,7 @@ function hasKeywords(attr, toSearch){
     var keywords = attr.split(separator);
     for (let j=0; j<keywords.length; j++) {
         console.log("Keywords:", keywords[j])
-        if(keywords[j].includes(toSearch)) {
+        if(keywords[j].normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(toSearch.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))) {
             return true;
         }
     }

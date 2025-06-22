@@ -162,7 +162,8 @@ function loadImages() {
 }
 
 function removeAccents(word) {
-  return word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    console.log(word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
+    return word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 };
 
 function populateSidebar(allKeywords) {
@@ -174,7 +175,7 @@ function populateSidebar(allKeywords) {
     categoryHeader.innerText = "Categorias"
     sidebar.appendChild(categoryHeader);
     for (let i=0; i<allCategories.length; i++){
-        var label = document.createElement("label")
+        var label = document.createElement("span")
         label.innerText = allCategories[i];
         label.className = "container"
         var radioInput = document.createElement('input');
@@ -185,9 +186,8 @@ function populateSidebar(allKeywords) {
             if (this.checked) {
                 var searchBox = document.getElementById("searchbox");
                 var noAccent = removeAccents(allCategories[i]);
-                searchBox.innerHTML = noAccent;
                 searchBox.value = noAccent;
-                onSearched()
+                onSearched();
             }
         });
         label.appendChild(radioInput)
@@ -203,7 +203,7 @@ function populateSidebar(allKeywords) {
     yearHeader.innerText = "Ano"
     sidebar.appendChild(yearHeader);
     for (let i=0; i<allYears.length; i++){
-        var label = document.createElement("label")
+        var label = document.createElement("span")
         label.innerText = allYears[i];
         label.className = "container"
         var radioInput = document.createElement('input');
@@ -213,7 +213,6 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             var noAccent = removeAccents(allYears[i]);
-            searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });
@@ -230,7 +229,7 @@ function populateSidebar(allKeywords) {
     decadeHeader.innerText = "Década"
     sidebar.appendChild(decadeHeader);
     for (let i=0; i<allDecades.length; i++){
-        var label = document.createElement("label")
+        var label = document.createElement("span")
         label.innerText = allDecades[i];
         label.className = "container"
         var radioInput = document.createElement('input');
@@ -240,7 +239,6 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             var noAccent = removeAccents(allDecades[i]);
-            searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });
@@ -257,7 +255,7 @@ function populateSidebar(allKeywords) {
     keywordsHeader.innerText = "Palavras-chave"
     sidebar.appendChild(keywordsHeader);
     for (let i=0; i<allKeywords.length; i++){
-        var label = document.createElement("label")
+        var label = document.createElement("span")
         label.innerText = allKeywords[i];
         label.className = "container"
         var radioInput = document.createElement('input');
@@ -267,7 +265,6 @@ function populateSidebar(allKeywords) {
         radioInput.addEventListener('change', function (e) {
             var searchBox = document.getElementById("searchbox");
             var noAccent = removeAccents(allKeywords[i]);
-            searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });

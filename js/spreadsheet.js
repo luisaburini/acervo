@@ -162,6 +162,7 @@ function loadImages() {
 }
 
 function removeAccents(word) {
+    console.log(word)
     console.log(word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
     return word.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 };

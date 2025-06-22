@@ -291,16 +291,6 @@ function populateSidebar(allKeywords) {
         keywordsDiv.appendChild(label)
     }
     sidebar.appendChild(keywordsHeader);
-
-    let clearButton = document.createElement("button");
-    clearButton.innerText = "Limpar";
-    clearButton.onclick = function() {
-        clear(grid);
-        for (let i=0;i<data.length;i++) {
-            createNewImage(data[i], grid);
-        }
-    }
-    sidebar.appendChild(clearButton);
 }
 
 function clear(grid) {

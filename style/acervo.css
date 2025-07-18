@@ -225,7 +225,8 @@ button:active {
 }
 
 .icon{
-  
+  width: 10vw;
+  height: 10vw;
 }
 
 @font-face {

@@ -499,8 +499,8 @@ function onZoomIn() {
 // CREDITS : https://www.cssscript.com/image-zoom-pan-hover-detail-view/
 // (A) GET CONTAINER + IMAGE SOURCE
   
-  let container = document.getElementsByClassName("overlayImg")[0],
-  imgsrc = container.currentStyle || window.getComputedStyle(container, false);
+  let container = document.getElementsByClassName("overlayImg")[0];
+  imgsrc = container.src || window.getComputedStyle(container, false);
   imgsrc = imgsrc.backgroundImage.slice(4, -1).replace(/"/g, "");
   console.log(imgsrc)
    

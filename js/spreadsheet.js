@@ -478,6 +478,7 @@ function on(link) {
 }
 
 function off() {
+    console.log("OFF")
   document.getElementById("overlay").style.display = "none";
 }
 

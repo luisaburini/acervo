@@ -509,9 +509,9 @@ function onZoomIn() {
   img.onload = () => {
         // (B1) CALCULATE ZOOM RATIO
         let ratio = img.naturalHeight / img.naturalWidth,  percentage = ratio * 100 + "%";
-        let rect = e.target.getBoundingClientRect(),
-                xPos = e.clientX - rect.left,
-                yPos = e.clientY - rect.top,
+        let rect = element.getBoundingClientRect(),
+                xPos = window.innerWidth/2 - rect.left,
+                yPos = window.innerHeight/2 - rect.top,
                 xPercent = xPos / (container.clientWidth / 100) + "%",
                 yPercent = yPos / ((container.clientWidth * ratio) / 100) + "%";
         Object.assign(container.style, {

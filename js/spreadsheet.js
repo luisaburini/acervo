@@ -477,8 +477,14 @@ function on(link) {
     document.getElementsByClassName("overlayImg")[0].src = link;
 }
 
+let dontHide = false;
+
 function off() {
-    console.log("OFF")
+  if (dontHide) {
+      dontHide = false;
+      return;
+  }
+  console.log("OFF")
   document.getElementById("overlay").style.display = "none";
 }
 
@@ -488,6 +494,7 @@ function goHome() {
 }
 
 function onZoomIn() {
+    dontHide = true;
     console.log("CLICKED ZOOM IN")
 // CREDITS : https://www.cssscript.com/image-zoom-pan-hover-detail-view/
 // (A) GET CONTAINER + IMAGE SOURCE
@@ -516,6 +523,7 @@ function onZoomIn() {
 }
 
 function onZoomOut() {
+    dontHide = true;
     console.log("CLICKED ZOOM OUT")
 }
 

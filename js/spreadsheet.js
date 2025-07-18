@@ -482,10 +482,12 @@ function off() {
 }
 
 function goHome() {
+    console.log("CLICKED GO HOME")
     off();
 }
 
 function onZoomIn() {
+    console.log("CLICKED ZOOM IN")
 // CREDITS : https://www.cssscript.com/image-zoom-pan-hover-detail-view/
 // (A) GET CONTAINER + IMAGE SOURCE
   
@@ -525,6 +527,6 @@ function onZoomIn() {
 }
 
 function onZoomOut() {
-    
+    console.log("CLICKED ZOOM OUT")
 }
 

@@ -400,7 +400,7 @@ function createNewImage(imgMetaData, grid) {
 
     let img = document.createElement('img');
     img.className = "thumbnail";
-    img.src = imgMetaData.hlink;
+    img.src = imgMetaData.hlinksmall;
     img.alt = imgMetaData.keywords;
     img.title = imgMetaData.description;
     img.onclick = function() {
@@ -519,16 +519,19 @@ function goHome() {
 function onZoomIn() {
     dontHide = true;
     console.log("CLICKED ZOOM IN")
-    let container = document.getElementsByClassName("overlayImg")[0];
+    let overlayImg = document.getElementsByClassName("overlayImg")[0];
     zoomStatus = zoomStatus*1.5;
-    container.style.transform = "scale("+zoomStatus+")";
+    overlayImg.style.transform = "scale("+zoomStatus+")";
+    overlayImg.style.transform = "translate(-"+50*zoomStatus+"%,-"+50*zoomStatus+"%)"
 }
 
 function onZoomOut() {
     dontHide = true;
     console.log("CLICKED ZOOM OUT");
-    let container = document.getElementsByClassName("overlayImg")[0];
+    let overlayImg = document.getElementsByClassName("overlayImg")[0];
+
     zoomStatus = zoomStatus/1.5;
-    container.style.transform = "scale("+zoomStatus+")";
+    overlayImg.style.transform = "scale("+zoomStatus+")";
+    overlayImg.style.transform = "translate(-"+50*zoomStatus+"%,-"+50*zoomStatus+"%)"
 }
 

@@ -1,23 +1,24 @@
 class ImgMetadata {
     constructor(year, decade, region, author, category,
          description, source, preservation, resolution,
-         format, id, keywords, hlink) {
-             this.year = year;
-             this.decade = decade;
-             this.region = region;
-             this.author = author;
-             this.category = category;
-             this.description = description;
-             this.source = source;
-             this.preservation = preservation;
-             this.resolution = resolution;
-             this.format = format;
-             this.id = id;
-             this.keywords = keywords;
-             this.hlink = hlink;
-            }
+         format, id, keywords, hlink, hlinksmall) {
+        this.year = year;
+        this.decade = decade;
+        this.region = region;
+        this.author = author;
+        this.category = category;
+        this.description = description;
+        this.source = source;
+        this.preservation = preservation;
+        this.resolution = resolution;
+        this.format = format;
+        this.id = id;
+        this.keywords = keywords;
+        this.hlink = hlink;
+        this.hlinksmall = hlinksmall;
+    }
 
-        }
+}
         
 
 
@@ -40,13 +41,15 @@ const ColunaM = "Resolução"
 const ColunaN = "Formato"
 const ColunaO = "Palavras-chave"
 const ColunaP = "Link"
+const ColunaQ = "Link pequeno"
 
 
-var data = [];
-var allKeywords = [];
-var allYears = [];
-var allDecades = [];
-var allCategories = [];
+let data = [];
+let allKeywords = [];
+let allYears = [];
+let allDecades = [];
+let allCategories = [];
+let zoomStatus = 1;
 
 init()
 
@@ -56,7 +59,7 @@ function init() {
 
 function loadImages() {
     console.log("INIT")
-    const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P")
+    const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P, Q")
     const url = `${base}&sheet=${sheetName}&tq=${query}`
     
     fetch(url)
@@ -64,7 +67,7 @@ function loadImages() {
     .then(rep => {
         //Apaga textos adicionais e extrai so o JSON:
         const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-        var colz = []
+        let colz = []
         //Extrai nome das colunas
     jsonData.table.cols.forEach((heading) => {
       let column = heading.label;
@@ -72,21 +75,22 @@ function loadImages() {
     })
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
-        var imagemColA = "";
-        var idColC = "";
-        var categoriaColD = "";
-        var anoColE = "";
-        var decadaColF = "";
-        var regiaoColG = "";
-        var autoriaColH = "";
-        var fonteOriginalColI = "";
-        var temaColJ = "";
-        var estadoColK = "";
-        var descColL = "";
-        var resolucaoColM = "";
-        var formatoColN = "";
-        var palavraChaveColO = "";
-        var linkColP = "";
+        let imagemColA = "";
+        let idColC = "";
+        let categoriaColD = "";
+        let anoColE = "";
+        let decadaColF = "";
+        let regiaoColG = "";
+        let autoriaColH = "";
+        let fonteOriginalColI = "";
+        let temaColJ = "";
+        let estadoColK = "";
+        let descColL = "";
+        let resolucaoColM = "";
+        let formatoColN = "";
+        let palavraChaveColO = "";
+        let linkBigColP = "";
+        let linkSmallColQ = "";
 
         colz.forEach((ele, ind) => {
           if (rowData.c[ind] != null && rowData.c[ind].v != null) {
@@ -126,33 +130,50 @@ function loadImages() {
                 formatoColN = String(rowData.c[ind].v);
             } else if (ele == ColunaO) {
                 palavraChaveColO = String(rowData.c[ind].v);
-                var kwds = String(rowData.c[ind].v).split(separator);
+                let kwds = String(rowData.c[ind].v).split(separator);
                 for (let k = 0; k < kwds.length; k++){
                     allKeywords.push(kwds[k]);
                 }
                 allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaP) {
-                linkColP = String(rowData.c[ind].v)
-            } 
+                linkBigColP = String(rowData.c[ind].v)
+            } else if (ele == ColunaQ) {
+                linkSmallColQ = String(rowData.c[ind].v)
+            }
           }    
       })
 
-      if (linkColP != "") {
+      if (linkBigColP != "" && linkSmallColQ != "") {
         console.log("Imagem nova!",anoColE, " ", decadaColF, " ", regiaoColG, " ", autoriaColH, " ", 
                               categoriaColD, " ", descColL, " ", fonteOriginalColI, " ",
                               estadoColK, " ", resolucaoColM, " ", formatoColN, " ", idColC, " ",
-                              palavraChaveColO, " ", linkColP)
-        var img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
+                              palavraChaveColO, " ", linkBigColP, " ", linkSmallColQ)
+        let img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
                               categoriaColD, descColL, fonteOriginalColI,
                               estadoColK, resolucaoColM, formatoColN, idColC,
-                              palavraChaveColO, linkColP)
-        linkColP = ""
+                              palavraChaveColO, linkBigColP, linkSmallColQ)
+        imagemColA = "";
+        idColC = "";
+        categoriaColD = "";
+        anoColE = "";
+        decadaColF = "";
+        regiaoColG = "";
+        autoriaColH = "";
+        fonteOriginalColI = "";
+        temaColJ = "";
+        estadoColK = "";
+        descColL = "";
+        resolucaoColM = "";
+        formatoColN = "";
+        palavraChaveColO = "";
+        linkBigColP = "";
+        linkSmallColQ = "";
         data.push(img)
       }
-      })
+    })
     
     populateSidebar(allKeywords);
-      var grid = document.getElementById('grid-container');
+      let grid = document.getElementById('grid-container');
     clear(grid);
     console.log("Data array length ", data.length)
     for (let i=0;i<data.length;i++) {
@@ -177,24 +198,24 @@ function populateSidebar(allKeywords) {
     categoryHeader.appendChild(categoryDiv)
     allCategories.sort();
     for (let i=0; i<allCategories.length; i++){
-        var label = document.createElement("label")
+        let label = document.createElement("label")
         label.innerText = allCategories[i];
         label.className = "container"
-        var radioInput = document.createElement('input');
+        let radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allCategories[i];
         radioInput.name = "categories";
         radioInput.addEventListener('change', function (e) {
             if (this.checked) {
-                var searchBox = document.getElementById("searchbox");
-                var noAccent = removeAccents(allCategories[i]);
+                let searchBox = document.getElementById("searchbox");
+                let noAccent = removeAccents(allCategories[i]);
                 searchBox.innerHTML = noAccent;
                 searchBox.value = noAccent;
                 onSearched();
             }
         });
         label.appendChild(radioInput)
-        var span = document.createElement("span");
+        let span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
         categoryDiv.appendChild(label)
@@ -210,22 +231,22 @@ function populateSidebar(allKeywords) {
     yearHeader.appendChild(yearDiv);
     allYears.sort();
     for (let i=0; i<allYears.length; i++){
-        var label = document.createElement("label")
+        let label = document.createElement("label")
         label.innerText = allYears[i];
         label.className = "container"
-        var radioInput = document.createElement('input');
+        let radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allYears[i];
         radioInput.name = "years";
         radioInput.addEventListener('change', function (e) {
-            var searchBox = document.getElementById("searchbox");
-            var noAccent = removeAccents(allYears[i]);
+            let searchBox = document.getElementById("searchbox");
+            let noAccent = removeAccents(allYears[i]);
             searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });
         label.appendChild(radioInput)
-        var span = document.createElement("span");
+        let span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
         yearDiv.appendChild(label)
@@ -241,22 +262,22 @@ function populateSidebar(allKeywords) {
     decadeHeader.appendChild(decadeDiv);
     allDecades.sort();
     for (let i=0; i<allDecades.length; i++){
-        var label = document.createElement("label")
+        let label = document.createElement("label")
         label.innerText = allDecades[i];
         label.className = "container"
-        var radioInput = document.createElement('input');
+        let radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allDecades[i];
         radioInput.name = "decades";
         radioInput.addEventListener('change', function (e) {
-            var searchBox = document.getElementById("searchbox");
-            var noAccent = removeAccents(allDecades[i]);
+            let searchBox = document.getElementById("searchbox");
+            let noAccent = removeAccents(allDecades[i]);
             searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched()
         });
         label.appendChild(radioInput)
-        var span = document.createElement("span");
+        let span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
         decadeDiv.appendChild(label)
@@ -272,21 +293,21 @@ function populateSidebar(allKeywords) {
     keywordsHeader.appendChild(keywordsDiv);
     allKeywords.sort();
     for (let i=0; i<allKeywords.length; i++){
-        var label = document.createElement("label")
+        let label = document.createElement("label")
         label.innerText = allKeywords[i];
         label.className = "container"
-        var radioInput = document.createElement('input');
+        let radioInput = document.createElement('input');
         radioInput.type = "radio";
         radioInput.value = allKeywords[i];
         radioInput.name = "keywords";
         radioInput.addEventListener('change', function (e) {
-            var searchBox = document.getElementById("searchbox");
+            let searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allKeywords[i];
             searchBox.value = allKeywords[i];
             onSearched()
         });
         label.appendChild(radioInput)
-        var span = document.createElement("span");
+        let span = document.createElement("span");
         span.className = "checkmark"
         label.appendChild(span)
         keywordsDiv.appendChild(label)
@@ -303,7 +324,7 @@ function clear(grid) {
 const separator = ";"
 
 function hasKeywords(attr, toSearch){
-    var keywords = attr.split(separator);
+    let keywords = attr.split(separator);
     for (let j=0; j<keywords.length; j++) {
         if(keywords[j].normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(toSearch.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))) {
             return true;
@@ -313,11 +334,11 @@ function hasKeywords(attr, toSearch){
 }
 
 function onSearched() {
-    var grid = document.getElementById('grid-container');
+    let grid = document.getElementById('grid-container');
     clear(grid);
 
-    var searchBox = document.getElementById("searchbox");
-    var toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
+    let searchBox = document.getElementById("searchbox");
+    let toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
     searchBox.value = "";
     
     for (let i=0; i<data.length;i++) {
@@ -383,6 +404,7 @@ function createNewImage(imgMetaData, grid) {
     img.alt = imgMetaData.keywords;
     img.title = imgMetaData.description;
     img.onclick = function() {
+        imgMetaData.hlink
         showFull(imgMetaData.hlink)
     }
     div.appendChild(img);
@@ -486,6 +508,7 @@ function off() {
   }
   console.log("OFF")
   document.getElementById("overlay").style.display = "none";
+  zoomStatus = 1;
 }
 
 function goHome() {
@@ -496,33 +519,16 @@ function goHome() {
 function onZoomIn() {
     dontHide = true;
     console.log("CLICKED ZOOM IN")
-// CREDITS : https://www.cssscript.com/image-zoom-pan-hover-detail-view/
-// (A) GET CONTAINER + IMAGE SOURCE
-  
-  let container = document.getElementsByClassName("overlayImg")[0];
-  imgsrc = container.src || window.getComputedStyle(container, false);
-  console.log(imgsrc)
-   
-  // (B) LOAD IMAGE + ATTACH ZOOM
-  let img = new Image();
-  img.src = imgsrc;
-  img.onload = () => {
-        // (B1) CALCULATE ZOOM RATIO
-        let ratio = img.naturalHeight / img.naturalWidth,  percentage = ratio * 100 + "%";
-        let rect = element.getBoundingClientRect(),
-                xPos = window.innerWidth/2 - rect.left,
-                yPos = window.innerHeight/2 - rect.top,
-                xPercent = xPos / (container.clientWidth / 100) + "%",
-                yPercent = yPos / ((container.clientWidth * ratio) / 100) + "%";
-        Object.assign(container.style, {
-            backgroundPosition: xPercent + " " + yPercent,
-            backgroundSize: img.naturalWidth + "px"
-        });    
-    }
+    let container = document.getElementsByClassName("overlayImg")[0];
+    zoomStatus = zoomStatus*1.5;
+    container.style.transform = "scale("+zoomStatus+")";
 }
 
 function onZoomOut() {
     dontHide = true;
-    console.log("CLICKED ZOOM OUT")
+    console.log("CLICKED ZOOM OUT");
+    let container = document.getElementsByClassName("overlayImg")[0];
+    zoomStatus = zoomStatus/1.5;
+    container.style.transform = "scale("+zoomStatus+")";
 }
 

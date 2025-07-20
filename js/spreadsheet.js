@@ -55,6 +55,47 @@ init()
 
 function init() {
     loadImages();
+    setZoomEvents();
+}
+
+function setZoomEvents() {
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    // when the user clicks down on the element
+    zoomImage.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+
+        // get the starting position of the cursor
+        startPosX = e.clientX;
+        startPosY = e.clientY;
+
+        document.addEventListener('mousemove', mouseMove);
+
+        document.addEventListener('mouseup', function() {
+            document.removeEventListener('mousemove', mouseMove);
+        });
+
+    });
+}
+
+function mouseMove(e) {
+    // calculate the new position
+    newPosX = startPosX - e.clientX;
+    newPosY = startPosY - e.clientY;
+
+    // with each move we also want to update the start X and Y
+    startPosX = e.clientX;
+    startPosY = e.clientY;
+
+    // Restrict images from leaving containers
+    if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2) ||
+        Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)
+    ) {
+        return;
+    }
+
+    // set the element's new position:
+    zoomImage.style.left = (zoomImage.offsetLeft - newPosX) + "px";
+    zoomImage.style.top = (zoomImage.offsetTop - newPosY) + "px";
 }
 
 function loadImages() {

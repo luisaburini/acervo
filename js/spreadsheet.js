@@ -17,7 +17,6 @@ class ImgMetadata {
         this.hlink = hlink;
         this.hlinksmall = hlinksmall;
     }
-
 }
         
 
@@ -49,32 +48,15 @@ let allKeywords = [];
 let allYears = [];
 let allDecades = [];
 let allCategories = [];
-let zoomStatus = 1;
+let zoomLevel = 1;
+let minZoomLevel = 1;
+let maxZoomLevel = 2;
+let zoomIncrement = 0.2;
 
 init()
 
 function init() {
     loadImages();
-    setZoomEvents();
-}
-
-function setZoomEvents() {
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    // when the user clicks down on the element
-    zoomImage.addEventListener('mousedown', function(e) {
-        e.preventDefault();
-
-        // get the starting position of the cursor
-        startPosX = e.clientX;
-        startPosY = e.clientY;
-
-        document.addEventListener('mousemove', mouseMove);
-
-        document.addEventListener('mouseup', function() {
-            document.removeEventListener('mousemove', mouseMove);
-        });
-
-    });
 }
 
 function mouseMove(e) {
@@ -549,7 +531,7 @@ function off() {
   }
   console.log("OFF")
   document.getElementById("overlay").style.display = "none";
-  zoomStatus = 1;
+  zoomLevel = 1;
 }
 
 function goHome() {
@@ -560,19 +542,75 @@ function goHome() {
 function onZoomIn() {
     dontHide = true;
     console.log("CLICKED ZOOM IN")
-    let overlayImg = document.getElementsByClassName("overlayImg")[0];
-    zoomStatus = zoomStatus*1.5;
-    overlayImg.style.transform = "scale("+zoomStatus+")";
-    overlayImg.style.transform = "translate(-"+50*zoomStatus+"%,-"+50*zoomStatus+"%)"
+    if (zoomLevel < maxZoomLevel) {
+        zoomLevel += zoomIncrement;
+        zoomLevel = Math.min(zoomLevel, maxZoomLevel);
+        updateZoomedImage();
+    }
+    if (zoomLevel === maxZoomLevel) {
+        document.getElementById('zoomInButton').disabled = true;
+    }
+    document.getElementById('zoomOutButton').disabled = false;    
+
 }
 
 function onZoomOut() {
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
     dontHide = true;
     console.log("CLICKED ZOOM OUT");
-    let overlayImg = document.getElementsByClassName("overlayImg")[0];
-
-    zoomStatus = zoomStatus/1.5;
-    overlayImg.style.transform = "scale("+zoomStatus+")";
-    overlayImg.style.transform = "translate(-"+50*zoomStatus+"%,-"+50*zoomStatus+"%)"
+    if (zoomLevel > minZoomLevel) {
+        zoomLevel -= zoomIncrement;
+        zoomLevel = Math.max(zoomLevel, minZoomLevel);
+        updateZoomedImage();
+    }
+    if (zoomLevel === minZoomLevel) {
+        document.getElementById('zoomOutButton').disabled = true;
+    }
+    document.getElementById('zoomInButton').disabled = false;
+    if (zoomLevel === 1) {
+        zoomImage.style.cursor = 'move';
+    }
 }
 
+function updateZoomedImage() {
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    var imageWidth = zoomImage.offsetWidth;
+    var imageHeight = zoomImage.offsetHeight;
+
+    var newImageWidth = imageWidth * zoomLevel;
+    var newImageHeight = imageHeight * zoomLevel;
+
+    var left = zoomImage.offsetLeft;
+    var top = zoomImage.offsetTop;
+
+    zoomImage.style.transform = 'scale(' + zoomLevel + ')';
+    zoomImage.style.width = newImageWidth + 'px';
+    zoomImage.style.height = newImageHeight + 'px';
+
+    // Restrict images from leaving containers
+    if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2)) {
+        left = 0;
+    }
+    if (Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)) {
+        top = 0;
+    }
+
+    zoomImage.style.left = left + 'px';
+    zoomImage.style.top = top + 'px';
+
+    // when the user clicks down on the element
+    zoomImage.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+
+        // get the starting position of the cursor
+        startPosX = e.clientX;
+        startPosY = e.clientY;
+
+        document.addEventListener('mousemove', mouseMove);
+
+        document.addEventListener('mouseup', function() {
+            document.removeEventListener('mousemove', mouseMove);
+        });
+
+    });
+}

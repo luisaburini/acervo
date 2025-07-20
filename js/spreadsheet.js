@@ -427,7 +427,7 @@ function createNewImage(imgMetaData, grid) {
     img.alt = imgMetaData.keywords;
     img.title = imgMetaData.description;
     img.onclick = function() {
-        imgMetaData.hlink
+        console.log("CLICKED IMAGE")
         showFull(imgMetaData.hlink)
     }
     div.appendChild(img);
@@ -513,13 +513,11 @@ function createNewImage(imgMetaData, grid) {
 }
 
 function showFull(link) {
-    on(link)
-}
-
-function on(link) {
+    console.log("SHOW FULL")
     let overlay = document.getElementById("overlay");
     overlay.style.display = "block";
     document.getElementsByClassName("overlayImg")[0].src = link;
+    console.log(link)
 }
 
 let dontHide = false;

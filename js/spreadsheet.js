@@ -64,6 +64,7 @@ function init() {
 }
 
 function mouseMove(e) {
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
     // calculate the new position
     newPosX = startPosX - e.clientX;
     newPosY = startPosY - e.clientY;

@@ -52,6 +52,10 @@ let zoomLevel = 1;
 let minZoomLevel = 1;
 let maxZoomLevel = 2;
 let zoomIncrement = 0.2;
+let newPosX = 0,
+    newPosY = 0,
+    startPosX = 0,
+    startPosY = 0;
 
 init()
 
@@ -530,6 +534,10 @@ function off() {
   console.log("OFF")
   document.getElementById("overlay").style.display = "none";
   zoomLevel = 1;
+  newPosX = 0;
+  newPosY = 0;
+  startPosX = 0;
+  startPosY = 0;
 }
 
 function goHome() {

@@ -1,7 +1,7 @@
 class ImgMetadata {
     constructor(year, decade, region, author, category,
          description, source, preservation, resolution,
-         format, id, keywords, hlink, hlinksmall) {
+         format, id, keywords, hlink, hlinksmall, index) {
         this.year = year;
         this.decade = decade;
         this.region = region;
@@ -16,6 +16,7 @@ class ImgMetadata {
         this.keywords = keywords;
         this.hlink = hlink;
         this.hlinksmall = hlinksmall;
+        this.index = index;
     }
 }
         
@@ -56,6 +57,7 @@ let newPosX = 0,
     newPosY = 0,
     startPosX = 0,
     startPosY = 0;
+let current = 0;
 
 init()
 
@@ -68,24 +70,22 @@ function mouseMove(e) {
     // calculate the new position
     newPosX = startPosX - e.clientX;
     newPosY = startPosY - e.clientY;
-
     // with each move we also want to update the start X and Y
     startPosX = e.clientX;
     startPosY = e.clientY;
-
     // Restrict images from leaving containers
     if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2) ||
         Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)
     ) {
         return;
     }
-
     // set the element's new position:
     zoomImage.style.left = (zoomImage.offsetLeft - newPosX) + "px";
     zoomImage.style.top = (zoomImage.offsetTop - newPosY) + "px";
 }
 
 function loadImages() {
+    var i = 0;
     console.log("INIT")
     const query = encodeURIComponent("Select A, C, D, E, F, G, H, I, O, P, Q")
     const url = `${base}&sheet=${sheetName}&tq=${query}`
@@ -175,11 +175,11 @@ function loadImages() {
         console.log("Imagem nova!",anoColE, " ", decadaColF, " ", regiaoColG, " ", autoriaColH, " ", 
                               categoriaColD, " ", descColL, " ", fonteOriginalColI, " ",
                               estadoColK, " ", resolucaoColM, " ", formatoColN, " ", idColC, " ",
-                              palavraChaveColO, " ", linkBigColP, " ", linkSmallColQ)
+                              palavraChaveColO, " ", linkBigColP, " ", linkSmallColQ);
         let img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
                               categoriaColD, descColL, fonteOriginalColI,
                               estadoColK, resolucaoColM, formatoColN, idColC,
-                              palavraChaveColO, linkBigColP, linkSmallColQ)
+                              palavraChaveColO, linkBigColP, linkSmallColQ, i);
         imagemColA = "";
         idColC = "";
         categoriaColD = "";
@@ -196,6 +196,7 @@ function loadImages() {
         palavraChaveColO = "";
         linkBigColP = "";
         linkSmallColQ = "";
+        i = i+1;
         data.push(img)
       }
     })
@@ -433,7 +434,8 @@ function createNewImage(imgMetaData, grid) {
     img.title = imgMetaData.description;
     img.onclick = function() {
         console.log("CLICKED IMAGE")
-        showFull(imgMetaData.hlink)
+        showFull(imgMetaData.hlinksmall);
+        current = imgMetaData.index;
     }
     div.appendChild(img);
     
@@ -526,10 +528,45 @@ function showFull(link) {
     console.log("SHOW FULL")
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     zoomImage.style.display = "none";
+    zoomImage.src = link;
+    console.log(link);
+    updateZoomedImage();
+    zoomImage.style.display = "block";
     let overlay = document.getElementById("overlay");
     overlay.style.display = "block";
-    zoomImage.src = link;
-    console.log(link)
+}
+
+function left() {
+    console.log("LEFT");
+    console.log(current);
+    current = (current-1)%(data.length);
+    console.log(current);
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    zoomImage.style.display = "none";
+    zoomImage.src = data[current].hlink;
+    zoomLevel = 1;
+    newPosX = 0;
+    newPosY = 0;
+    startPosX = 0;
+    startPosY = 0;
+    updateZoomedImage();
+    zoomImage.style.display = "block";
+}
+
+function right() {
+    console.log("RIGHT");
+    console.log(current);
+    current = (current+1)%(data.length);
+    console.log(current);
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    zoomImage.style.display = "none";
+    zoomImage.src = data[current].hlink;
+    zoomLevel = 1;
+    newPosX = 0;
+    newPosY = 0;
+    startPosX = 0;
+    startPosY = 0;
+    updateZoomedImage();
     zoomImage.style.display = "block";
 }
 
@@ -619,16 +656,12 @@ function updateZoomedImage() {
     // when the user clicks down on the element
     zoomImage.addEventListener('mousedown', function(e) {
         e.preventDefault();
-
         // get the starting position of the cursor
         startPosX = e.clientX;
         startPosY = e.clientY;
-
         document.addEventListener('mousemove', mouseMove);
-
         document.addEventListener('mouseup', function() {
             document.removeEventListener('mousemove', mouseMove);
         });
-
     });
 }

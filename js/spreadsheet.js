@@ -518,11 +518,19 @@ function createNewImage(imgMetaData, grid) {
 }
 
 function showFull(link) {
+    zoomLevel = 1;
+    newPosX = 0;
+    newPosY = 0;
+    startPosX = 0;
+    startPosY = 0;
     console.log("SHOW FULL")
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    zoomImage.style.display = "none";
     let overlay = document.getElementById("overlay");
     overlay.style.display = "block";
-    document.getElementsByClassName("overlayImg")[0].src = link;
+    zoomImage.src = link;
     console.log(link)
+    zoomImage.style.display = "block";
 }
 
 let dontHide = false;

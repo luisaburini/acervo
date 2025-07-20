@@ -542,6 +542,9 @@ function off() {
   }
   console.log("OFF")
   document.getElementById("overlay").style.display = "none";
+  let zoomImage = document.getElementsByClassName("overlayImg")[0];
+  zoomImage.style.display = "none";
+  zoomImage.src = "";
   zoomLevel = 1;
   newPosX = 0;
   newPosY = 0;

@@ -527,26 +527,34 @@ function showFull(link) {
     startPosY = 0;
     console.log("SHOW FULL")
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    zoomImage.src = link;
+    zoomImage.style.visibility = "visible";
+    console.log(link);
+    resetPositionAndSize();
+    let overlay = document.getElementById("overlay");
+    overlay.style.visibility = "visible";
+    overlay.style.display = "block";
+}
+
+function resetPositionAndSize() {
+    let zoomImage = document.getElementsByClassName("overlayImg")[0];
     let width = zoomImage.style.width;
     let height = zoomImage.style.height;
     if (width > height) {
+        console.log
         zoomImage.style.width = "50%";
         zoomImage.style.height = "auto";
     } else {
         zoomImage.style.height = "50%";
         zoomImage.style.width = "auto";
     }
-    zoomImage.style.marginLeft = "auto";
-    zoomImage.style.marginRight = "auto";
-    zoomImage.src = link;
-    zoomImage.style.visibility = "visible";
-    console.log(link);
-    let overlay = document.getElementById("overlay");
-    overlay.style.visibility = "visible";
-    overlay.style.display = "block";
+    zoomImage.style.top = "50%";
+    zoomImage.style.left = "50%";
+    zoomImage.style.transform = "translateX(-50%) translateY(50%)"
 }
 
 function left() {
+    resetPositionAndSize();
     console.log("LEFT");
     console.log(current);
     current = (current-1)%(data.length);
@@ -564,6 +572,7 @@ function left() {
 }
 
 function right() {
+    resetPositionAndSize();
     console.log("RIGHT");
     console.log(current);
     current = (current+1)%(data.length);

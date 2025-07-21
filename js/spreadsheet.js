@@ -572,6 +572,7 @@ function resetPositionAndSize() {
         let windowWidth = window.innerWidth;
         zoomImage.style.left = (windowWidth-zoomImage.offsetWidth)/2 + " px";
     }
+    console.log("reset position left ", zoomImage.style.left, " top ", zoomImage.style.top)
 }
 
 function left() {

@@ -550,7 +550,8 @@ function resetPositionAndSize() {
     }
     zoomImage.style.top = "50%";
     zoomImage.style.left = "50%";
-    zoomImage.style.transform = "translateX(-50%) translateY(50%)"
+    zoomImage.style.transform = "translateX(-50%)"
+    zoomImage.style.transform = " translateY(-50%)"
 }
 
 function left() {

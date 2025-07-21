@@ -555,18 +555,23 @@ function showFull(link) {
 
 function resetPositionAndSize() {
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    let width = zoomImage.style.width;
-    let height = zoomImage.style.height;
+    let width = zoomImage.offsetWidth;
+    let height = zoomImage.offsetHeight;
     if (width > height) {
         console.log
         zoomImage.style.width = "50%";
+        zoomImage.style.left = "25%";
         zoomImage.style.height = "auto";
+        let windowHeight = window.innerHeight;
+        zoomImage.style.top = (windowHeight-zoomImage.offsetHeight)/2 + " px";
+        
     } else {
+        zoomImage.style.top = "25%";
         zoomImage.style.height = "50%";
         zoomImage.style.width = "auto";
+        let windowWidth = window.innerWidth;
+        zoomImage.style.left = (windowWidth-zoomImage.offsetWidth)/2 + " px";
     }
-    zoomImage.style.top = "25%";
-    zoomImage.style.left = "25%";
 }
 
 function left() {

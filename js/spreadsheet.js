@@ -563,14 +563,16 @@ function resetPositionAndSize() {
         zoomImage.style.left = "25%";
         zoomImage.style.height = "auto";
         let windowHeight = window.innerHeight;
-        zoomImage.style.top = (windowHeight-zoomImage.offsetHeight)/2 + " px";
+        console.log("window innerHeight ", windowHeight, " offsetHeight ", zoomImage.offsetHeight)
+        zoomImage.style.top = (windowHeight-zoomImage.offsetHeight)/2 + "%";
         
     } else {
         zoomImage.style.top = "25%";
         zoomImage.style.height = "50%";
         zoomImage.style.width = "auto";
         let windowWidth = window.innerWidth;
-        zoomImage.style.left = (windowWidth-zoomImage.offsetWidth)/2 + " px";
+        console.log("window innerWidth ", windowWidth, " offsetWidth ", zoomImage.offsetWidth)
+        zoomImage.style.left = (windowWidth-zoomImage.offsetWidth)/2 + "%";
     }
     console.log("reset position left ", zoomImage.style.left, " top ", zoomImage.style.top)
 }

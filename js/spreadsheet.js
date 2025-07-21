@@ -629,8 +629,8 @@ function onZoomOut() {
 
 function updateZoomedImage() {
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    var imageWidth = zoomImage.offsetWidth;
-    var imageHeight = zoomImage.offsetHeight;
+    var imageWidth = zoomImage.with;
+    var imageHeight = zoomImage.height;
     console.log("Img width ", imageWidth);
     var newImageWidth = imageWidth * zoomLevel;
     var newImageHeight = imageHeight * zoomLevel;

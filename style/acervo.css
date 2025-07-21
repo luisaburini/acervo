@@ -202,8 +202,6 @@ button:active {
 }
 
 #overlayImg {
-  max-width: 100%;
-  max-height: 100%;
   position: absolute;
   background-size: cover;
   z-index: 10;

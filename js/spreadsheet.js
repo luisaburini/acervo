@@ -530,10 +530,10 @@ function showFull(link) {
     let width = zoomImage.style.width;
     let height = zoomImage.style.height;
     if (width > height) {
-        zoomImage.style.width = "100%";
+        zoomImage.style.width = "50%";
         zoomImage.style.height = "auto";
     } else {
-        zoomImage.style.height = "100%";
+        zoomImage.style.height = "50%";
         zoomImage.style.width = "auto";
     }
     zoomImage.style.marginLeft = "auto";

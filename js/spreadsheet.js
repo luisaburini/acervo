@@ -565,7 +565,7 @@ function resetPositionAndSize() {
         let windowHeight = window.innerHeight;
         console.log("window innerHeight ", windowHeight, " offsetHeight ", zoomImage.offsetHeight)
         let calculatedHeight =(windowHeight-zoomImage.offsetHeight)/2 
-        zoomImage.style.top = calculatedHeight.toString() + " px";
+        zoomImage.style.top = calculatedHeight.toString() + "px";
         console.log(zoomImage.style.top, " ",(windowHeight-zoomImage.offsetHeight)/2 + " px");
         
     } else {
@@ -575,7 +575,7 @@ function resetPositionAndSize() {
         let windowWidth = window.innerWidth;
         console.log("window innerWidth ", windowWidth, " offsetWidth ", zoomImage.offsetWidth)
         let calculatedWidth = (windowWidth-zoomImage.offsetWidth)/2
-        zoomImage.style.left = calculatedWidth.toString() + " px";
+        zoomImage.style.left = calculatedWidth.toString() + "px";
         console.log(zoomImage.style.left, " ", (windowWidth-zoomImage.offsetWidth)/2 + " px")
     }
     console.log("reset position left ", zoomImage.style.left, " top ", zoomImage.style.top)

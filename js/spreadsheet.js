@@ -63,17 +63,21 @@ init()
 
 function init() {
     loadImages();
-    let overlay = document.getElementById("overlay");
-    overlay.addEventListener('keydown', function (event) {
-        const key = event.key;
-        switch (key) {
-            case "ArrowLeft":
-                left();
-                break;
-            case "ArrowRight":
-                right();
-                break;
-        }
+    document.body.addEventListener('keydown', function (event) {
+        let zoomImage = document.getElementsByClassName("overlayImg")[0];
+        let imgVisibility = zoomImage.style.visibility;
+        if(imgVisibility.localeCompare("visible") == 0) {
+            const key = event.key;
+            switch (key) {
+                case "ArrowLeft":
+                    left();
+                    break;
+                case "ArrowRight":
+                    right();
+                    break;
+            }
+        } 
+        
     });
 }
 
@@ -649,9 +653,6 @@ function onZoomOut() {
         zoomLevel -= zoomIncrement;
         zoomLevel = Math.max(zoomLevel, minZoomLevel);
         updateZoomedImage();
-    }
-    if (zoomLevel === minZoomLevel) {
-        document.getElementById('zoomOutButton').disabled = true;
     }
     document.getElementById('zoomInButton').disabled = false;
     if (zoomLevel === 1) {

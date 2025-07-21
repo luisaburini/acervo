@@ -572,7 +572,7 @@ function resetPositionAndSize() {
 function left() {
     console.log("LEFT");
     console.log(current);
-    current = (current-1)%(data.length);
+    current = Math.abs((current-1)%data.length);
     console.log(current);
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     zoomImage.style.visibility = "hidden";
@@ -590,7 +590,7 @@ function left() {
 function right() {
     console.log("RIGHT");
     console.log(current);
-    current = (current+1)%(data.length);
+    current = Math.abs((current+1)%(data.length));
     console.log(current);
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     zoomImage.style.visibility = "hidden";

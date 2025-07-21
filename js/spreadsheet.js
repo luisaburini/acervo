@@ -527,6 +527,17 @@ function showFull(link) {
     startPosY = 0;
     console.log("SHOW FULL")
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    let width = zoomImage.style.width;
+    let height = zoomImage.style.height;
+    if (width > height) {
+        zoomImage.style.width = "100%";
+        zoomImage.style.height = "auto";
+    } else {
+        zoomImage.style.height = "100%";
+        zoomImage.style.width = "auto";
+    }
+    zoomImage.style.marginLeft = "auto";
+    zoomImage.style.marginRight = "auto";
     zoomImage.src = link;
     zoomImage.style.visibility = "visible";
     console.log(link);

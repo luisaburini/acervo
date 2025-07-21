@@ -527,11 +527,10 @@ function showFull(link) {
     startPosY = 0;
     console.log("SHOW FULL")
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    zoomImage.style.visibility = "hidden";
     zoomImage.src = link;
+    zoomImage.style.visibility = "visible";
     console.log(link);
     updateZoomedImage();
-    zoomImage.style.visibility = "visible";
     let overlay = document.getElementById("overlay");
     overlay.style.visibility = "visible";
     overlay.style.display = "block";
@@ -632,7 +631,7 @@ function updateZoomedImage() {
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     var imageWidth = zoomImage.offsetWidth;
     var imageHeight = zoomImage.offsetHeight;
-
+    console.log("Img width ", imageWidth);
     var newImageWidth = imageWidth * zoomLevel;
     var newImageHeight = imageHeight * zoomLevel;
 

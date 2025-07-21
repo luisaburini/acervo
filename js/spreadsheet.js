@@ -530,7 +530,6 @@ function showFull(link) {
     zoomImage.src = link;
     zoomImage.style.visibility = "visible";
     console.log(link);
-    updateZoomedImage();
     let overlay = document.getElementById("overlay");
     overlay.style.visibility = "visible";
     overlay.style.display = "block";

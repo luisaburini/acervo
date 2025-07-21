@@ -527,12 +527,13 @@ function showFull(link) {
     startPosY = 0;
     console.log("SHOW FULL")
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    zoomImage.style.display = "none";
+    zoomImage.style.visibility = "hidden";
     zoomImage.src = link;
     console.log(link);
     updateZoomedImage();
-    zoomImage.style.display = "block";
+    zoomImage.style.visibility = "visible";
     let overlay = document.getElementById("overlay");
+    overlay.style.visibility = "visible";
     overlay.style.display = "block";
 }
 
@@ -542,7 +543,7 @@ function left() {
     current = (current-1)%(data.length);
     console.log(current);
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    zoomImage.style.display = "none";
+    zoomImage.style.visibility = "hidden";
     zoomImage.src = data[current].hlink;
     zoomLevel = 1;
     newPosX = 0;
@@ -550,7 +551,7 @@ function left() {
     startPosX = 0;
     startPosY = 0;
     updateZoomedImage();
-    zoomImage.style.display = "block";
+    zoomImage.style.visibility = "visible";
 }
 
 function right() {
@@ -559,7 +560,7 @@ function right() {
     current = (current+1)%(data.length);
     console.log(current);
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    zoomImage.style.display = "none";
+    zoomImage.style.visibility = "hidden";
     zoomImage.src = data[current].hlink;
     zoomLevel = 1;
     newPosX = 0;
@@ -567,7 +568,7 @@ function right() {
     startPosX = 0;
     startPosY = 0;
     updateZoomedImage();
-    zoomImage.style.display = "block";
+    zoomImage.style.visibility = "visible";
 }
 
 let dontHide = false;
@@ -578,9 +579,9 @@ function off() {
       return;
   }
   console.log("OFF")
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById("overlay").style.visibility = "hidden";
   let zoomImage = document.getElementsByClassName("overlayImg")[0];
-  zoomImage.style.display = "none";
+  zoomImage.style.visibility = "hidden";
   zoomImage.src = "";
   zoomLevel = 1;
   newPosX = 0;

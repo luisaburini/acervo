@@ -578,7 +578,11 @@ function resetPositionAndSize() {
 function left() {
     console.log("LEFT");
     console.log(current);
-    current = Math.abs((current-1)%data.length);
+    if (current-1 < 0) {
+        current = data.length-1
+    } else {
+        current = Math.abs((current-1)%data.length);
+    }
     console.log(current);
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     zoomImage.style.visibility = "hidden";

@@ -547,16 +547,16 @@ function showFull(link) {
     zoomImage.src = link;
     zoomImage.style.visibility = "visible";
     console.log(link);
-    resetPositionAndSize();
     let overlay = document.getElementById("overlay");
     overlay.style.visibility = "visible";
     overlay.style.display = "block";
+    resetPositionAndSize();
 }
 
 function resetPositionAndSize() {
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    let width = zoomImage.width;
-    let height = zoomImage.height;
+    let width = zoomImage.offsetWidth;
+    let height = zoomImage.offsetHeight;
     if (width > height) {
         console.log
         zoomImage.style.width = "50%";
@@ -564,7 +564,7 @@ function resetPositionAndSize() {
         zoomImage.style.height = "auto";
         let windowHeight = window.innerHeight;
         console.log("window innerHeight ", windowHeight, " offsetHeight ", zoomImage.offsetHeight)
-        zoomImage.style.top = (windowHeight-zoomImage.height)/2 + " px";
+        zoomImage.style.top = (windowHeight-zoomImage.offsetHeight)/2 + " px";
         
     } else {
         zoomImage.style.top = "25%";
@@ -572,7 +572,7 @@ function resetPositionAndSize() {
         zoomImage.style.width = "auto";
         let windowWidth = window.innerWidth;
         console.log("window innerWidth ", windowWidth, " offsetWidth ", zoomImage.offsetWidth)
-        zoomImage.style.left = (windowWidth-zoomImage.width)/2 + " px";
+        zoomImage.style.left = (windowWidth-zoomImage.offsetWidth)/2 + " px";
     }
     console.log("reset position left ", zoomImage.style.left, " top ", zoomImage.style.top)
 }
@@ -594,9 +594,9 @@ function left() {
     newPosY = 0;
     startPosX = 0;
     startPosY = 0;
+    zoomImage.style.visibility = "visible";
     updateZoomedImage();
     resetPositionAndSize();
-    zoomImage.style.visibility = "visible";
 }
 
 function right() {
@@ -612,9 +612,9 @@ function right() {
     newPosY = 0;
     startPosX = 0;
     startPosY = 0;
+    zoomImage.style.visibility = "visible";
     updateZoomedImage();
     resetPositionAndSize();
-    zoomImage.style.visibility = "visible";
 }
 
 let dontHide = false;

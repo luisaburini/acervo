@@ -561,12 +561,12 @@ function resetPositionAndSize() {
         console.log
         zoomImage.style.width = "50%";
         zoomImage.style.height = "auto";
-        zoomImage.style.left = "25%";
     } else {
-        zoomImage.style.top = "25%";
         zoomImage.style.height = "50%";
         zoomImage.style.width = "auto";
     }
+    zoomImage.style.top = "25%";
+    zoomImage.style.left = "25%";
 }
 
 function left() {

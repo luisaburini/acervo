@@ -555,8 +555,8 @@ function showFull(link) {
 
 function resetPositionAndSize() {
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
-    let width = zoomImage.offsetWidth;
-    let height = zoomImage.offsetHeight;
+    let width = zoomImage.width;
+    let height = zoomImage.height;
     if (width > height) {
         console.log
         zoomImage.style.width = "50%";
@@ -564,7 +564,7 @@ function resetPositionAndSize() {
         zoomImage.style.height = "auto";
         let windowHeight = window.innerHeight;
         console.log("window innerHeight ", windowHeight, " offsetHeight ", zoomImage.offsetHeight)
-        zoomImage.style.top = (windowHeight-zoomImage.offsetHeight)/2 + "%";
+        zoomImage.style.top = (windowHeight-zoomImage.height)/2 + " px";
         
     } else {
         zoomImage.style.top = "25%";
@@ -572,7 +572,7 @@ function resetPositionAndSize() {
         zoomImage.style.width = "auto";
         let windowWidth = window.innerWidth;
         console.log("window innerWidth ", windowWidth, " offsetWidth ", zoomImage.offsetWidth)
-        zoomImage.style.left = (windowWidth-zoomImage.offsetWidth)/2 + "%";
+        zoomImage.style.left = (windowWidth-zoomImage.width)/2 + " px";
     }
     console.log("reset position left ", zoomImage.style.left, " top ", zoomImage.style.top)
 }

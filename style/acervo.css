@@ -208,7 +208,6 @@ button:active {
   transition: transform 0.3s;
   top: 25%;
   left: 25%;
-  transform: translateX(-25%) translateY(-25%);
 }
 
 #iconContainer {

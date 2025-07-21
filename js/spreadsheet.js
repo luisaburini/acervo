@@ -570,7 +570,6 @@ function resetPositionAndSize() {
 }
 
 function left() {
-    resetPositionAndSize();
     console.log("LEFT");
     console.log(current);
     current = (current-1)%(data.length);
@@ -584,11 +583,11 @@ function left() {
     startPosX = 0;
     startPosY = 0;
     updateZoomedImage();
+    resetPositionAndSize();
     zoomImage.style.visibility = "visible";
 }
 
 function right() {
-    resetPositionAndSize();
     console.log("RIGHT");
     console.log(current);
     current = (current+1)%(data.length);
@@ -602,6 +601,7 @@ function right() {
     startPosX = 0;
     startPosY = 0;
     updateZoomedImage();
+    resetPositionAndSize();
     zoomImage.style.visibility = "visible";
 }
 

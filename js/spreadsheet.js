@@ -65,9 +65,10 @@ function init() {
     loadImages();
     document.body.addEventListener('keydown', function (event) {
         let zoomImage = document.getElementsByClassName("overlayImg")[0];
-        let imgVisibility = zoomImage.style.visibility;
+        const imgVisibility = zoomImage.style.visibility;
         if(imgVisibility.localeCompare("visible") == 0) {
             const key = event.key;
+            console.log("KEY DOWN", key);
             switch (key) {
                 case "ArrowLeft":
                     left();

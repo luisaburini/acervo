@@ -63,6 +63,18 @@ init()
 
 function init() {
     loadImages();
+    let overlay = document.getElementById("overlay");
+    overlay.addEventListener('keydown', function (event) {
+        const key = event.key;
+        switch (key) {
+            case "ArrowLeft":
+                left();
+                break;
+            case "ArrowRight":
+                right();
+                break;
+        }
+    });
 }
 
 function mouseMove(e) {
@@ -548,10 +560,10 @@ function resetPositionAndSize() {
         zoomImage.style.height = "50%";
         zoomImage.style.width = "auto";
     }
-    zoomImage.style.top = "50%";
-    zoomImage.style.left = "50%";
-    zoomImage.style.transform = "translateX(-50%)"
-    zoomImage.style.transform = " translateY(-50%)"
+    zoomImage.style.top = "25%";
+    zoomImage.style.left = "25%";
+    zoomImage.style.transform = "translateX(-25%)"
+    zoomImage.style.transform = " translateY(-25%)"
 }
 
 function left() {

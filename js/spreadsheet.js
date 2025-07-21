@@ -564,7 +564,8 @@ function resetPositionAndSize() {
         zoomImage.style.height = "auto";
         let windowHeight = window.innerHeight;
         console.log("window innerHeight ", windowHeight, " offsetHeight ", zoomImage.offsetHeight)
-        zoomImage.style.top = (windowHeight-zoomImage.offsetHeight)/2 + " px";
+        let calculatedHeight =(windowHeight-zoomImage.offsetHeight)/2 
+        zoomImage.style.top = calculatedHeight.toString() + " px";
         console.log(zoomImage.style.top, " ",(windowHeight-zoomImage.offsetHeight)/2 + " px");
         
     } else {
@@ -573,7 +574,8 @@ function resetPositionAndSize() {
         zoomImage.style.width = "auto";
         let windowWidth = window.innerWidth;
         console.log("window innerWidth ", windowWidth, " offsetWidth ", zoomImage.offsetWidth)
-        zoomImage.style.left = (windowWidth-zoomImage.offsetWidth)/2 + " px";
+        let calculatedWidth = (windowWidth-zoomImage.offsetWidth)/2
+        zoomImage.style.left = calculatedWidth.toString() + " px";
         console.log(zoomImage.style.left, " ", (windowWidth-zoomImage.offsetWidth)/2 + " px")
     }
     console.log("reset position left ", zoomImage.style.left, " top ", zoomImage.style.top)

@@ -205,7 +205,6 @@ button:active {
   position: absolute;
   background-size: cover;
   z-index: 10;
-  transition: transform 0.3s;
   top: 25%;
   left: 25%;
 }

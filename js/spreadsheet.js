@@ -50,8 +50,8 @@ let allYears = [];
 let allDecades = [];
 let allCategories = [];
 let zoomLevel = 1;
-let minZoomLevel = 1;
-let maxZoomLevel = 2;
+let minZoomLevel = 0.5;
+let maxZoomLevel = 10;
 let zoomIncrement = 0.2;
 let newPosX = 0,
     newPosY = 0,
@@ -83,6 +83,7 @@ function init() {
 }
 
 function mouseMove(e) {
+    console.log("mouse move")
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     // calculate the new position
     newPosX = startPosX - e.clientX;
@@ -91,11 +92,11 @@ function mouseMove(e) {
     startPosX = e.clientX;
     startPosY = e.clientY;
     // Restrict images from leaving containers
-    if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2) ||
-        Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)
-    ) {
-        return;
-    }
+    // if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2) ||
+    //     Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)
+    // ) {
+    //     return;
+    // }
     // set the element's new position:
     zoomImage.style.left = (zoomImage.offsetLeft - newPosX) + "px";
     zoomImage.style.top = (zoomImage.offsetTop - newPosY) + "px";
@@ -658,7 +659,6 @@ function onZoomIn() {
 }
 
 function onZoomOut() {
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
     dontHide = true;
     console.log("CLICKED ZOOM OUT");
     if (zoomLevel > minZoomLevel) {

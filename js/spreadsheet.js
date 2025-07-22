@@ -91,12 +91,6 @@ function mouseMove(e) {
     // with each move we also want to update the start X and Y
     startPosX = e.clientX;
     startPosY = e.clientY;
-    // Restrict images from leaving containers
-    // if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2) ||
-    //     Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)
-    // ) {
-    //     return;
-    // }
     // set the element's new position:
     zoomImage.style.left = (zoomImage.offsetLeft - newPosX) + "px";
     zoomImage.style.top = (zoomImage.offsetTop - newPosY) + "px";
@@ -422,8 +416,6 @@ function onSearched() {
         let id = data[i].id
         let hasID = id != null;
         let foundID = hasID ? id.toLowerCase().includes(toSearch) : false;
-
-
         if (foundYear ||
             foundDecade || 
             foundRegion || 
@@ -444,19 +436,16 @@ function onSearched() {
 function createNewImage(imgMetaData, grid) {
     let div = document.createElement('div');
     div.className = "card";
-
     let img = document.createElement('img');
     img.className = "thumbnail";
     img.src = imgMetaData.hlinksmall;
     img.alt = imgMetaData.keywords;
     img.title = imgMetaData.description;
     img.onclick = function() {
-        console.log("CLICKED IMAGE")
         showFull(imgMetaData.hlinksmall);
         current = imgMetaData.index;
     }
     div.appendChild(img);
-    
     if (imgMetaData.description != "") {
         let descAttr = document.createElement("p");
         descAttr.className = "cardattribute";
@@ -543,11 +532,9 @@ function showFull(link) {
     newPosY = 0;
     startPosX = 0;
     startPosY = 0;
-    console.log("SHOW FULL")
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     zoomImage.src = link;
     zoomImage.style.visibility = "visible";
-    console.log(link);
     let overlay = document.getElementById("overlay");
     overlay.style.visibility = "visible";
     overlay.style.display = "block";
@@ -559,7 +546,6 @@ function resetPositionAndSize() {
     let width = zoomImage.offsetWidth;
     let height = zoomImage.offsetHeight;
     if (width > height) {
-        console.log
         zoomImage.style.width = "50%";
         zoomImage.style.left = "25%";
         zoomImage.style.height = "auto";
@@ -583,14 +569,11 @@ function resetPositionAndSize() {
 }
 
 function left() {
-    console.log("LEFT");
-    console.log(current);
     if (current-1 < 0) {
         current = data.length-1
     } else {
         current = Math.abs((current-1)%data.length);
     }
-    console.log(current);
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     zoomImage.style.visibility = "hidden";
     zoomImage.src = data[current].hlink;
@@ -605,10 +588,7 @@ function left() {
 }
 
 function right() {
-    console.log("RIGHT");
-    console.log(current);
     current = Math.abs((current+1)%(data.length));
-    console.log(current);
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     zoomImage.style.visibility = "hidden";
     zoomImage.src = data[current].hlink;
@@ -629,7 +609,6 @@ function off() {
       dontHide = false;
       return;
   }
-  console.log("OFF")
   document.getElementById("overlay").style.visibility = "hidden";
   let zoomImage = document.getElementsByClassName("overlayImg")[0];
   zoomImage.style.visibility = "hidden";
@@ -642,31 +621,25 @@ function off() {
 }
 
 function goHome() {
-    console.log("CLICKED GO HOME")
     off();
 }
 
 function onZoomIn() {
     dontHide = true;
-    console.log("CLICKED ZOOM IN")
     if (zoomLevel < maxZoomLevel) {
         zoomLevel += zoomIncrement;
         zoomLevel = Math.min(zoomLevel, maxZoomLevel);
         updateZoomedImage();
     }
-    document.getElementById('zoomOutButton').disabled = false;    
-
 }
 
 function onZoomOut() {
     dontHide = true;
-    console.log("CLICKED ZOOM OUT");
     if (zoomLevel > minZoomLevel) {
         zoomLevel -= zoomIncrement;
         zoomLevel = Math.max(zoomLevel, minZoomLevel);
         updateZoomedImage();
     }
-    document.getElementById('zoomInButton').disabled = false;
 }
 
 function updateZoomedImage() {
@@ -678,23 +651,9 @@ function updateZoomedImage() {
     var newImageHeight = imageHeight * zoomLevel;
     console.log("NEW Img width ", newImageWidth, " NEW image height ",newImageHeight);
 
-    
     zoomImage.style.transform = 'scale(' + zoomLevel + ')';
     zoomImage.style.width = newImageWidth + 'px';
     zoomImage.style.height = newImageHeight + 'px';
-    
-    // var left = zoomImage.offsetLeft;
-    // var top = zoomImage.offsetTop;
-    // Restrict images from leaving containers
-    // if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2)) {
-        //     left = 0;
-        // }
-        // if (Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)) {
-    //     top = 0;
-    // }
-
-    // zoomImage.style.left = left + 'px';
-    // zoomImage.style.top = top + 'px';
 
     // when the user clicks down on the element
     zoomImage.addEventListener('mousedown', function(e) {

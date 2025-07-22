@@ -653,9 +653,6 @@ function onZoomIn() {
         zoomLevel = Math.min(zoomLevel, maxZoomLevel);
         updateZoomedImage();
     }
-    if (zoomLevel === maxZoomLevel) {
-        document.getElementById('zoomInButton').disabled = true;
-    }
     document.getElementById('zoomOutButton').disabled = false;    
 
 }
@@ -670,36 +667,34 @@ function onZoomOut() {
         updateZoomedImage();
     }
     document.getElementById('zoomInButton').disabled = false;
-    if (zoomLevel === 1) {
-        zoomImage.style.cursor = 'move';
-    }
 }
 
 function updateZoomedImage() {
     let zoomImage = document.getElementsByClassName("overlayImg")[0];
     var imageWidth = zoomImage.offsetWidth;
     var imageHeight = zoomImage.offsetHeight;
-    console.log("Img width ", imageWidth);
+    console.log("Img width ", imageWidth, " img height ",imageHeight);
     var newImageWidth = imageWidth * zoomLevel;
     var newImageHeight = imageHeight * zoomLevel;
+    console.log("NEW Img width ", newImageWidth, " NEW image height ",newImageHeight);
 
-    var left = zoomImage.offsetLeft;
-    var top = zoomImage.offsetTop;
-
+    
     zoomImage.style.transform = 'scale(' + zoomLevel + ')';
     zoomImage.style.width = newImageWidth + 'px';
     zoomImage.style.height = newImageHeight + 'px';
-
+    
+    // var left = zoomImage.offsetLeft;
+    // var top = zoomImage.offsetTop;
     // Restrict images from leaving containers
-    if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2)) {
-        left = 0;
-    }
-    if (Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)) {
-        top = 0;
-    }
+    // if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2)) {
+        //     left = 0;
+        // }
+        // if (Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)) {
+    //     top = 0;
+    // }
 
-    zoomImage.style.left = left + 'px';
-    zoomImage.style.top = top + 'px';
+    // zoomImage.style.left = left + 'px';
+    // zoomImage.style.top = top + 'px';
 
     // when the user clicks down on the element
     zoomImage.addEventListener('mousedown', function(e) {

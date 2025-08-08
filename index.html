@@ -4,26 +4,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Acervo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Viaoda+Libre&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./style/acervo.css">
 </head>
 <body>
     <div id="overlay">
-        <div id="iconContainer">
-            <img id="zoomInButton" class="icon" src="./imgs/zoom-in.png" onclick="onZoomIn()">
-            <img id="zoomOutButton" class="icon" src="./imgs/zoom-out.png" onclick="onZoomOut()">
+        <div id="icon-container">
+            <img id="zoom-in-button" class="icon" src="./imgs/zoom-in.png" onclick="onZoomIn()">
+            <img id="zoom-out-button" class="icon" src="./imgs/zoom-out.png" onclick="onZoomOut()">
             <img id="home" class="icon" src="./imgs/home.png" onclick="goHome()">
             <img id="left" class="icon" src="./imgs/left.png" onclick="left()">
             <img id="right" class="icon" src="./imgs/right.png" onclick="right()">
         </div>
-        <img id="overlayImg" class="overlayImg">
+        <img id="overlay-img" class="overlay-img">
     </div>
-    <div id="header">Acervo de Monte Sião</div>
-    <input type="text" id="searchbox"> 
-    <button onclick="onSearched()">Buscar</button>
-    <div id="outer-container">
-        <div id="sidebar"></div>
-        <div id="grid-container"></div>
+
+    <div id="upper">
+        <!-- HOME -->
+        <div id="home" class="home">
+            <div id="home-grid">
+                <div id="header">ACERVO DIGITAL</div>
+                <div id="subheader">de</div>
+                <div id="subsubheader">Monte Sião</div>
+            </div>
+        </div>
+        <!-- NAVEGUE -->
+        <div id="navegue">
+            <div id="navegue-header">Navegue, explore e redescubra<br>Monte Sião através do tempo</div>
+            <div id="navegue-grid">
+            </div>
+        </div>
+        <!-- BUSCA -->
+        <div id="search">
+            <input type="text" id="searchbox"> 
+            <button onclick="onSearched()">Buscar</button>
+            <div id="outer-container">
+                <div id="sidebar"></div>
+                <div id="grid-container"></div>
+            </div>
+        </div>
     </div>
+
+
     <script src="./js/spreadsheet.js"></script>
 </body>
 </html>

@@ -64,7 +64,7 @@ init()
 function init() {
     loadImages();
     document.body.addEventListener('keydown', function (event) {
-        let zoomImage = document.getElementsByClassName("overlayImg")[0];
+        let zoomImage = document.getElementsByClassName("overlay-img")[0];
         const imgVisibility = zoomImage.style.visibility;
         if(imgVisibility.localeCompare("visible") == 0) {
             const key = event.key;
@@ -84,7 +84,7 @@ function init() {
 
 function mouseMove(e) {
     console.log("mouse move")
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    let zoomImage = document.getElementsByClassName("overlay-img")[0];
     // calculate the new position
     newPosX = startPosX - e.clientX;
     newPosY = startPosY - e.clientY;
@@ -532,7 +532,7 @@ function showFull(link) {
     newPosY = 0;
     startPosX = 0;
     startPosY = 0;
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    let zoomImage = document.getElementsByClassName("overlay-img")[0];
     zoomImage.src = link;
     zoomImage.style.visibility = "visible";
     let overlay = document.getElementById("overlay");
@@ -542,7 +542,7 @@ function showFull(link) {
 }
 
 function resetPositionAndSize() {
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    let zoomImage = document.getElementsByClassName("overlay-img")[0];
     let width = zoomImage.offsetWidth;
     let height = zoomImage.offsetHeight;
     if (width > height) {
@@ -574,7 +574,7 @@ function left() {
     } else {
         current = Math.abs((current-1)%data.length);
     }
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    let zoomImage = document.getElementsByClassName("overlay-img")[0];
     zoomImage.style.visibility = "hidden";
     zoomImage.src = data[current].hlink;
     zoomLevel = 1;
@@ -589,7 +589,7 @@ function left() {
 
 function right() {
     current = Math.abs((current+1)%(data.length));
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    let zoomImage = document.getElementsByClassName("overlay-img")[0];
     zoomImage.style.visibility = "hidden";
     zoomImage.src = data[current].hlink;
     zoomLevel = 1;
@@ -610,7 +610,7 @@ function off() {
       return;
   }
   document.getElementById("overlay").style.visibility = "hidden";
-  let zoomImage = document.getElementsByClassName("overlayImg")[0];
+  let zoomImage = document.getElementsByClassName("overlay-img")[0];
   zoomImage.style.visibility = "hidden";
   zoomImage.src = "";
   zoomLevel = 1;
@@ -643,7 +643,7 @@ function onZoomOut() {
 }
 
 function updateZoomedImage() {
-    let zoomImage = document.getElementsByClassName("overlayImg")[0];
+    let zoomImage = document.getElementsByClassName("overlay-img")[0];
     var imageWidth = zoomImage.offsetWidth;
     var imageHeight = zoomImage.offsetHeight;
     console.log("Img width ", imageWidth, " img height ",imageHeight);

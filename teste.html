@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Move (drag/pan) and zoom object (image or div) in pure js</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            #zoomContainer {
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                position: relative;
+            }
+
+            #zoomImage {
+                position: absolute;
+                cursor: move;
+                transition: transform 0.3s;
+                max-width: 100%;
+                max-height: 100%;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .zoomButton {
+                position: fixed;
+                top: 20px;
+                padding: 10px;
+                font-size: 16px;
+                background-color: #ffffff;
+                border: none;
+                cursor: pointer;
+            }
+
+            #zoom-in-button {
+                left: 20px;
+            }
+
+            #zoom-out-button {
+                left: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="zoomContainer">
+        	<img id="zoomImage" src="bg.jpg" alt="zoom image" />
+        </div>
+        <button id="zoom-in-button" class="zoomButton">zoom in</button>
+        <button id="zoom-out-button" class="zoomButton">zoom out</button>
+        
+        <script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    var zoomContainer = document.getElementById('zoomContainer');
+		    var zoomImage = document.getElementById('zoomImage');
+		
+		    var zoomLevel = 1;
+		    var minZoomLevel = 1;
+		    var maxZoomLevel = 2;
+		    var zoomIncrement = 0.2;
+		    var isDragging = false;
+		    let newPosX = 0,
+		        newPosY = 0,
+		        startPosX = 0,
+		        startPosY = 0;
+		
+		    function updateZoomedImage() {
+		        var imageWidth = zoomImage.offsetWidth;
+		        var imageHeight = zoomImage.offsetHeight;
+		
+		        var newImageWidth = imageWidth * zoomLevel;
+		        var newImageHeight = imageHeight * zoomLevel;
+		
+		        var left = zoomImage.offsetLeft;
+		        var top = zoomImage.offsetTop;
+		
+		        zoomImage.style.transform = 'scale(' + zoomLevel + ')';
+		        zoomImage.style.width = newImageWidth + 'px';
+		        zoomImage.style.height = newImageHeight + 'px';
+		
+		        // Restrict images from leaving containers
+		        if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2)) {
+		            left = 0;
+		        }
+		        if (Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)) {
+		            top = 0;
+		        }
+		
+		        zoomImage.style.left = left + 'px';
+		        zoomImage.style.top = top + 'px';
+		
+		        // when the user clicks down on the element
+		        zoomImage.addEventListener('mousedown', function(e) {
+		            e.preventDefault();
+		
+		            // get the starting position of the cursor
+		            startPosX = e.clientX;
+		            startPosY = e.clientY;
+		
+		            document.addEventListener('mousemove', mouseMove);
+		
+		            document.addEventListener('mouseup', function() {
+		                document.removeEventListener('mousemove', mouseMove);
+		            });
+		
+		        });
+		    }
+		
+		    function zoomIn() {
+		        if (zoomLevel < maxZoomLevel) {
+		            zoomLevel += zoomIncrement;
+		            zoomLevel = Math.min(zoomLevel, maxZoomLevel);
+		            updateZoomedImage();
+		        }
+		        if (zoomLevel === maxZoomLevel) {
+		            document.getElementById('zoom-in-button').disabled = true;
+		        }
+		        document.getElementById('zoom-out-button').disabled = false;
+		    }
+		
+		    function zoomOut() {
+		        if (zoomLevel > minZoomLevel) {
+		            zoomLevel -= zoomIncrement;
+		            zoomLevel = Math.max(zoomLevel, minZoomLevel);
+		            updateZoomedImage();
+		        }
+		        if (zoomLevel === minZoomLevel) {
+		            document.getElementById('zoom-out-button').disabled = true;
+		        }
+		        document.getElementById('zoom-in-button').disabled = false;
+		        if (zoomLevel === 1) {
+		            zoomImage.style.cursor = 'move';
+		        }
+		    }
+		
+		    function mouseMove(e) {
+		        // calculate the new position
+		        newPosX = startPosX - e.clientX;
+		        newPosY = startPosY - e.clientY;
+		
+		        // with each move we also want to update the start X and Y
+		        startPosX = e.clientX;
+		        startPosY = e.clientY;
+		
+		        // Restrict images from leaving containers
+		        if (Math.abs(zoomImage.offsetLeft - newPosX) >= Math.abs((parseInt(zoomImage.style.width, 10) - window.innerWidth) / 2) ||
+		            Math.abs(zoomImage.offsetTop - newPosY) >= Math.abs((parseInt(zoomImage.style.height, 10) - window.innerHeight) / 2)
+		        ) {
+		            return;
+		        }
+		
+		        // set the element's new position:
+		        zoomImage.style.left = (zoomImage.offsetLeft - newPosX) + "px";
+		        zoomImage.style.top = (zoomImage.offsetTop - newPosY) + "px";
+		    }
+		
+		    function initialize() {
+		        var windowWidth = window.innerWidth;
+		        var windowHeight = window.innerHeight;
+		
+		        zoomContainer.style.width = windowWidth + 'px';
+		        zoomContainer.style.height = windowHeight + 'px';
+		        updateZoomedImage();
+		
+		        document.getElementById('zoom-in-button').addEventListener('click', zoomIn);
+		        document.getElementById('zoom-out-button').addEventListener('click', zoomOut);
+		    }
+		
+		    initialize();
+		
+		    window.addEventListener('resize', function() {
+		        initialize();
+		    });
+		});
+		</script>
+        
+    </body>
+</html>

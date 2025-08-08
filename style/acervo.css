@@ -1,14 +1,96 @@
 body {
-    background-color: #f3e3d7;
+    background-color: #26361c;
     width: 100vw;
-    height: 100vh;
+    height: 400vh;
+}
+
+#upper {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr;
 }
 
 #header {
-    font-family: CreatorDisplayLight;
+    font-family: "Viaoda Libre", serif;
+    font-size: 8vw;
+    font-weight: lighter;
     text-align: center;
-    font-size: 10vh;
-    color: #8e0f1d;
+    color: white;
+    grid-column: 1 / 5;
+    grid-row: 1;
+}
+
+#subheader {
+  font-family: "Viaoda Libre", serif;
+  font-size: 5vh;
+  font-weight: lighter;
+  grid-column: 1 / 3;
+  padding-left: 10%;
+  color: white;
+}
+
+#subsubheader {
+  font-family: "Mr Dafoe", cursive;
+  font-size: 20vh;
+  text-align: right;
+  color: white;
+  grid-column: 1 / 4;
+}
+
+.home {
+  padding-top: 0px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+  content: ""; /* Create a pseudo-element */
+}
+
+.home::before{
+  content: url("https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg");
+  opacity: 0.4;
+  position: absolute;
+  padding-top: 0px;
+  width: 100%;
+  height: auto;
+}
+
+#home-grid{
+  position: relative;
+  z-index: 10;
+  height: 80%;
+  padding-left: 15%;
+  width: 100%;
+  padding-top: 10%;
+  display: grid;
+  grid-template-rows: 20vh 1px 1fr;
+  grid-template-columns: 1fr 10vw 10vw 10vw 1fr;
+}
+
+#navegue {
+  background-color:#26361c;
+  position: relative;
+
+}
+
+#navegue-header{
+  position: relative;
+  text-align: center;
+  font-family: "Viaoda Libre", serif;
+  font-size: 5vh;
+  font-weight: lighter;
+  color: #fae0ca;
+}
+
+#navegue-grid{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  
+}
+
+#search {
+  position: relative;
 }
 
 #outer-container {
@@ -136,7 +218,10 @@ body {
     border-radius: 8px;
     color: #8e0f1d;
     font-size: 3vh;
-    font-family: CreatorDisplayRegular;
+    font-family: Gotham;
+    font-weight: lighter;
+    z-index: 20;
+    position: relative;
 }
 
 button {
@@ -151,8 +236,11 @@ button {
     border-radius: 8px;
     box-shadow: 0 0 0 4px #fae0ca, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .1s ease-in-out, .4s color;
-    font-family: CreatorDisplayRegular;
+    font-family: Gotham;
+    font-weight: lighter;
     font-size: 2.5vh;
+    z-index: 20;
+    position: relative;
 }
   
 button:active {
@@ -181,7 +269,7 @@ button:active {
 }
 
 .cardattribute{
-    font-family: CreatorDisplayBlack;
+    font-family: Gotham;
     color: #8e0f1d;
     height: 3vh;
     font-size: 2vh;
@@ -201,7 +289,7 @@ button:active {
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 }
 
-#overlayImg {
+#overlay-img {
   position: absolute;
   background-size: cover;
   z-index: 10;
@@ -209,7 +297,7 @@ button:active {
   left: 25%;
 }
 
-#iconContainer {
+#icon-container {
   width: 100px;
   right: 20px;
   display: grid;   
@@ -225,23 +313,19 @@ button:active {
   height: 10vw;
 }
 
-@font-face {
-    font-family: CreatorDisplayMediumItalic;
-    src: url(./fonts/CreatoDisplay-MediumItalic.otf);
+.viaoda-libre-regular {
+  font-family: "Viaoda Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mr-dafoe-regular {
+  font-family: "Mr Dafoe", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: CreatorDisplayRegular;
-    src: url(./fonts/CreatoDisplay-Regular.otf);
+  font-family: Gotham;
+  src: url("./fonts/Gotham-Font/Gotham-Light.otf");
 }
-
-@font-face {
-    font-family: CreatorDisplayLight;
-    src: url(./fonts/CreatoDisplay-Light.otf);
-}
-
-@font-face {
-    font-family: CreatorDisplayBlack;
-    src: url(./fonts/CreatoDisplay-Black.otf);
-}
-

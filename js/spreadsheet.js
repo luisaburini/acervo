@@ -109,10 +109,10 @@ function loadImages() {
         const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
         let colz = []
         //Extrai nome das colunas
-    jsonData.table.cols.forEach((heading) => {
-      let column = heading.label;
-      colz.push(column)
-    })
+        jsonData.table.cols.forEach((heading) => {
+        let column = heading.label;
+        colz.push(column)
+        })
     //Extrai dados das linhas
     jsonData.table.rows.forEach((rowData) => {
         let imagemColA = "";
@@ -214,7 +214,7 @@ function loadImages() {
     })
     
     populateSidebar(allKeywords);
-      let grid = document.getElementById('grid-container');
+    let grid = document.getElementById('grid-container');
     clear(grid);
     console.log("Data array length ", data.length)
     for (let i=0;i<data.length;i++) {

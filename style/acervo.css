@@ -40,7 +40,7 @@ body {
 
 .home {
   padding-top: 0px;
-  width: 100%;
+  width: 100vw;
   height: auto;
   position: relative;
   z-index: 0;
@@ -52,7 +52,7 @@ body {
   opacity: 0.4;
   position: absolute;
   padding-top: 0px;
-  width: 100%;
+  width: 100vw;
   height: auto;
 }
 
@@ -78,15 +78,43 @@ body {
   position: relative;
   text-align: center;
   font-family: "Viaoda Libre", serif;
-  font-size: 5vh;
+  font-size: 6vh;
   font-weight: lighter;
-  color: #fae0ca;
+  color: #edfbe4;
+  height: 30vh;
+  padding-top: 5vh;
 }
 
 #navegue-grid{
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  
+  /* grid-template-rows: 1fr 1fr; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  gap: 5vh;
+}
+
+.navegue-item{
+  font-family: GothamBlack;
+  font-size: 9vh;
+  padding-top: 5vh;
+  color: #edfbe4;
+  width: 28vh;
+  height: 17vh;
+  border-color: #edfbe4;
+  border-style:solid;
+  text-align: center;
+}
+
+#explore-button {
+  color: #4f3f00;
+  background-color: #f0f194;
+  font-family: GothamLight;
+  font-size: 4vh;
+  height: 10vh;
+  text-align: center;
+  border-radius: 10px;
+  height: max-content;
+  grid-column: 1 / 4;
 }
 
 #search {
@@ -218,7 +246,7 @@ body {
     border-radius: 8px;
     color: #8e0f1d;
     font-size: 3vh;
-    font-family: Gotham;
+    font-family: GothamLight;
     font-weight: lighter;
     z-index: 20;
     position: relative;
@@ -236,7 +264,7 @@ button {
     border-radius: 8px;
     box-shadow: 0 0 0 4px #fae0ca, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .1s ease-in-out, .4s color;
-    font-family: Gotham;
+    font-family: GothamLight;
     font-weight: lighter;
     font-size: 2.5vh;
     z-index: 20;
@@ -256,7 +284,7 @@ button:active {
     height: 15vw;
 }
 .description {
-    font-family: CreatorDisplayMediumItalic;
+    font-family: GothamLight;
     font-size: 2vh;
     color: #63405c;
     margin: 1vh;
@@ -269,7 +297,7 @@ button:active {
 }
 
 .cardattribute{
-    font-family: Gotham;
+    font-family: GothamLight;
     color: #8e0f1d;
     height: 3vh;
     font-size: 2vh;
@@ -326,6 +354,11 @@ button:active {
 }
 
 @font-face {
-  font-family: Gotham;
+  font-family: GothamLight;
   src: url("./fonts/Gotham-Font/Gotham-Light.otf");
+}
+
+@font-face {
+  font-family: GothamBlack;
+  src: url("./fonts/Gotham-Font/Gotham-Black.otf");
 }

@@ -68,7 +68,6 @@ function init() {
         const imgVisibility = zoomImage.style.visibility;
         if(imgVisibility.localeCompare("visible") == 0) {
             const key = event.key;
-            console.log("KEY DOWN", key);
             switch (key) {
                 case "ArrowLeft":
                     left();
@@ -213,19 +212,47 @@ function loadImages() {
       }
     })
     
-    populateSidebar(allKeywords);
-    let grid = document.getElementById('grid-container');
-    clear(grid);
-    console.log("Data array length ", data.length)
-    for (let i=0;i<data.length;i++) {
-        createNewImage(data[i], grid);
-    }
+    //populateSidebar(allKeywords);
+    populateNavegue();
+    populateGrid();
+
     })
 }
 
 function removeAccents(word) {
     return word.toLowerCase();
 };
+
+function populateNavegue() {
+    let navegueGrid = document.getElementById("navegue-grid");
+
+    allDecades.sort();
+
+    for (let i=0; i<allDecades.length; i++){
+        let decadeButton = document.createElement('div');
+        decadeButton.className = "navegue-item";
+        decadeButton.innerText = allDecades[i];
+        navegueGrid.appendChild(decadeButton);
+    } 
+    let spacersAmount = allDecades.length % 2;
+    for (let i=0; i<spacersAmount; i++) {
+        let spacer = document.createElement("spacer");
+        navegueGrid.appendChild(spacer);
+    }
+    let navegueButton = document.createElement("button");
+    navegueButton.className = "explore-button";
+    navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	&#129130;";
+    navegueGrid.appendChild(navegueButton);
+}
+
+function populateGrid() {
+    let grid = document.getElementById('grid-container');
+    clear(grid);
+    console.log("Data array length ", data.length)
+    for (let i=0;i<data.length;i++) {
+        createNewImage(data[i], grid);
+    }
+}
 
 function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar")

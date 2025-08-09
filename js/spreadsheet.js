@@ -225,13 +225,19 @@ function removeAccents(word) {
 
 function populateNavegue() {
     let navegueGrid = document.getElementById("navegue-grid");
-
+    let gridTemplateColumns = "1fr "
+    navegueGrid.style.gridTemplateColumns = gridTemplateColumns.repeat(allDecades.length/2);
     allDecades.sort();
 
     for (let i=0; i<allDecades.length; i++){
         let decadeButton = document.createElement('div');
         decadeButton.className = "navegue-item";
         decadeButton.innerText = allDecades[i];
+        decadeButton.onclick = function() {
+            let searchBox = document.getElementById("searchbox");
+            searchBox.innerHTML = allDecades[i];
+            onSearched();
+        };
         navegueGrid.appendChild(decadeButton);
     } 
     let spacersAmount = allDecades.length % 2;

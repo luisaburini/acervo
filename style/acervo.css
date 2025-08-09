@@ -71,7 +71,6 @@ body {
 #navegue {
   background-color:#26361c;
   position: relative;
-
 }
 
 #navegue-header{
@@ -115,6 +114,46 @@ body {
   border-radius: 10px;
   height: max-content;
   grid-column: 1 / 4;
+}
+
+#iniciativa {
+  background-color:#dbd9da;
+  position: relative;
+}
+
+#iniciativa-grid {
+  background-color:#dbd9da;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+.iniciativa-header{
+  position: relative;
+  text-align: center;
+  font-family: "Viaoda Libre", serif;
+  font-size: 6vh;
+  color: #474546;
+  height: 30vh;
+  padding-top: 5vh;
+}
+
+.iniciativa-container{
+  margin: 20px;
+}
+
+.iniciativa-text{
+  position: relative;
+  font-family: GothamLight;
+  font-size: 4vh;
+  font-weight: lighter;
+  color: #474546;
+}
+
+.igrejinha{
+  content: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
+  height: 100%;
 }
 
 #search {

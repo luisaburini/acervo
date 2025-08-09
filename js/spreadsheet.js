@@ -226,7 +226,7 @@ function removeAccents(word) {
 function populateNavegue() {
     let navegueGrid = document.getElementById("navegue-grid");
     let gridTemplateColumns = "1fr "
-    navegueGrid.style.gridTemplateColumns = gridTemplateColumns.repeat(allDecades.length/2);
+    navegueGrid.style.gridTemplateColumns = gridTemplateColumns.repeat(1+allDecades.length/2);
     allDecades.sort();
 
     for (let i=0; i<allDecades.length; i++){
@@ -248,6 +248,9 @@ function populateNavegue() {
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	&#129130;";
+    navegueButton.onclick = function() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
     navegueGrid.appendChild(navegueButton);
 }
 

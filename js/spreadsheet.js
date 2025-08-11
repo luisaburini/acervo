@@ -247,13 +247,14 @@ function populateNavegue() {
         decadeButton.innerText = allDecades[i];
         decadeButton.onmouseover = function() {
             decadeButton.style.color = "red";
-            decadeButton.src = getFirstImageFromDecade(allDecades[i]);
+            decadeButton.style.backgroundImage = getFirstImageFromDecade(allDecades[i]);
             console.log(getFirstImageFromDecade(allDecades[i]));
         };
         decadeButton.onmouseout = function() {
             decadeButton.style.color = "white";
-            decadeButton.src = "";
+            decadeButton.backgroundImage = "";
             decadeButton.innerText = allDecades[i];
+            console.log(allDecades[i])
         };
         decadeButton.onclick = function() {
             let searchBox = document.getElementById("searchbox");

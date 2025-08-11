@@ -125,13 +125,16 @@ body {
 .navegue-item{
   font-family: GothamBlack;
   font-size: 5vh;
-  padding-top: 5vh;
+  padding-top: 3vh;
   color: #edfbe4;
-  width: 28vh;
-  height: 17vh;
+  width: 20vh;
+  height: 9vh;
   border-color: #edfbe4;
   border-style:solid;
   text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .explore-button {

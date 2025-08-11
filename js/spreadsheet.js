@@ -229,7 +229,7 @@ function getFirstImageFromDecade(decade) {
         let hasDecade = decade != null;
         let foundDecade = hasDecade ? decade.toLowerCase().includes(decade) : false;
         if (foundDecade) {
-            return data[i].hlinksmall;
+            return "url('" + data[i].hlinksmall + "')";
         }
     }
     return "";

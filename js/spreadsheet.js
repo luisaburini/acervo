@@ -221,7 +221,19 @@ function loadImages() {
 
 function removeAccents(word) {
     return word.toLowerCase();
-};
+}
+
+function getFirstImageFromDecade(decade) {
+    for (let i=0; i<data.length; i++) {
+        let decade = data[i].decade;
+        let hasDecade = decade != null;
+        let foundDecade = hasDecade ? decade.toLowerCase().includes(decade) : false;
+        if (foundDecade) {
+            return data[i].hlinksmall;
+        }
+    }
+    return "";
+}
 
 function populateNavegue() {
     let navegueGrid = document.getElementById("navegue-grid");
@@ -230,7 +242,7 @@ function populateNavegue() {
     allDecades.sort();
 
     for (let i=0; i<allDecades.length; i++){
-        let decadeButton = document.createElement('img');
+        let decadeButton = document.createElement('div');
         decadeButton.className = "navegue-item";
         decadeButton.innerText = allDecades[i];
         decadeButton.onmouseover = function() {
@@ -240,6 +252,7 @@ function populateNavegue() {
         };
         decadeButton.onmouseout = function() {
             decadeButton.style.color = "white";
+            decadeButton.src = "";
             decadeButton.innerText = allDecades[i];
         };
         decadeButton.onclick = function() {
@@ -265,17 +278,6 @@ function populateNavegue() {
     navegueGrid.appendChild(navegueButton);
 }
 
-function getFirstImageFromDecade(decade) {
-    for (let i=0; i<data.length; i++) {
-        let decade = data[i].decade;
-        let hasDecade = decade != null;
-        let foundDecade = hasDecade ? decade.toLowerCase().includes(decade) : false;
-        if (foundDecade) {
-            return data[i].hlinksmall
-        }
-    }
-    return ""
-}
 
 function populateGrid() {
     let grid = document.getElementById('grid-container');

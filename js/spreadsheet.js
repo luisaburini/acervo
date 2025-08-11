@@ -240,6 +240,7 @@ function populateNavegue() {
         };
         decadeButton.onmouseout = function() {
             decadeButton.style.color = "white";
+            decadeButton.innerText = allDecades[i];
         };
         decadeButton.onclick = function() {
             let searchBox = document.getElementById("searchbox");

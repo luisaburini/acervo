@@ -253,7 +253,7 @@ function populateNavegue() {
             };
             decadeButton.onmouseout = function() {
                 decadeButton.style.color = "white";
-                decadeButton.backgroundImage = "";
+                decadeButton.style.backgroundImage = "";
                 decadeButton.innerText = allDecades[i];
                 console.log(allDecades[i])
             };

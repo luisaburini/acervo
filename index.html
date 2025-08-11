@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./style/acervo.css">
 </head>
 <body>
-    <div id="overlay">
+    <!-- <div id="overlay">
         <div id="icon-container">
             <img id="zoom-in-button" class="icon" src="./imgs/zoom-in.png" onclick="onZoomIn()">
             <img id="zoom-out-button" class="icon" src="./imgs/zoom-out.png" onclick="onZoomOut()">
@@ -19,11 +19,18 @@
             <img id="right" class="icon" src="./imgs/right.png" onclick="right()">
         </div>
         <img id="overlay-img" class="overlay-img">
-    </div>
+    </div> -->
 
     <div id="upper">
         <!-- HOME -->
         <div class="home">
+            <div class="upperbar">
+                <div class="upperbar-item"></div>
+                <div class="upperbar-item"></div>
+                <div class="upperbar-item">Início</div>
+                <div class="upperbar-item">Acervo</div>
+                <div class="upperbar-item">Contato</div>
+            </div>
             <div id="home-grid">
                 <div id="header">ACERVO DIGITAL</div>
                 <div id="subheader">de</div>
@@ -53,14 +60,14 @@
             </div>
         </div>
         <!-- BUSCA -->
-        <div id="search">
+        <!-- <div id="search">
             <input type="text" id="searchbox"> 
             <button onclick="onSearched()">Buscar</button>
             <div id="outer-container">
                 <div id="sidebar"></div>
                 <div id="grid-container"></div>
             </div>
-        </div>
+        </div> -->
         <!-- BOTTOM -->
         <div id="bottom">
             <div class="bottom-grid">
@@ -69,9 +76,9 @@
                 <div class="bottom-subsubheader">Monte Sião</div>
             </div>
             <div class="contato">
-                <div class="contato-item">Termos e Condições</div>
-                <div class="contato-item">Contato</div>
-                <div class="contato-item">Início</div>
+                <div class="contato-item" onclick="">Termos e Condições</div>
+                <div class="contato-item" onclick="">Contato</div>
+                <div class="contato-item" onclick="inicio()">Início</div>
             </div>
         </div>
     </div>

@@ -1,15 +1,62 @@
 body {
-    background-color: #26361c;
     width: 100vw;
-    height: 400vh;
 }
 
 #upper {
   display: grid;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
   grid-template-columns: 1fr;
 }
+
+
+.home {
+  background-color: #26361c;
+  height: auto;
+  position: relative;
+  z-index: 0;
+  content: ""; /* Create a pseudo-element */
+  width:100vw;
+}
+
+.home::before{
+  content: url("https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg");
+  opacity: 0.4;
+  position: absolute;
+  width:100vw;
+}
+
+.upperbar {
+  background-color: #1b1b1b;
+  opacity: 0.7;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 80vw;
+  left: 10vw;
+  top: 2vh;
+  height: 8vh;
+  position: relative;
+}
+
+.upperbar-item {
+  font-family: GothamBlack;
+  color: #cecece;
+  margin: auto;
+  text-align: center;
+  font-size: 2vh;
+}
+
+#home-grid{
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: fit-content;
+  left: 20vw;
+  display: grid;
+  grid-template-rows: 20vh 1px 1fr;
+  grid-template-columns: 1fr 9vw 9vw 9vw 1fr;
+  margin-top: 10vh;
+}
+
 
 #header {
     font-family: "Viaoda Libre", serif;
@@ -19,14 +66,17 @@ body {
     color: white;
     grid-column: 1 / 5;
     grid-row: 1;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 #subheader {
   font-family: "Viaoda Libre", serif;
   font-size: 5vh;
   font-weight: lighter;
+  text-align: center;
   grid-column: 1 / 3;
-  padding-left: 10%;
   color: white;
 }
 
@@ -35,37 +85,7 @@ body {
   font-size: 20vh;
   text-align: right;
   color: white;
-  grid-column: 1 / 4;
-}
-
-.home {
-  padding-top: 0px;
-  width: 100vw;
-  height: auto;
-  position: relative;
-  z-index: 0;
-  content: ""; /* Create a pseudo-element */
-}
-
-.home::before{
-  content: url("https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg");
-  opacity: 0.4;
-  position: absolute;
-  padding-top: 0px;
-  width: 100vw;
-  height: auto;
-}
-
-#home-grid{
-  position: relative;
-  z-index: 10;
-  height: 80%;
-  padding-left: 15%;
-  width: 100%;
-  padding-top: 10%;
-  display: grid;
-  grid-template-rows: 20vh 1px 1fr;
-  grid-template-columns: 1fr 10vw 10vw 10vw 1fr;
+  grid-column: 1 / 5;
 }
 
 #navegue {
@@ -86,7 +106,6 @@ body {
 
 #navegue-grid{
   display: grid;
-  /* grid-template-rows: 1fr 1fr; */
   grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: center;
   gap: 5vh;
@@ -94,7 +113,7 @@ body {
 
 .navegue-item{
   font-family: GothamBlack;
-  font-size: 9vh;
+  font-size: 5vh;
   padding-top: 5vh;
   color: #edfbe4;
   width: 28vh;
@@ -121,6 +140,7 @@ body {
 #iniciativa {
   background-color:#dbd9da;
   position: relative;
+  width: 100%;
 }
 
 #iniciativa-grid {
@@ -128,7 +148,7 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100%;
+  width: 100%;
 }
 
 .iniciativa-header{
@@ -148,14 +168,14 @@ body {
 .iniciativa-text{
   position: relative;
   font-family: GothamLight;
-  font-size: 4vh;
+  font-size: 3vh;
   font-weight: lighter;
   color: #474546;
 }
 
 .igrejinha{
   content: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
-  height: 100%;
+  width: 100%;
 }
 
 #search {
@@ -178,7 +198,7 @@ body {
     margin: 0;
     row-gap: 0;
     column-gap: 0;
-    width: 100vw;
+    width: 100%
 }
 
 #sidebar {
@@ -383,6 +403,7 @@ button:active {
 }
 
 #bottom{
+  height: 40vh;
   width: 100%;
   background-color: #1b1b1b;
   display: grid;
@@ -392,10 +413,10 @@ button:active {
 .bottom-grid{
   position: relative;
   z-index: 10;
-  padding: 25%;
   display: grid;
-  grid-template-rows: 20vh 1px 1fr;
-  grid-template-columns: 1fr 10vw 10vw 10vw 1fr;
+  grid-template-rows: 10vh 1px 1fr;
+  grid-template-columns: 1fr 5vw 5vw 5vw 1fr;
+  margin-top: 10vh;
 }
 
 .bottom-header {
@@ -413,7 +434,7 @@ button:active {
   font-size: 2vh;
   font-weight: lighter;
   grid-column: 1 / 3;
-  padding-left: 10%;
+  text-align: center;
   color: white;
 }
 
@@ -422,18 +443,24 @@ button:active {
   font-size: 6vh;
   text-align: right;
   color: white;
-  grid-column: 1 / 4;
+  grid-column: 1 / 3;
 }
 
 .contato{
   display: grid;
   grid-template-columns: 1fr;
-  margin: 20%;
+  height: 20vh;
+  margin-top: 7vh;
+
 }
 
 .contato-item{
   font-family: GothamBlack;
   color: #cecece;
+  font-size: 4vh;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .viaoda-libre-regular {

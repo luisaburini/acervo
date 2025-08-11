@@ -703,3 +703,8 @@ function updateZoomedImage() {
         });
     });
 }
+
+
+function inicio() {
+        window.scrollTo(0, 0);
+    }

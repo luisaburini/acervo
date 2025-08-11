@@ -225,9 +225,9 @@ function removeAccents(word) {
 
 function getFirstImageFromDecade(decade) {
     for (let i=0; i<data.length; i++) {
-        let decade = data[i].decade;
+        let dataDecade = data[i].decade;
         let hasDecade = decade != null;
-        let foundDecade = hasDecade ? decade.toLowerCase().includes(decade) : false;
+        let foundDecade = hasDecade ? dataDecade.toLowerCase().includes(decade) : false;
         if (foundDecade) {
             return "url('" + data[i].hlinksmall + "')";
         }
@@ -246,7 +246,7 @@ function populateNavegue() {
         decadeButton.className = "navegue-item";
         decadeButton.innerText = allDecades[i];
         decadeButton.onmouseover = function() {
-            decadeButton.style.color = "red";
+            decadeButton.innerText = "";
             decadeButton.style.backgroundImage = getFirstImageFromDecade(allDecades[i]);
             console.log(getFirstImageFromDecade(allDecades[i]));
         };

@@ -233,6 +233,9 @@ function populateNavegue() {
         let decadeButton = document.createElement('div');
         decadeButton.className = "navegue-item";
         decadeButton.innerText = allDecades[i];
+        decadeButton.onmouseover = function() {
+            decadeButton.style.backgroundImage = getFirstImageFromDecade(allDecades[i])
+        };
         decadeButton.onclick = function() {
             let searchBox = document.getElementById("searchbox");
             searchBox.innerHTML = allDecades[i];
@@ -253,6 +256,18 @@ function populateNavegue() {
         window.scrollTo(0, document.body.scrollHeight);
     }
     navegueGrid.appendChild(navegueButton);
+}
+
+function getFirstImageFromDecade(decade) {
+    for (let i=0; i<data.length; i++) {
+        let decade = data[i].decade;
+        let hasDecade = decade != null;
+        let foundDecade = hasDecade ? decade.toLowerCase().includes(toSearch) : false;
+        if (foundDecade) {
+            return data[i].hlinksmall
+        }
+    }
+    return ""
 }
 
 function populateGrid() {
@@ -707,5 +722,5 @@ function updateZoomedImage() {
 
 
 function inicio() {
-        window.scrollTo(0, 0);
-    }
+    window.scrollTo(0, 0);
+}

@@ -11,18 +11,26 @@ body {
 
 .home {
   background-color: #26361c;
-  height: auto;
   position: relative;
   z-index: 0;
   content: ""; /* Create a pseudo-element */
-  width:100vw;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .home::before{
-  content: url("https://live.staticflickr.com/65535/54526439361_4a31a4d2f5_c.jpg");
+  display: block;
   opacity: 0.4;
   position: absolute;
-  width:100vw;
+  width: 100vw;
+}
+
+.home-img{
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  height: auto;
 }
 
 .upperbar {
@@ -84,9 +92,9 @@ body {
 #subsubheader {
   font-family: "Mr Dafoe", cursive;
   font-size: 20vh;
-  text-align: right;
+  text-align: center;
   color: white;
-  grid-column: 1 / 5;
+  grid-column: 1 / 6;
 }
 
 #navegue {

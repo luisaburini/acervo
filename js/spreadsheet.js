@@ -257,8 +257,8 @@ function populateNavegue() {
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	&#129130;";
-    navegueButton.style.gridColumn = "1 / " + (1+allDecades.length/2).toString();
-    console.log("1 / " + (1+allDecades.length/2).toString());
+    navegueButton.style.gridColumn = "1 / " + Math.ceil(allDecades.length/2).toString();
+    console.log("1 / " + Math.ceil(allDecades.length/2).toString());
     navegueButton.onclick = function() {
         window.scrollTo(0, document.body.scrollHeight);
     }
@@ -269,7 +269,7 @@ function getFirstImageFromDecade(decade) {
     for (let i=0; i<data.length; i++) {
         let decade = data[i].decade;
         let hasDecade = decade != null;
-        let foundDecade = hasDecade ? decade.toLowerCase().includes(toSearch) : false;
+        let foundDecade = hasDecade ? decade.toLowerCase().includes(decade) : false;
         if (foundDecade) {
             return data[i].hlinksmall
         }

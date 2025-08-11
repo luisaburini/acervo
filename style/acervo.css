@@ -51,6 +51,9 @@ body {
   margin: auto;
   text-align: center;
   font-size: 2vh;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 #home-grid{
@@ -87,6 +90,9 @@ body {
   text-align: center;
   grid-column: 2 / 1;
   color: white;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 #subsubheader {
@@ -95,6 +101,9 @@ body {
   text-align: center;
   color: white;
   grid-column: 1 / 6;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */  
 }
 
 #navegue {
@@ -441,6 +450,9 @@ button:active {
     color: white;
     grid-column: 1 / 5;
     grid-row: 1;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */    
 }
 
 .bottom-subheader {
@@ -450,6 +462,9 @@ button:active {
   grid-column: 1 / 3;
   text-align: center;
   color: white;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */  
 }
 
 .bottom-subsubheader {
@@ -458,6 +473,9 @@ button:active {
   text-align: right;
   color: white;
   grid-column: 1 / 3;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */  
 }
 
 .contato{

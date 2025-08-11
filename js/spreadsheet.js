@@ -273,7 +273,7 @@ function populateNavegue() {
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	&#129130;";
-    navegueButton.style.gridColumn = "1 / " + Math.ceil(allDecades.length/2).toString();
+    navegueButton.style.gridColumn = "1 / " + Math.ceil(1+allDecades.length/2).toString();
     console.log("1 / " + Math.ceil(allDecades.length/2).toString());
     navegueButton.onclick = function() {
         window.scrollTo(0, document.body.scrollHeight);

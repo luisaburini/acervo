@@ -242,26 +242,28 @@ function populateNavegue() {
     allDecades.sort();
 
     for (let i=0; i<allDecades.length; i++){
-        let decadeButton = document.createElement('div');
-        decadeButton.className = "navegue-item";
-        decadeButton.innerText = allDecades[i];
-        decadeButton.onmouseover = function() {
-            decadeButton.innerText = "";
-            decadeButton.style.backgroundImage = getFirstImageFromDecade(allDecades[i]);
-            console.log(getFirstImageFromDecade(allDecades[i]));
-        };
-        decadeButton.onmouseout = function() {
-            decadeButton.style.color = "white";
-            decadeButton.backgroundImage = "";
+        if (getFirstImageFromDecade(allDecades[i]) != "") {
+            let decadeButton = document.createElement('div');
+            decadeButton.className = "navegue-item";
             decadeButton.innerText = allDecades[i];
-            console.log(allDecades[i])
-        };
-        decadeButton.onclick = function() {
-            let searchBox = document.getElementById("searchbox");
-            searchBox.innerHTML = allDecades[i];
-            onSearched();
-        };
-        navegueGrid.appendChild(decadeButton);
+            decadeButton.onmouseover = function() {
+                decadeButton.innerText = "";
+                decadeButton.style.backgroundImage = getFirstImageFromDecade(allDecades[i]);
+                console.log(getFirstImageFromDecade(allDecades[i]));
+            };
+            decadeButton.onmouseout = function() {
+                decadeButton.style.color = "white";
+                decadeButton.backgroundImage = "";
+                decadeButton.innerText = allDecades[i];
+                console.log(allDecades[i])
+            };
+            decadeButton.onclick = function() {
+                let searchBox = document.getElementById("searchbox");
+                searchBox.innerHTML = allDecades[i];
+                onSearched();
+            };
+            navegueGrid.appendChild(decadeButton);
+        }
     } 
     let spacersAmount = allDecades.length % 2;
     for (let i=0; i<spacersAmount; i++) {

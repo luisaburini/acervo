@@ -242,12 +242,12 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: CreatorDisplayRegular;
+  font-family: GothamLight;
 }
 
 .attribute{
-    font-family: CreatorDisplayBlack;
-    color: #8e0f1d;
+    font-family: GothamBlack;
+    color: black;
     height: 10vh;
     font-size: 2vh;
     margin: 1vh;
@@ -260,7 +260,7 @@ body {
 .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #fae0ca;
+    background-color: white;
     margin-left: 10px;
     width: 160px;
     border-radius: 5px;
@@ -326,7 +326,7 @@ body {
 #searchbox {
     background-color: #fae0ca;
     margin-left: 5vh;
-    border: 2px double  #cf807a;
+    border: 2px double  #c0c0c0;
     border-radius: 8px;
     color: #8e0f1d;
     font-size: 3vh;
@@ -375,14 +375,14 @@ button:active {
 }
 
 .card {
-    background-color: #fae0ca;
-    border: 2px dashed #c65a11;
+    background-color: whitesmoke;
+    border: 2px inset #c0c0c0;
     border-radius: 15px;
 }
 
 .cardattribute{
     font-family: GothamLight;
-    color: #8e0f1d;
+    color: black;
     height: 3vh;
     font-size: 2vh;
     margin: 1vh;

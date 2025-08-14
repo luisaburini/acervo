@@ -281,10 +281,19 @@ function populateNavegue() {
 }
 
 function hideAll() {
-    elementsToHide = ["upper", "navegue", "iniciativa"];
+    elementsToHide = ["navegue", "navegue-header", "navegue-grid", 
+        "iniciativa", "iniciativa-grid"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.display = "none";
+    }
+    elementsByClass = ["navegue-item", "iniciativa-container", 
+        "iniciativa-header", "iniciativa-text", "igrejinha"];
+    for (let i=0; i<elementsToHide.length; i++) {
+        elems = document.getElementsByClassName(elementsToHide[i]);
+        for (let j=0; j<elems.length; j++) {
+            elems[j].style.display = "none";
+        }
     }
 }
 

@@ -274,29 +274,29 @@ function populateNavegue() {
     navegueButton.style.gridColumn = "1 / " + Math.ceil(1+allDecades.length/2).toString();
     console.log("1 / " + Math.ceil(allDecades.length/2).toString());
     navegueButton.onclick = function() {
+        changeVisibilityOfAll("none");
         populateSidebar(allKeywords);
         populateGrid();
     }
     navegueGrid.appendChild(navegueButton);
 }
 
-function hideAll() {
+function changeVisibilityOfAll(visibility) {
     elementsToHide = ["navegue", "navegue-header", "navegue-grid", 
         "iniciativa", "iniciativa-grid"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
-        elem.style.display = "none";
+        elem.style.display = visibility;
     }
     elementsByClass = ["navegue-item", "iniciativa-container", 
         "iniciativa-header", "iniciativa-text", "igrejinha"];
     for (let i=0; i<elementsToHide.length; i++) {
         elems = document.getElementsByClassName(elementsToHide[i]);
         for (let j=0; j<elems.length; j++) {
-            elems[j].style.display = "none";
+            elems[j].style.display = visibility;
         }
     }
 }
-
 
 function populateGrid() {
     let grid = document.getElementById('grid-container');

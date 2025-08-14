@@ -255,7 +255,7 @@ function populateNavegue() {
                 console.log(allDecades[i])
             };
             decadeButton.onclick = function() {
-                let searchBox = document.getElementById("searchbox");
+                let searchBox = document.getElementById("search-box");
                 searchBox.innerHTML = allDecades[i];
                 onSearched();
             };
@@ -337,7 +337,7 @@ function populateSidebar(allKeywords) {
         radioInput.name = "categories";
         radioInput.addEventListener('change', function (e) {
             if (this.checked) {
-                let searchBox = document.getElementById("searchbox");
+                let searchBox = document.getElementById("search-box");
                 let noAccent = removeAccents(allCategories[i]);
                 searchBox.innerHTML = noAccent;
                 searchBox.value = noAccent;
@@ -369,7 +369,7 @@ function populateSidebar(allKeywords) {
         radioInput.value = allYears[i];
         radioInput.name = "years";
         radioInput.addEventListener('change', function (e) {
-            let searchBox = document.getElementById("searchbox");
+            let searchBox = document.getElementById("search-box");
             let noAccent = removeAccents(allYears[i]);
             searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
@@ -400,7 +400,7 @@ function populateSidebar(allKeywords) {
         radioInput.value = allDecades[i];
         radioInput.name = "decades";
         radioInput.addEventListener('change', function (e) {
-            let searchBox = document.getElementById("searchbox");
+            let searchBox = document.getElementById("search-box");
             let noAccent = removeAccents(allDecades[i]);
             searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
@@ -431,7 +431,7 @@ function populateSidebar(allKeywords) {
         radioInput.value = allKeywords[i];
         radioInput.name = "keywords";
         radioInput.addEventListener('change', function (e) {
-            let searchBox = document.getElementById("searchbox");
+            let searchBox = document.getElementById("search-box");
             searchBox.innerHTML = allKeywords[i];
             searchBox.value = allKeywords[i];
             onSearched()
@@ -465,9 +465,10 @@ function hasKeywords(attr, toSearch){
 
 function onSearched() {
     let grid = document.getElementById('grid-container');
+    grid.style.display = "block";
     clear(grid);
 
-    let searchBox = document.getElementById("searchbox");
+    let searchBox = document.getElementById("search-box");
     let toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
     searchBox.value = "";
     

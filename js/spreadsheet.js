@@ -258,6 +258,8 @@ function populateNavegue() {
                 let searchBox = document.getElementById("search-box");
                 searchBox.innerHTML = allDecades[i];
                 onSearched();
+                changeVisibilityOfAll("none");
+                changeVisibilitySearch("block");
             };
             navegueGrid.appendChild(decadeButton);
         }

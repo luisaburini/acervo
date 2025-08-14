@@ -211,9 +211,8 @@ function loadImages() {
         data.push(img)
       }
     })
-    
     populateNavegue();
-
+    changeVisibilitySearch("none");
     })
 }
 
@@ -275,6 +274,7 @@ function populateNavegue() {
     console.log("1 / " + Math.ceil(allDecades.length/2).toString());
     navegueButton.onclick = function() {
         changeVisibilityOfAll("none");
+        changeVisibilitySearch("block");
         populateSidebar(allKeywords);
         populateGrid();
     }
@@ -295,6 +295,15 @@ function changeVisibilityOfAll(visibility) {
         for (let j=0; j<elems.length; j++) {
             elems[j].style.display = visibility;
         }
+    }
+}
+
+function changeVisibilitySearch(visibility) {
+    elementsToHide = ["search", "search-box", "search-button", 
+        "outer-container", "sidebar", "grid-container"];
+    for (let i=0; i<elementsToHide.length; i++) {
+        elem = document.getElementById(elementsToHide[i]);
+        elem.style.display = visibility;
     }
 }
 

@@ -288,13 +288,15 @@ function showAcervo() {
 }
 
 function changeVisibilityOfAll(visibility) {
-    elementsToHide = ["navegue", "navegue-header", "navegue-grid", 
+    elementsToHide = ["home-grid", "header", "subheader", "subsubheader",
+        "navegue", "navegue-header", "navegue-grid", 
         "iniciativa", "iniciativa-grid"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.display = visibility;
     }
-    elementsByClass = ["navegue-item", "iniciativa-container", 
+    elementsByClass = ["home", "home-img", "upperbar", "upperbar-item",
+        "navegue-item", "iniciativa-container", 
         "iniciativa-header", "iniciativa-text", "igrejinha"];
     for (let i=0; i<elementsToHide.length; i++) {
         elems = document.getElementsByClassName(elementsToHide[i]);

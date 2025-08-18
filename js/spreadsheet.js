@@ -296,7 +296,7 @@ function changeVisibilityOfAll(visibility) {
         elem.style.display = visibility;
     }
     elementsByClass = ["home", "home-img", "upperbar", "upperbar-item",
-        "navegue-item", "iniciativa-container", 
+        "navegue-item", "iniciativa-container", "explore-button",
         "iniciativa-header", "iniciativa-text", "igrejinha"];
     for (let i=0; i<elementsToHide.length; i++) {
         elems = document.getElementsByClassName(elementsToHide[i]);

@@ -208,17 +208,13 @@ body {
 
 #outer-container {
     display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 10vw 90vw;
     margin: 0;
     row-gap: 0;
     column-gap: 0;
 }
 
 #sidebar {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 10vw;
     margin: 0;
     padding: 0;
     row-gap: 0;
@@ -370,17 +366,17 @@ button:active {
     width: 15vw;
     height: 15vw;
 }
+
 .description {
-    font-family: GothamLight;
+    font-family: GothamBlack;
     font-size: 2vh;
-    color: #63405c;
+    color: black;
     margin: 1vh;
 }
 
 .card {
     background-color: whitesmoke;
     border: 2px inset #c0c0c0;
-    border-radius: 15px;
 }
 
 .cardattribute{

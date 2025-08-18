@@ -218,12 +218,12 @@ body {
 #sidebar {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 100px;
+    grid-template-columns: 10vw;
     margin: 0;
     padding: 0;
     row-gap: 0;
     column-gap: 0;
-    width: 100px;
+    width: 10vw;
 }
 
 #grid-container {
@@ -233,6 +233,7 @@ body {
     margin: 0;
     row-gap: 0;
     column-gap: 0;
+    width: 90vw;
 }
 
 

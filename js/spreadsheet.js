@@ -290,14 +290,17 @@ function showAcervo() {
 function changeVisibilityOfAll(visibility) {
     elementsToHide = ["home-grid", "header", "subheader", "subsubheader",
         "navegue", "navegue-header", "navegue-grid", 
-        "iniciativa", "iniciativa-grid"];
+        "iniciativa", "iniciativa-grid", 
+        "bottom"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.display = visibility;
     }
     elementsByClass = ["home", "home-img", "upperbar", "upperbar-item",
         "navegue-item", "iniciativa-container", "explore-button",
-        "iniciativa-header", "iniciativa-text", "igrejinha"];
+        "iniciativa-header", "iniciativa-text", "igrejinha",
+        "bottom-grid", "bottom-header", "bottom-subheader", "bottom-subsubheader", 
+        "contato", "contato-item"];
     for (let i=0; i<elementsToHide.length; i++) {
         elems = document.getElementsByClassName(elementsToHide[i]);
         for (let j=0; j<elems.length; j++) {

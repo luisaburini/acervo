@@ -215,6 +215,17 @@ body {
     column-gap: 0;
 }
 
+#sidebar {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 100px;
+    margin: 0;
+    padding: 0;
+    row-gap: 0;
+    column-gap: 0;
+    width: 100px;
+}
+
 #grid-container {
     text-align: center;
     display: grid;
@@ -224,15 +235,6 @@ body {
     column-gap: 0;
 }
 
-#sidebar {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 100px;
-    margin: 0;
-    padding: 0;
-    row-gap: 0;
-    column-gap: 0;
-}
 
 .container {
   display: block;

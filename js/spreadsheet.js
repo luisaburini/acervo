@@ -255,11 +255,11 @@ function populateNavegue() {
                 console.log(allDecades[i])
             };
             decadeButton.onclick = function() {
+                changeVisibilityOfAll("none");
+                changeVisibilitySearch("block");
                 let searchBox = document.getElementById("search-box");
                 searchBox.innerHTML = allDecades[i];
                 onSearched();
-                changeVisibilityOfAll("none");
-                changeVisibilitySearch("block");
             };
             navegueGrid.appendChild(decadeButton);
         }
@@ -275,12 +275,16 @@ function populateNavegue() {
     navegueButton.style.gridColumn = "1 / " + Math.ceil(1+allDecades.length/2).toString();
     console.log("1 / " + Math.ceil(allDecades.length/2).toString());
     navegueButton.onclick = function() {
-        changeVisibilityOfAll("none");
-        changeVisibilitySearch("block");
-        populateSidebar(allKeywords);
-        populateGrid();
+        showAcervo();
     }
     navegueGrid.appendChild(navegueButton);
+}
+
+function showAcervo() {
+    changeVisibilityOfAll("none");
+    changeVisibilitySearch("block");
+    populateSidebar(allKeywords);
+    populateGrid();
 }
 
 function changeVisibilityOfAll(visibility) {

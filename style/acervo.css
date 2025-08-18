@@ -220,6 +220,8 @@ body {
     row-gap: 0;
     column-gap: 0;
     width: 10vw;
+    grid-column: 1 / 2;
+    grid-row: 1 / 1;
 }
 
 #grid-container {
@@ -230,6 +232,8 @@ body {
     row-gap: 0;
     column-gap: 0;
     width: 90vw;
+    grid-column: 2 / 1;
+    grid-row: 1 / 1;
 }
 
 

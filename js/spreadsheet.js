@@ -550,80 +550,45 @@ function createNewImage(imgMetaData, grid) {
     if (imgMetaData.description != "") {
         let descAttr = document.createElement("p");
         descAttr.className = "cardattribute";
-        descAttr.innerText = "Descrição";
+        descAttr.innerText = "Descrição " + imgMetaData.description;
         div.appendChild(descAttr);
-        let desc = document.createElement("p");
-        desc.className = "description";
-        desc.innerText = imgMetaData.description;
-        div.appendChild(desc);
     }
-
     if (imgMetaData.year != "") {
         let yearAttr = document.createElement("p");
         yearAttr.className = "cardattribute";
-        yearAttr.innerText = "Ano";
+        yearAttr.innerText = "Ano " + imgMetaData.year;
         div.appendChild(yearAttr);
-        let year = document.createElement("p");
-        year.className = "description";
-        year.innerText = imgMetaData.year;
-        div.appendChild(year);
     }
-
     if (imgMetaData.author != "") {
         let authorAttr = document.createElement("p");
         authorAttr.className = "cardattribute";
-        authorAttr.innerText = "Autoria";
+        authorAttr.innerText = "Autoria " + imgMetaData.author;
         div.appendChild(authorAttr);
-        let author = document.createElement("p");
-        author.className = "description";
-        author.innerText = imgMetaData.author;
-        div.appendChild(author);
     }
-
     if (imgMetaData.category != "") {
         let categoryAttr = document.createElement("p");
         categoryAttr.className = "cardattribute";
-        categoryAttr.innerText = "Categoria";
+        categoryAttr.innerText = "Categoria " + imgMetaData.category;
         div.appendChild(categoryAttr);
-        let category = document.createElement("p");
-        category.className = "description";
-        category.innerText = imgMetaData.category;
-        div.appendChild(category);
     }
-
     if (imgMetaData.region != "" ) {
         let regionAttr = document.createElement("p");
         regionAttr.className = "cardattribute";
-        regionAttr.innerText = "Bairro/Região";
+        regionAttr.innerText = "Bairro/Região " + imgMetaData.region;
         div.appendChild(regionAttr);
-        let region = document.createElement("p");
-        region.className = "description";
-        region.innerText = imgMetaData.region;
-        div.appendChild(region);
     }
-
     if (imgMetaData.source != "") {
         let sourceAttr = document.createElement("p");
         sourceAttr.className = "cardattribute";
-        sourceAttr.innerText = "Fonte Original";
+        sourceAttr.innerText = "Fonte Original " + imgMetaData.source;
         div.appendChild(sourceAttr);
-        let source = document.createElement("p");
-        source.className = "description";
-        source.innerText = imgMetaData.source;
-        div.appendChild(source);
     }
-
     if (imgMetaData.keywords != "") {
         let keywordsAttr = document.createElement("p");
         keywordsAttr.className = "cardattribute";
-        keywordsAttr.innerText = "Palavras-chave";
+        keywordsAttr.innerText = "Palavras-chave " + imgMetaData.keywords;
         div.appendChild(keywordsAttr);
-        let keywords = document.createElement("p");
-        keywords.className = "description";
-        keywords.innerText = imgMetaData.keywords;
-        div.appendChild(keywords);
     }
-
     grid.appendChild(div);
 }
 

@@ -308,9 +308,6 @@ body {
     display: grid;
     grid-template-columns: 10vw 89vw;
     grid-template-rows: 100vh;
-    margin: 0;
-    row-gap: 0;
-    column-gap: 0;
 }
 
 #sidebar {
@@ -318,6 +315,7 @@ body {
     padding: 0;
     row-gap: 0;
     column-gap: 0;
+    width: 10vw;
     height: 40vh;
     grid-column: 1 / 1;
     grid-row: 1 / 1;

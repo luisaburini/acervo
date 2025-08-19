@@ -306,6 +306,7 @@ body {
 
 #outer-container {
     display: grid;
+    width: 100vw;
     grid-template-columns: 10vw 89vw;
     grid-template-rows: 100vh;
 }
@@ -322,10 +323,11 @@ body {
     background-color: #d7d3d4;
 }
 
-#grid-container {
+#img-container {
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 20vw 20vw 20vw 20vw 1fr;
+    grid-template-rows: 100vh;
     margin: 0;
     row-gap: 0;
     column-gap: 0;

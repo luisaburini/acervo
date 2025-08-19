@@ -311,7 +311,7 @@ function changeVisibilityOfAll(visibility) {
 
 function changeVisibilitySearch(visibility) {
     elementsToHide = ["search", "search-box", "search-button", 
-        "outer-container", "sidebar", "grid-container"];
+        "outer-container", "sidebar", "img-container"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.display = visibility;
@@ -319,7 +319,7 @@ function changeVisibilitySearch(visibility) {
 }
 
 function populateGrid() {
-    let grid = document.getElementById('grid-container');
+    let grid = document.getElementById('img-container');
     clear(grid);
     console.log("Data array length ", data.length)
     for (let i=0;i<data.length;i++) {
@@ -475,7 +475,7 @@ function hasKeywords(attr, toSearch){
 }
 
 function onSearched() {
-    let grid = document.getElementById('grid-container');
+    let grid = document.getElementById('img-container');
     grid.style.display = "block";
     clear(grid);
 

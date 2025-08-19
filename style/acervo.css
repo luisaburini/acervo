@@ -460,11 +460,11 @@ body {
     font-family: GothamBlack;
     font-size: 2vh;
     color: black;
-    margin: 1vh;
 }
 
 .card {
     background-color: whitesmoke;
+    width: 20vw;
     border: 2px inset #c0c0c0;
 }
 
@@ -473,7 +473,6 @@ body {
     color: black;
     height: 3vh;
     font-size: 2vh;
-    margin: 1vh;
 }
 
 #overlay {

@@ -325,7 +325,7 @@ body {
 
 .img-container {
     text-align: center;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 20vw 20vw 20vw 20vw 1fr;
     grid-template-rows: 100vh;
     margin: 0;

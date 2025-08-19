@@ -323,7 +323,7 @@ body {
     background-color: #d7d3d4;
 }
 
-#img-container {
+.img-container {
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 20vw 20vw 20vw 20vw 1fr;

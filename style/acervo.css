@@ -316,7 +316,7 @@ body {
     background-color: #d7d3d4;
 }
 
-.img-container {
+#img-container {
     margin: 0;
     row-gap: 0;
     column-gap: 0;
@@ -324,6 +324,7 @@ body {
     left: 15vw;
     top: 0;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 

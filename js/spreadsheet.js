@@ -316,6 +316,9 @@ function changeVisibilitySearch(visibility) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.display = visibility;
     }
+    if (visibility == "block") {
+        document.getElementById("img-container").style.display = "grid";
+    }
 }
 
 function populateGrid() {
@@ -476,7 +479,7 @@ function hasKeywords(attr, toSearch){
 
 function onSearched() {
     let grid = document.getElementById('img-container');
-    grid.style.display = "block";
+    grid.style.display = "grid";
     clear(grid);
 
     let searchBox = document.getElementById("search-box");

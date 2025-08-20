@@ -295,6 +295,11 @@ function changeVisibilityOfAll(visibility) {
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.visibility = visibility;
+        if (visibility == "collapse") {
+            elem.style.maxHeight = "0";
+        } else {
+            elem.style.maxHeight = "none";
+        }
     }
     elementsByClass = ["home", "home-img", "upperbar", "upperbar-item",
         "navegue-item", "iniciativa-container", "explore-button",
@@ -305,6 +310,11 @@ function changeVisibilityOfAll(visibility) {
         elems = document.getElementsByClassName(elementsToHide[i]);
         for (let j=0; j<elems.length; j++) {
             elems[j].style.visibility = visibility;
+            if (visibility == "collapse") {
+                elem.style.maxHeight = "0";
+            } else {
+                elem.style.maxHeight = "none";
+            }
         }
     }
 }
@@ -315,6 +325,11 @@ function changeVisibilitySearch(visibility) {
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.visibility = visibility;
+        if (visibility == "collapse") {
+            elem.style.maxHeight = "0";
+        } else {
+            elem.style.maxHeight = "none";
+        }
     }
 }
 

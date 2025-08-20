@@ -212,7 +212,7 @@ function loadImages() {
       }
     })
     populateNavegue();
-    changeVisibilitySearch("none");
+    changeVisibilitySearch("hidden");
     })
 }
 
@@ -255,8 +255,8 @@ function populateNavegue() {
                 console.log(allDecades[i])
             };
             decadeButton.onclick = function() {
-                changeVisibilityOfAll("none");
-                changeVisibilitySearch("block");
+                changeVisibilityOfAll("hidden");
+                changeVisibilitySearch("visible");
                 let searchBox = document.getElementById("search-box");
                 searchBox.innerHTML = allDecades[i];
                 onSearched();
@@ -281,8 +281,8 @@ function populateNavegue() {
 }
 
 function showAcervo() {
-    changeVisibilityOfAll("none");
-    changeVisibilitySearch("block");
+    changeVisibilityOfAll("hidden");
+    changeVisibilitySearch("visible");
     populateSidebar(allKeywords);
     populateGrid();
 }
@@ -294,7 +294,7 @@ function changeVisibilityOfAll(visibility) {
         "bottom"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
-        elem.style.display = visibility;
+        elem.style.visibility = visibility;
     }
     elementsByClass = ["home", "home-img", "upperbar", "upperbar-item",
         "navegue-item", "iniciativa-container", "explore-button",
@@ -304,7 +304,7 @@ function changeVisibilityOfAll(visibility) {
     for (let i=0; i<elementsToHide.length; i++) {
         elems = document.getElementsByClassName(elementsToHide[i]);
         for (let j=0; j<elems.length; j++) {
-            elems[j].style.display = visibility;
+            elems[j].style.visibility = visibility;
         }
     }
 }
@@ -314,10 +314,7 @@ function changeVisibilitySearch(visibility) {
         "outer-container", "sidebar", "img-container"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
-        elem.style.display = visibility;
-    }
-    if (visibility == "block") {
-        document.getElementById("img-container").style.display = "grid";
+        elem.style.visibility = visibility;
     }
 }
 

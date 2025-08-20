@@ -302,6 +302,8 @@ body {
 
 #outer-container {
     width: 100vw;
+    display: grid;
+    grid-template-columns: 10vw 1fr;
 }
 
 #sidebar {
@@ -457,7 +459,6 @@ body {
 
 .card {
     background-color: whitesmoke;
-    width: 20vw;
     border: 2px inset #c0c0c0;
 }
 

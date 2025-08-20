@@ -317,8 +317,14 @@ function changeVisibilityOfAll(visibility) {
             elems[j].style.visibility = visibility;
             if (visibility == "collapse") {
                 elems[j].style.maxHeight = "0";
+                if (elementsByClass[i] == "home-img") {
+                    elems[j].src = ""
+                }
             } else {
                 elems[j].style.maxHeight = "none";
+                if (elementsByClass[i] == "home-img") {
+                    elems[j].src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
+                }
             }
         }
     }

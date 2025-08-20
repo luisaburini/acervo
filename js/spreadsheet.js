@@ -287,6 +287,11 @@ function showAcervo() {
     populateGrid();
 }
 
+function showInicio() {
+    changeVisibilityOfAll("visible");
+    changeVisibilitySearch("collapse");
+}
+
 function changeVisibilityOfAll(visibility) {
     elementsToHide = ["home-grid", "header", "subheader", "subsubheader",
         "navegue", "navegue-header", "navegue-grid", 

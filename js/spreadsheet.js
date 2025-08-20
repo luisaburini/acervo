@@ -311,9 +311,9 @@ function changeVisibilityOfAll(visibility) {
         for (let j=0; j<elems.length; j++) {
             elems[j].style.visibility = visibility;
             if (visibility == "collapse") {
-                elem.style.maxHeight = "0";
+                elems[j].style.maxHeight = "0";
             } else {
-                elem.style.maxHeight = "none";
+                elems[j].style.maxHeight = "none";
             }
         }
     }

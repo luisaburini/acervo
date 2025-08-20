@@ -550,43 +550,43 @@ function createNewImage(imgMetaData, grid) {
     if (imgMetaData.description != "") {
         let descAttr = document.createElement("p");
         descAttr.className = "cardattribute";
-        descAttr.innerText = "Descrição " + imgMetaData.description;
+        descAttr.innerText = "Descrição: " + imgMetaData.description;
         div.appendChild(descAttr);
     }
     if (imgMetaData.year != "") {
         let yearAttr = document.createElement("p");
         yearAttr.className = "cardattribute";
-        yearAttr.innerText = "Ano " + imgMetaData.year;
+        yearAttr.innerText = "Ano: " + imgMetaData.year;
         div.appendChild(yearAttr);
     }
     if (imgMetaData.author != "") {
         let authorAttr = document.createElement("p");
         authorAttr.className = "cardattribute";
-        authorAttr.innerText = "Autoria " + imgMetaData.author;
+        authorAttr.innerText = "Autoria: " + imgMetaData.author;
         div.appendChild(authorAttr);
     }
     if (imgMetaData.category != "") {
         let categoryAttr = document.createElement("p");
         categoryAttr.className = "cardattribute";
-        categoryAttr.innerText = "Categoria " + imgMetaData.category;
+        categoryAttr.innerText = "Categoria: " + imgMetaData.category;
         div.appendChild(categoryAttr);
     }
     if (imgMetaData.region != "" ) {
         let regionAttr = document.createElement("p");
         regionAttr.className = "cardattribute";
-        regionAttr.innerText = "Bairro/Região " + imgMetaData.region;
+        regionAttr.innerText = "Bairro/Região: " + imgMetaData.region;
         div.appendChild(regionAttr);
     }
     if (imgMetaData.source != "") {
         let sourceAttr = document.createElement("p");
         sourceAttr.className = "cardattribute";
-        sourceAttr.innerText = "Fonte Original " + imgMetaData.source;
+        sourceAttr.innerText = "Fonte Original: " + imgMetaData.source;
         div.appendChild(sourceAttr);
     }
     if (imgMetaData.keywords != "") {
         let keywordsAttr = document.createElement("p");
         keywordsAttr.className = "cardattribute";
-        keywordsAttr.innerText = "Palavras-chave " + imgMetaData.keywords;
+        keywordsAttr.innerText = "Palavras-chave: " + imgMetaData.keywords;
         div.appendChild(keywordsAttr);
     }
     grid.appendChild(div);

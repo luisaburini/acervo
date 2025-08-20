@@ -292,6 +292,10 @@ function showInicio() {
     changeVisibilitySearch("collapse");
 }
 
+function showContato(){
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
 function changeVisibilityOfAll(visibility) {
     elementsToHide = ["home-grid", "header", "subheader", "subsubheader",
         "navegue", "navegue-header", "navegue-grid", 

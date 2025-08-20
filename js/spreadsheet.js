@@ -212,7 +212,7 @@ function loadImages() {
       }
     })
     populateNavegue();
-    changeVisibilitySearch("hidden");
+    changeVisibilitySearch("collapse");
     })
 }
 
@@ -255,7 +255,7 @@ function populateNavegue() {
                 console.log(allDecades[i])
             };
             decadeButton.onclick = function() {
-                changeVisibilityOfAll("hidden");
+                changeVisibilityOfAll("collapse");
                 changeVisibilitySearch("visible");
                 let searchBox = document.getElementById("search-box");
                 searchBox.innerHTML = allDecades[i];
@@ -281,7 +281,7 @@ function populateNavegue() {
 }
 
 function showAcervo() {
-    changeVisibilityOfAll("hidden");
+    changeVisibilityOfAll("collapse");
     changeVisibilitySearch("visible");
     populateSidebar(allKeywords);
     populateGrid();
@@ -641,7 +641,7 @@ function left() {
         current = Math.abs((current-1)%data.length);
     }
     let zoomImage = document.getElementsByClassName("overlay-img")[0];
-    zoomImage.style.visibility = "hidden";
+    zoomImage.style.visibility = "collapse";
     zoomImage.src = data[current].hlink;
     zoomLevel = 1;
     newPosX = 0;
@@ -656,7 +656,7 @@ function left() {
 function right() {
     current = Math.abs((current+1)%(data.length));
     let zoomImage = document.getElementsByClassName("overlay-img")[0];
-    zoomImage.style.visibility = "hidden";
+    zoomImage.style.visibility = "collapse";
     zoomImage.src = data[current].hlink;
     zoomLevel = 1;
     newPosX = 0;
@@ -675,9 +675,9 @@ function off() {
       dontHide = false;
       return;
   }
-  document.getElementById("overlay").style.visibility = "hidden";
+  document.getElementById("overlay").style.visibility = "collapse";
   let zoomImage = document.getElementsByClassName("overlay-img")[0];
-  zoomImage.style.visibility = "hidden";
+  zoomImage.style.visibility = "collapse";
   zoomImage.src = "";
   zoomLevel = 1;
   newPosX = 0;

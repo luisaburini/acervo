@@ -457,6 +457,7 @@ body {
 .card {
     background-color: whitesmoke;
     border: 2px inset #c0c0c0;
+    text-align: center;
 }
 
 .cardattribute{
@@ -464,7 +465,7 @@ body {
     color: black;
     height: 3vh;
     font-size: 2vh;
-    left: 2vw;
+    text-align: left;
 }
 
 #overlay {

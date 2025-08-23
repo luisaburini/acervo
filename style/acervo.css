@@ -443,10 +443,10 @@ body {
 
 .thumbnail {
     object-fit: cover;
-    padding-left: 2vw;
-    padding-top: 3vh;
-    width: 15vw;
-    height: 15vw;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    width: 16vw;
+    height: 16vw;
 }
 
 .description {

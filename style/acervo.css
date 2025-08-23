@@ -318,12 +318,11 @@ body {
 }
 
 #img-container {
-    margin: 0;
-    row-gap: 0;
-    column-gap: 0;
+    row-gap: 2vw;
+    column-gap: 2vh;
     width: 89vw;
     left: 15vw;
-    top: 0;
+    top: 3vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }

@@ -308,16 +308,18 @@ function changeVisibilityOfAll(visibility) {
             elem.style.maxHeight = "0";
             if (elementsToHide[i] == "home-img") {
                 elem.src = ""
-                document.getElementById("home").style.backgroundColor = "#000000";
-                document.getElementById("home").style.height = "10vh";
+                let home = document.getElementById("home");
+                home.style.backgroundColor = "#000000";
+                home.style.height = "10vh";
 
             }
         } else {
             elem.style.maxHeight = "none";
             if (elementsToHide[i] == "home-img") {
                 elem.src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
-                document.getElementById("home").style.backgroundColor = "#26361c";
-                document.getElementById("home").style.height = "auto";
+                let home = document.getElementById("home");
+                home.style.backgroundColor = "#26361c";
+                home.style.height = "auto";
             }
         }
     }

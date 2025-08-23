@@ -16,7 +16,6 @@ body {
   content: ""; /* Create a pseudo-element */
   display: block;
   width: 100%;
-  height: auto;
 }
 
 .home::before{

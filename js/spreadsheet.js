@@ -308,15 +308,17 @@ function changeVisibilityOfAll(visibility) {
             elem.style.maxHeight = "0";
             if (elementsToHide[i] == "home-img") {
                 elem.src = ""
+                document.getElementById("home").style.backgroundColor = "black";
             }
         } else {
             elem.style.maxHeight = "none";
             if (elementsToHide[i] == "home-img") {
                 elem.src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
+                document.getElementById("home").style.backgroundColor = "#26361c";
             }
         }
     }
-    elementsByClass = ["home", "upperbar", "upperbar-item",
+    elementsByClass = ["upperbar", "upperbar-item",
         "navegue-item", "iniciativa-container", "explore-button",
         "iniciativa-header", "iniciativa-text", "igrejinha",
         "bottom-grid", "bottom-header", "bottom-subheader", "bottom-subsubheader", 

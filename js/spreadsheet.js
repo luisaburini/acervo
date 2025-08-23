@@ -621,6 +621,7 @@ function createNewImage(imgMetaData, grid) {
         keywordsAttr.innerHTML = "<b>Palavras-chave:<b> " + imgMetaData.keywords;
         div.appendChild(keywordsAttr);
     }
+    div.style.height = "auto";
     grid.appendChild(div);
 }
 

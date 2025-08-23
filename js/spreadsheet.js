@@ -307,12 +307,12 @@ function changeVisibilityOfAll(visibility) {
         if (visibility == "collapse") {
             elem.style.maxHeight = "0";
             if (elementsToHide[i] == "home-img") {
-                elems[j].src = ""
+                elem.src = ""
             }
         } else {
             elem.style.maxHeight = "none";
             if (elementsToHide[i] == "home-img") {
-                elems[j].src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
+                elem.src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
             }
         }
     }

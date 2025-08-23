@@ -297,7 +297,7 @@ function showContato(){
 }
 
 function changeVisibilityOfAll(visibility) {
-    elementsToHide = ["home-grid", "header", "subheader", "subsubheader",
+    elementsToHide = ["home-grid", "home-img", "header", "subheader", "subsubheader",
         "navegue", "navegue-header", "navegue-grid", 
         "iniciativa", "iniciativa-grid", 
         "bottom"];
@@ -306,11 +306,17 @@ function changeVisibilityOfAll(visibility) {
         elem.style.visibility = visibility;
         if (visibility == "collapse") {
             elem.style.maxHeight = "0";
+            if (elementsToHide[i] == "home-img") {
+                elems[j].src = ""
+            }
         } else {
             elem.style.maxHeight = "none";
+            if (elementsToHide[i] == "home-img") {
+                elems[j].src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
+            }
         }
     }
-    elementsByClass = ["home", "home-img", "upperbar", "upperbar-item",
+    elementsByClass = ["home", "upperbar", "upperbar-item",
         "navegue-item", "iniciativa-container", "explore-button",
         "iniciativa-header", "iniciativa-text", "igrejinha",
         "bottom-grid", "bottom-header", "bottom-subheader", "bottom-subsubheader", 
@@ -321,14 +327,8 @@ function changeVisibilityOfAll(visibility) {
             elems[j].style.visibility = visibility;
             if (visibility == "collapse") {
                 elems[j].style.maxHeight = "0";
-                if (elementsByClass[i] == "home-img") {
-                    elems[j].src = ""
-                }
             } else {
                 elems[j].style.maxHeight = "none";
-                if (elementsByClass[i] == "home-img") {
-                    elems[j].src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
-                }
             }
         }
     }

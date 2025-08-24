@@ -309,6 +309,14 @@ body {
     background-color: whitesmoke;
 }
 
+#pagination{
+  width: 89vw;
+  font-family: GothamLight;
+  font-size: 5vh;
+  height: 7vh;
+  color: black;
+}
+
 #sidebar {
     margin: 0;
     padding: 0;
@@ -322,7 +330,6 @@ body {
     row-gap: 2vw;
     column-gap: 2vh;
     width: 89vw;
-    left: 15vw;
     top: 3vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

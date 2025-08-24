@@ -45,6 +45,7 @@ const ColunaQ = "Link pequeno"
 
 
 let data = [];
+let searchedImages = [];
 let allKeywords = [];
 let allYears = [];
 let allDecades = [];
@@ -281,6 +282,7 @@ function populateNavegue() {
 }
 
 function showAcervo() {
+    searchedImages = data;
     changeVisibilityOfAll("collapse");
     changeVisibilitySearch("visible");
     populateSidebar(allKeywords);
@@ -343,7 +345,8 @@ function changeVisibilityOfAll(visibility) {
 
 function changeVisibilitySearch(visibility) {
     elementsToHide = ["search", "search-box", "search-button", 
-        "outer-container", "sidebar", "img-container"];
+        "outer-container", "sidebar", "pagination",
+        "img-container"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);
         elem.style.visibility = visibility;
@@ -358,9 +361,9 @@ function changeVisibilitySearch(visibility) {
 function populateGrid() {
     let grid = document.getElementById('img-container');
     clear(grid);
-    console.log("Data array length ", data.length)
-    for (let i=0;i<data.length;i++) {
-        createNewImage(data[i], grid);
+    console.log("Data array length ", searchedImages.length)
+    for (let i=0;i<searchedImages.length;i++) {
+        createNewImage(searchedImages[i], grid);
     }
 }
 
@@ -515,7 +518,8 @@ function onSearched() {
     let grid = document.getElementById('img-container');
     grid.style.display = "grid";
     clear(grid);
-
+    searchedImages = [];
+    
     let searchBox = document.getElementById("search-box");
     let toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
     searchBox.value = "";
@@ -566,9 +570,11 @@ function onSearched() {
             foundFormat || 
             foundID ||
             hasKeywords(data[i].keywords.toLowerCase(), toSearch)) {
-            createNewImage(data[i], grid);
+                searchedImages.push(data[i]);
+                createNewImage(data[i], grid);
+            }
         }
-    }
+        grid = document.getElementById('pagination').innerText = searchedImages.length 
  }
 
 function createNewImage(imgMetaData, grid) {
@@ -674,13 +680,13 @@ function resetPositionAndSize() {
 
 function left() {
     if (current-1 < 0) {
-        current = data.length-1
+        current = searchedImages.length-1
     } else {
-        current = Math.abs((current-1)%data.length);
+        current = Math.abs((current-1)%searchedImages.length);
     }
     let zoomImage = document.getElementsByClassName("overlay-img")[0];
     zoomImage.style.visibility = "collapse";
-    zoomImage.src = data[current].hlink;
+    zoomImage.src = searchedImages[current].hlink;
     zoomLevel = 1;
     newPosX = 0;
     newPosY = 0;
@@ -692,10 +698,10 @@ function left() {
 }
 
 function right() {
-    current = Math.abs((current+1)%(data.length));
+    current = Math.abs((current+1)%(searchedImages.length));
     let zoomImage = document.getElementsByClassName("overlay-img")[0];
     zoomImage.style.visibility = "collapse";
-    zoomImage.src = data[current].hlink;
+    zoomImage.src = searchedImages[current].hlink;
     zoomLevel = 1;
     newPosX = 0;
     newPosY = 0;

@@ -307,8 +307,6 @@ body {
 
 #outer-container {
     width: 100vw;
-    display: grid;
-    grid-template-columns: 10vw 1fr;
     background-color: whitesmoke;
 }
 
@@ -329,6 +327,8 @@ body {
     padding: 0;
     row-gap: 0;
     column-gap: 0;
+    left: 0;
+    top: 0;
     width: 10vw;
     background-color: #d7d3d4;
 }

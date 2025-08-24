@@ -120,6 +120,9 @@ body {
   color: #edfbe4;
   height: 30vh;
   padding-top: 5vh;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */  
 }
 
 #navegue-grid{

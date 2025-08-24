@@ -337,7 +337,7 @@ body {
     row-gap: 2vw;
     column-gap: 2vh;
     width: 89vw;
-    top: 3vh;
+    top: 13vh;
     left: 12vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

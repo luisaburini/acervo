@@ -318,6 +318,10 @@ body {
   font-size: 5vh;
   height: 7vh;
   color: black;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 #sidebar {

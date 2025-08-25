@@ -142,16 +142,10 @@ function loadImages() {
                 idColC = String(rowData.c[ind].v)
             } else if (ele == ColunaD) {
                 categoriaColD = String(rowData.c[ind].v)
-                allCategories.push(categoriaColD);
-                allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e))
             } else if (ele == ColunaE) {
                 anoColE = String(rowData.c[ind].v);
-                allYears.push(anoColE);
-                allYears = allYears.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaF) {
                 decadaColF = String(rowData.c[ind].v);
-                allDecades.push(decadaColF);
-                allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaG) {
                 regiaoColG = String(rowData.c[ind].v);
             } else if (ele == ColunaH) {
@@ -192,6 +186,13 @@ function loadImages() {
                               categoriaColD, descColL, fonteOriginalColI,
                               estadoColK, resolucaoColM, formatoColN, idColC,
                               palavraChaveColO, linkBigColP, linkSmallColQ, i);
+        
+        allDecades.push(decadaColF);
+        allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
+        allYears.push(anoColE);
+        allYears = allYears.filter((e, i, self) => i === self.indexOf(e));
+        allCategories.push(categoriaColD);
+        allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e));
         imagemColA = "";
         idColC = "";
         categoriaColD = "";
@@ -274,7 +275,6 @@ function populateNavegue() {
     navegueButton.className = "explore-button";
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	&#129130;";
     navegueButton.style.gridColumn = "1 / " + Math.ceil(1+allDecades.length/2).toString();
-    console.log("1 / " + Math.ceil(allDecades.length/2).toString());
     navegueButton.onclick = function() {
         showAcervo();
     }
@@ -362,7 +362,6 @@ function populateGrid() {
     let grid = document.getElementById('img-container');
     clear(grid);
     document.getElementById('pagination').innerText = "1 de " + searchedImages.length;
-    console.log("Data array length ", searchedImages.length)
     for (let i=0;i<searchedImages.length;i++) {
         createNewImage(searchedImages[i], grid);
     }
@@ -661,22 +660,16 @@ function resetPositionAndSize() {
         zoomImage.style.left = "25%";
         zoomImage.style.height = "auto";
         let windowHeight = window.innerHeight;
-        console.log("window innerHeight ", windowHeight, " offsetHeight ", zoomImage.offsetHeight)
         let calculatedHeight =(windowHeight-zoomImage.offsetHeight)/2 
         zoomImage.style.top = calculatedHeight.toString() + "px";
-        console.log(zoomImage.style.top, " ",(windowHeight-zoomImage.offsetHeight)/2 + " px");
-        
     } else {
         zoomImage.style.top = "25%";
         zoomImage.style.height = "50%";
         zoomImage.style.width = "auto";
         let windowWidth = window.innerWidth;
-        console.log("window innerWidth ", windowWidth, " offsetWidth ", zoomImage.offsetWidth)
         let calculatedWidth = (windowWidth-zoomImage.offsetWidth)/2
         zoomImage.style.left = calculatedWidth.toString() + "px";
-        console.log(zoomImage.style.left, " ", (windowWidth-zoomImage.offsetWidth)/2 + " px")
     }
-    console.log("reset position left ", zoomImage.style.left, " top ", zoomImage.style.top)
 }
 
 function left() {
@@ -757,11 +750,8 @@ function updateZoomedImage() {
     let zoomImage = document.getElementsByClassName("overlay-img")[0];
     var imageWidth = zoomImage.offsetWidth;
     var imageHeight = zoomImage.offsetHeight;
-    console.log("Img width ", imageWidth, " img height ",imageHeight);
     var newImageWidth = imageWidth * zoomLevel;
     var newImageHeight = imageHeight * zoomLevel;
-    console.log("NEW Img width ", newImageWidth, " NEW image height ",newImageHeight);
-
     zoomImage.style.transform = 'scale(' + zoomLevel + ')';
     zoomImage.style.width = newImageWidth + 'px';
     zoomImage.style.height = newImageHeight + 'px';

@@ -310,6 +310,10 @@ body {
     background-color: whitesmoke;
     display: grid;
     grid-template-columns: 15vw auto;
+    margin: 0;
+    padding: 0;
+    row-gap: 0;
+    column-gap: 0;
 }
 
 #sidebar {
@@ -463,7 +467,6 @@ body {
 
 .thumbnail {
     object-fit: cover;
-    padding-left: 1vw;
     padding-top: 1vh;
     width: 16vw;
     height: 16vw;

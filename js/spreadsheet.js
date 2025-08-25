@@ -357,7 +357,12 @@ function changeVisibilitySearch(visibility) {
 function populateGrid() {
     let grid = document.getElementById('img-container');
     clear(grid);
-    document.getElementById('pagination').innerText = "1 de " + searchedImages.length;
+    let pagination = document.getElementById('pagination');
+    if (searchedImages.length > 0) {
+        pagination.innerText = "1 de " + searchedImages.length;
+    } else {
+        pagination.innerText = "nenhum resultado encontrado";
+    }
     for (let i=0;i<searchedImages.length;i++) {
         createNewImage(searchedImages[i], grid);
     }
@@ -570,7 +575,12 @@ function onSearched() {
                 createNewImage(data[i], grid);
             }
         }
-        grid = document.getElementById('pagination').innerText = "1 de " +  searchedImages.length 
+        let pagination = document.getElementById('pagination');
+        if (searchedImages.length > 0) {
+            pagination.innerText = "1 de " + searchedImages.length;
+        } else {
+            pagination.innerText = "nenhum resultado encontrado";
+        } 
  }
 
 function createNewImage(imgMetaData, grid) {

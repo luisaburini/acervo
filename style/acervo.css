@@ -327,11 +327,11 @@ body {
     background-color: #d7d3d4;
   }
 
-  #img-column{
+  .img-column{
     width: 89vw;
   }
   
-  #pagination{
+  .pagination{
     width: 89vw;
     height: 7vh;
     font-family: GothamLight;
@@ -343,9 +343,9 @@ body {
     user-select: none; /* Standard syntax */
   }
   
-#img-container {
-    row-gap: 2vw;
-    column-gap: 2vh;
+.img-container {
+    row-gap: 1vw;
+    column-gap: 1vw;
     width: 89vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -468,14 +468,14 @@ body {
 .thumbnail {
     object-fit: cover;
     padding-top: 1vh;
-    width: 16vw;
-    height: 16vw;
+    width: 17vw;
+    height: 17vw;
 }
 
 .description {
     font-family: GothamBlack;
     font-size: 2vh;
-    color: black;
+    color: rgb(52, 50, 50);
 }
 
 .card {
@@ -490,7 +490,7 @@ body {
     height: 4vh;
     font-size: 2vh;
     text-align: left;
-    padding-left: 2vw;
+    padding-left: 1vw;
 }
 
 #overlay {

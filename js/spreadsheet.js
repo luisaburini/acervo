@@ -341,7 +341,7 @@ function changeVisibilityOfAll(visibility) {
 
 function changeVisibilitySearch(visibility) {
     elementsToHide = ["search", "search-box", "search-button", 
-        "outer-container", "sidebar", "pagination",
+        "outer-container", "sidebar", "pagination", "img-column",
         "img-container"];
     for (let i=0; i<elementsToHide.length; i++) {
         elem = document.getElementById(elementsToHide[i]);

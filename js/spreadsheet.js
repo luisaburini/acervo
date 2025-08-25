@@ -255,8 +255,7 @@ function populateNavegue() {
             decadeButton.onclick = function() {
                 changeVisibilityOfAll("collapse");
                 changeVisibilitySearch("visible");
-                let searchBox = document.getElementById("search-box");
-                searchBox.value = allDecades[i];
+                document.getElementById("search-box").value = allDecades[i];
                 onSearched();
                 showAcervo();
             };

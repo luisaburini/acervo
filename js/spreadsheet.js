@@ -361,7 +361,7 @@ function changeVisibilitySearch(visibility) {
 function populateGrid() {
     let grid = document.getElementById('img-container');
     clear(grid);
-    grid = document.getElementById('pagination').innerText = searchedImages.length;
+    document.getElementById('pagination').innerText = "1 de " + searchedImages.length;
     console.log("Data array length ", searchedImages.length)
     for (let i=0;i<searchedImages.length;i++) {
         createNewImage(searchedImages[i], grid);
@@ -575,7 +575,7 @@ function onSearched() {
                 createNewImage(data[i], grid);
             }
         }
-        grid = document.getElementById('pagination').innerText = searchedImages.length 
+        grid = document.getElementById('pagination').innerText = "1 de " +  searchedImages.length 
  }
 
 function createNewImage(imgMetaData, grid) {

@@ -300,13 +300,13 @@ function changeVisibilityOfAll(visibility) {
         "iniciativa", "iniciativa-grid", 
         "bottom"];
     for (let i=0; i<elementsToHide.length; i++) {
-        elem = document.getElementById(elementsToHide[i]);
+        let elem = document.getElementById(elementsToHide[i]);
         elem.style.visibility = visibility;
         if (visibility == "collapse") {
             elem.style.maxHeight = "0";
             if (elementsToHide[i] == "home-img") {
                 elem.src = ""
-                let home = document.getElementById("home");
+                let home = document.getElementById("home-container");
                 home.style.backgroundColor = "#000000";
                 home.style.height = "10vh";
 
@@ -315,7 +315,7 @@ function changeVisibilityOfAll(visibility) {
             elem.style.maxHeight = "none";
             if (elementsToHide[i] == "home-img") {
                 elem.src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
-                let home = document.getElementById("home");
+                let home = document.getElementById("home-container");
                 home.style.backgroundColor = "#26361c";
                 home.style.height = "auto";
             }

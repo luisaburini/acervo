@@ -178,10 +178,6 @@ function loadImages() {
       })
 
       if (linkBigColP != "" && linkSmallColQ != "") {
-        console.log("Imagem nova!",anoColE, " ", decadaColF, " ", regiaoColG, " ", autoriaColH, " ", 
-                              categoriaColD, " ", descColL, " ", fonteOriginalColI, " ",
-                              estadoColK, " ", resolucaoColM, " ", formatoColN, " ", idColC, " ",
-                              palavraChaveColO, " ", linkBigColP, " ", linkSmallColQ);
         let img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
                               categoriaColD, descColL, fonteOriginalColI,
                               estadoColK, resolucaoColM, formatoColN, idColC,

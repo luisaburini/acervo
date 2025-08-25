@@ -370,7 +370,8 @@ function populateGrid() {
 }
 
 function populateSidebar(allKeywords) {
-    let sidebar = document.getElementById("sidebar")
+    let sidebar = document.getElementById("sidebar");
+    sidebar.innerHTML = "";
 
     // Adiciona categoria
     let categoryHeader = document.createElement('div');

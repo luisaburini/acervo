@@ -257,6 +257,7 @@ function populateNavegue() {
                 changeVisibilitySearch("visible");
                 let searchBox = document.getElementById("search-box");
                 searchBox.innerHTML = allDecades[i];
+                showAcervo();
                 onSearched();
             };
             navegueGrid.appendChild(decadeButton);

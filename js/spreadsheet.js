@@ -361,6 +361,7 @@ function changeVisibilitySearch(visibility) {
 function populateGrid() {
     let grid = document.getElementById('img-container');
     clear(grid);
+    grid = document.getElementById('pagination').innerText = searchedImages.length;
     console.log("Data array length ", searchedImages.length)
     for (let i=0;i<searchedImages.length;i++) {
         createNewImage(searchedImages[i], grid);

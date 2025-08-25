@@ -322,6 +322,10 @@ body {
     width: 10vw;
     background-color: #d7d3d4;
   }
+
+  #img-column{
+    left: -3vw;
+  }
   
   #pagination{
     width: 100%;

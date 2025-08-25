@@ -256,9 +256,9 @@ function populateNavegue() {
                 changeVisibilityOfAll("collapse");
                 changeVisibilitySearch("visible");
                 let searchBox = document.getElementById("search-box");
-                searchBox.innerHTML = allDecades[i];
-                showAcervo();
+                searchBox.value = allDecades[i];
                 onSearched();
+                showAcervo();
             };
             navegueGrid.appendChild(decadeButton);
         }

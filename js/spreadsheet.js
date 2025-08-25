@@ -164,11 +164,6 @@ function loadImages() {
                 formatoColN = String(rowData.c[ind].v);
             } else if (ele == ColunaO) {
                 palavraChaveColO = String(rowData.c[ind].v);
-                let kwds = String(rowData.c[ind].v).split(separator);
-                for (let k = 0; k < kwds.length; k++){
-                    allKeywords.push(kwds[k]);
-                }
-                allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e));
             } else if (ele == ColunaP) {
                 linkBigColP = String(rowData.c[ind].v)
             } else if (ele == ColunaQ) {
@@ -189,6 +184,11 @@ function loadImages() {
         allYears = allYears.filter((e, i, self) => i === self.indexOf(e));
         allCategories.push(categoriaColD);
         allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e));
+        let kwds = palavraChaveColO.split(separator);
+        for (let k = 0; k < kwds.length; k++){
+            allKeywords.push(kwds[k]);
+        }
+        allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e));
         imagemColA = "";
         idColC = "";
         categoriaColD = "";

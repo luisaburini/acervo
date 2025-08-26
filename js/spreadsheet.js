@@ -289,6 +289,11 @@ function showAcervo() {
     populateGrid();
 }
 
+function showAcervoAll() {
+    searchedImages = data;
+    showAcervo();
+}
+
 function showInicio() {
     changeVisibilityOfAll("visible");
     changeVisibilitySearch("collapse");

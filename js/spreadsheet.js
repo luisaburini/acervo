@@ -275,13 +275,13 @@ function populateNavegue() {
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	&#129130;";
     navegueButton.style.gridColumn = "1 / " + Math.ceil(1+allDecades.length/2).toString();
     navegueButton.onclick = function() {
+        searchedImages = data;
         showAcervo();
     }
     navegueGrid.appendChild(navegueButton);
 }
 
 function showAcervo() {
-    searchedImages = data;
     changeVisibilityOfAll("collapse");
     changeVisibilitySearch("visible");
     populateSidebar(allKeywords);

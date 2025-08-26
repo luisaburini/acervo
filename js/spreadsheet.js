@@ -255,7 +255,10 @@ function populateNavegue() {
             decadeButton.onclick = function() {
                 changeVisibilityOfAll("collapse");
                 changeVisibilitySearch("visible");
-                document.getElementById("search-box").value = allDecades[i];
+                let searchBox = document.getElementById("search-box");
+                let noAccent = removeAccents(allDecades[i]);
+                searchBox.innerHTML = noAccent;
+                searchBox.value = noAccent;
                 onSearched();
                 showAcervo();
             };

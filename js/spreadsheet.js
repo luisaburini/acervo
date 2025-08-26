@@ -261,6 +261,7 @@ function populateNavegue() {
                 searchBox.value = noAccent;
                 onSearched();
                 showAcervo();
+                inicio();
             };
             navegueGrid.appendChild(decadeButton);
         }

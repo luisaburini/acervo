@@ -1,12 +1,13 @@
 body {
     width: 100vw;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #upper {
   display: grid;
   width: 100vw;
   grid-template-columns: 1fr;
+  height: auto;
 }
 
 

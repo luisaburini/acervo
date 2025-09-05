@@ -548,6 +548,7 @@ body {
   display: grid;
   grid-template-rows: 10vh 1px 1fr;
   grid-template-columns: 1fr 5vw 5vw 5vw 1fr;
+  margin-top: 2vh;
 }
 
 .bottom-header {
@@ -590,6 +591,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   height: 20vh;
+  margin-top: 2vh;
 }
 
 .contato-item{

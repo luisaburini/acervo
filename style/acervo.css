@@ -139,7 +139,7 @@ body {
 .navegue-item{
   font-family: GothamBlack;
   font-size: 5vh;
-  padding-top: 3vh;
+  padding-top: 5vh;
   color: #edfbe4;
   width: 20vh;
   height: 15vh;
@@ -149,6 +149,8 @@ body {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .explore-button {

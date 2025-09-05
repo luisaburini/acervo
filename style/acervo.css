@@ -533,7 +533,7 @@ body {
 }
 
 #bottom{
-  height: 30vh;
+  height: 20vh;
   width: 100%;
   background-color: #1b1b1b;
   display: grid;
@@ -546,7 +546,7 @@ body {
   display: grid;
   grid-template-rows: 10vh 1px 1fr;
   grid-template-columns: 1fr 5vw 5vw 5vw 1fr;
-  margin-top: 10vh;
+  margin-top: 2vh;
 }
 
 .bottom-header {
@@ -596,7 +596,7 @@ body {
 .contato-item{
   font-family: GothamBlack;
   color: #cecece;
-  font-size: 3vh;
+  font-size: 2vh;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */

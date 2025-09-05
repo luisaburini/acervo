@@ -533,7 +533,7 @@ body {
 }
 
 #bottom{
-  height: 40vh;
+  height: 30vh;
   width: 100%;
   background-color: #1b1b1b;
   display: grid;
@@ -596,7 +596,7 @@ body {
 .contato-item{
   font-family: GothamBlack;
   color: #cecece;
-  font-size: 4vh;
+  font-size: 3vh;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */

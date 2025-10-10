@@ -207,7 +207,7 @@ function loadImages() {
         }
     })
      changeVisibilitySearch("collapse");
-     populateGrid();
+     populateNavegue();
     })
 }
 

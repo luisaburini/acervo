@@ -209,7 +209,6 @@ function loadImages() {
         data.push(img)
       }
     })
-    populateNavegue();
     changeVisibilitySearch("collapse");
     })
 }
@@ -237,13 +236,13 @@ function populateNavegue() {
     allDecades.sort();
 
     for (let i=0; i<allDecades.length; i++){
-        let decadeButton = document.createElement('div');
+        let decadeButton = document.createElement('img');
         decadeButton.className = "navegue-item";
         decadeButton.innerText = allDecades[i];
         decadeButton.onmouseover = function() {
             decadeButton.innerText = "";
             imgPath = "../imgs/Foto_"+allDecades[i]+".jpg"
-            decadeButton.style.backgroundImage = imgPath;
+            decadeButton.src = imgPath;
             console.log(allDecades[i]);
             console.log(imgPath);
             console.log(decadeButton.style.backgroundImage);

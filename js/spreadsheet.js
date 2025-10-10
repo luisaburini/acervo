@@ -105,112 +105,110 @@ function loadImages() {
     fetch(url)
     .then(res => res.text())
     .then(rep => {
-        //Apaga textos adicionais e extrai so o JSON:
-        const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-        let colz = []
-        //Extrai nome das colunas
-        jsonData.table.cols.forEach((heading) => {
-        let column = heading.label;
-        colz.push(column)
+            //Apaga textos adicionais e extrai so o JSON:
+            const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+            let colz = []
+            //Extrai nome das colunas
+            jsonData.table.cols.forEach((heading) => {
+            let column = heading.label;
+            colz.push(column)
+            })
+        //Extrai dados das linhas
+        jsonData.table.rows.forEach((rowData) => {
+            let imagemColA = "";
+            let idColC = "";
+            let categoriaColD = "";
+            let anoColE = "";
+            let decadaColF = "";
+            let regiaoColG = "";
+            let autoriaColH = "";
+            let fonteOriginalColI = "";
+            let temaColJ = "";
+            let estadoColK = "";
+            let descColL = "";
+            let resolucaoColM = "";
+            let formatoColN = "";
+            let palavraChaveColO = "";
+            let linkBigColP = "";
+            let linkSmallColQ = "";
+            colz.forEach((ele, ind) => {
+            if (rowData.c[ind] != null && rowData.c[ind].v != null) {
+                if (ele == ColunaA) {
+                    imagemColA = String(rowData.c[ind].v)
+                } else if (ele == ColunaB) {
+                    console.log("Seq ", rowData.c[ind].v)
+                } else if (ele == ColunaC) {
+                    idColC = String(rowData.c[ind].v)
+                } else if (ele == ColunaD) {
+                    categoriaColD = String(rowData.c[ind].v)
+                } else if (ele == ColunaE) {
+                    anoColE = String(rowData.c[ind].v);
+                } else if (ele == ColunaF) {
+                    decadaColF = String(rowData.c[ind].v);
+                } else if (ele == ColunaG) {
+                    regiaoColG = String(rowData.c[ind].v);
+                } else if (ele == ColunaH) {
+                    autoriaColH = String(rowData.c[ind].v);
+                } else if (ele == ColunaI) {
+                    fonteOriginalColI = String(rowData.c[ind].v);
+                } else if (ele == ColunaJ) {
+                    temaColJ = String(rowData.c[ind].v);
+                } else if (ele == ColunaK) {
+                    estadoColK = String(rowData.c[ind].v);
+                } else if (ele == ColunaL) {
+                    descColL = String(rowData.c[ind].v);
+                } else if (ele == ColunaM) {
+                    resolucaoColM = String(rowData.c[ind].v);
+                } else if (ele == ColunaN) {
+                    formatoColN = String(rowData.c[ind].v);
+                } else if (ele == ColunaO) {
+                    palavraChaveColO = String(rowData.c[ind].v);
+                } else if (ele == ColunaP) {
+                    linkBigColP = String(rowData.c[ind].v)
+                } else if (ele == ColunaQ) {
+                    linkSmallColQ = String(rowData.c[ind].v)
+                }
+            }    
         })
-    //Extrai dados das linhas
-    jsonData.table.rows.forEach((rowData) => {
-        let imagemColA = "";
-        let idColC = "";
-        let categoriaColD = "";
-        let anoColE = "";
-        let decadaColF = "";
-        let regiaoColG = "";
-        let autoriaColH = "";
-        let fonteOriginalColI = "";
-        let temaColJ = "";
-        let estadoColK = "";
-        let descColL = "";
-        let resolucaoColM = "";
-        let formatoColN = "";
-        let palavraChaveColO = "";
-        let linkBigColP = "";
-        let linkSmallColQ = "";
-
-        colz.forEach((ele, ind) => {
-          if (rowData.c[ind] != null && rowData.c[ind].v != null) {
-            if (ele == ColunaA) {
-                imagemColA = String(rowData.c[ind].v)
-            } else if (ele == ColunaB) {
-                console.log("Seq ", rowData.c[ind].v)
-            } else if (ele == ColunaC) {
-                idColC = String(rowData.c[ind].v)
-            } else if (ele == ColunaD) {
-                categoriaColD = String(rowData.c[ind].v)
-            } else if (ele == ColunaE) {
-                anoColE = String(rowData.c[ind].v);
-            } else if (ele == ColunaF) {
-                decadaColF = String(rowData.c[ind].v);
-            } else if (ele == ColunaG) {
-                regiaoColG = String(rowData.c[ind].v);
-            } else if (ele == ColunaH) {
-                autoriaColH = String(rowData.c[ind].v);
-            } else if (ele == ColunaI) {
-                fonteOriginalColI = String(rowData.c[ind].v);
-            } else if (ele == ColunaJ) {
-                temaColJ = String(rowData.c[ind].v);
-            } else if (ele == ColunaK) {
-                estadoColK = String(rowData.c[ind].v);
-            } else if (ele == ColunaL) {
-                descColL = String(rowData.c[ind].v);
-            } else if (ele == ColunaM) {
-                resolucaoColM = String(rowData.c[ind].v);
-            } else if (ele == ColunaN) {
-                formatoColN = String(rowData.c[ind].v);
-            } else if (ele == ColunaO) {
-                palavraChaveColO = String(rowData.c[ind].v);
-            } else if (ele == ColunaP) {
-                linkBigColP = String(rowData.c[ind].v)
-            } else if (ele == ColunaQ) {
-                linkSmallColQ = String(rowData.c[ind].v)
+        if (linkBigColP != "" && linkSmallColQ != "") {
+            let img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
+                                categoriaColD, descColL, fonteOriginalColI,
+                                estadoColK, resolucaoColM, formatoColN, idColC,
+                                palavraChaveColO, linkBigColP, linkSmallColQ, i);
+            allDecades.push(decadaColF);
+            allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
+            allYears.push(anoColE);
+            allYears = allYears.filter((e, i, self) => i === self.indexOf(e));
+            allCategories.push(categoriaColD);
+            allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e));
+            let kwds = palavraChaveColO.split(separator);
+            for (let k = 0; k < kwds.length; k++){
+                allKeywords.push(kwds[k]);
             }
-          }    
-      })
-
-      if (linkBigColP != "" && linkSmallColQ != "") {
-        let img = new ImgMetadata(anoColE, decadaColF, regiaoColG, autoriaColH, 
-                              categoriaColD, descColL, fonteOriginalColI,
-                              estadoColK, resolucaoColM, formatoColN, idColC,
-                              palavraChaveColO, linkBigColP, linkSmallColQ, i);
-        
-        allDecades.push(decadaColF);
-        allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
-        allYears.push(anoColE);
-        allYears = allYears.filter((e, i, self) => i === self.indexOf(e));
-        allCategories.push(categoriaColD);
-        allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e));
-        let kwds = palavraChaveColO.split(separator);
-        for (let k = 0; k < kwds.length; k++){
-            allKeywords.push(kwds[k]);
+            allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e));
+            imagemColA = "";
+            idColC = "";
+            categoriaColD = "";
+            anoColE = "";
+            decadaColF = "";
+            regiaoColG = "";
+            autoriaColH = "";
+            fonteOriginalColI = "";
+            temaColJ = "";
+            estadoColK = "";
+            descColL = "";
+            resolucaoColM = "";
+            formatoColN = "";
+            palavraChaveColO = "";
+            linkBigColP = "";
+            linkSmallColQ = "";
+            i = i+1;
+            data.push(img)
         }
-        allKeywords = allKeywords.filter((e, i, self) => i === self.indexOf(e));
-        imagemColA = "";
-        idColC = "";
-        categoriaColD = "";
-        anoColE = "";
-        decadaColF = "";
-        regiaoColG = "";
-        autoriaColH = "";
-        fonteOriginalColI = "";
-        temaColJ = "";
-        estadoColK = "";
-        descColL = "";
-        resolucaoColM = "";
-        formatoColN = "";
-        palavraChaveColO = "";
-        linkBigColP = "";
-        linkSmallColQ = "";
-        i = i+1;
-        data.push(img)
-      }
+        })
+     changeVisibilitySearch("collapse");
     })
-    changeVisibilitySearch("collapse");
-    })
+    populateGrid();
 }
 
 function removeAccents(word) {

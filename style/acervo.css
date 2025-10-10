@@ -7,7 +7,7 @@ body {
   display: grid;
   width: 100vw;
   grid-template-columns: 1fr;
-  height: auto;
+  height: fit-content;
 }
 
 
@@ -207,6 +207,11 @@ body {
 .igrejinha{
   content: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
   width: 100%;
+}
+
+#bolinhas-grid{
+  display: grid;
+  grid-template-rows: ;
 }
 
 #search {

@@ -105,14 +105,14 @@ function loadImages() {
     fetch(url)
     .then(res => res.text())
     .then(rep => {
-            //Apaga textos adicionais e extrai so o JSON:
-            const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-            let colz = []
-            //Extrai nome das colunas
-            jsonData.table.cols.forEach((heading) => {
+        //Apaga textos adicionais e extrai so o JSON:
+        const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
+        let colz = []
+        //Extrai nome das colunas
+        jsonData.table.cols.forEach((heading) => {
             let column = heading.label;
             colz.push(column)
-            })
+        })
         //Extrai dados das linhas
         jsonData.table.rows.forEach((rowData) => {
             let imagemColA = "";
@@ -205,10 +205,10 @@ function loadImages() {
             i = i+1;
             data.push(img)
         }
-        })
-     changeVisibilitySearch("collapse");
     })
-    populateGrid();
+     changeVisibilitySearch("collapse");
+     populateGrid();
+    })
 }
 
 function removeAccents(word) {

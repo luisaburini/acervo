@@ -242,7 +242,7 @@ function populateNavegue() {
         decadeButton.innerText = allDecades[i];
         decadeButton.onmouseover = function() {
             decadeButton.innerText = "";
-            decadeButton.style.backgroundImage = "./imgs/Foto_" + +".jpg";
+            decadeButton.style.backgroundImage = "../imgs/Foto_" + +".jpg";
             console.log(decadeButton.style.backgroundImage);
         };
         decadeButton.onmouseout = function() {

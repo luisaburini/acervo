@@ -295,6 +295,7 @@ function showAcervoAll() {
 function showInicio() {
     changeVisibilityOfAll("visible");
     changeVisibilitySearch("collapse");
+    document.getElementById("upper").style.height = "auto";
 }
 
 function showContato(){

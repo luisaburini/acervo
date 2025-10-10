@@ -234,7 +234,7 @@ function populateNavegue() {
     allDecades.sort();
 
     for (let i=0; i<allDecades.length; i++){
-        let decadeButton = document.createElement('img');
+        let decadeButton = document.createElement('div');
         decadeButton.className = "navegue-item";
         decadeButton.innerText = allDecades[i];
         decadeButton.onmouseover = function() {

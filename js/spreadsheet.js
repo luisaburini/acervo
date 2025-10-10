@@ -237,34 +237,32 @@ function populateNavegue() {
     allDecades.sort();
 
     for (let i=0; i<allDecades.length; i++){
-        if (getFirstImageFromDecade(allDecades[i]) != "") {
-            let decadeButton = document.createElement('div');
-            decadeButton.className = "navegue-item";
+        let decadeButton = document.createElement('div');
+        decadeButton.className = "navegue-item";
+        decadeButton.innerText = allDecades[i];
+        decadeButton.onmouseover = function() {
+            decadeButton.innerText = "";
+            decadeButton.style.backgroundImage = "./imgs/Foto_" + +".jpg";
+            console.log(decadeButton.style.backgroundImage);
+        };
+        decadeButton.onmouseout = function() {
+            decadeButton.style.color = "white";
+            decadeButton.style.backgroundImage = "";
             decadeButton.innerText = allDecades[i];
-            decadeButton.onmouseover = function() {
-                decadeButton.innerText = "";
-                decadeButton.style.backgroundImage = getFirstImageFromDecade(allDecades[i]);
-                console.log(getFirstImageFromDecade(allDecades[i]));
-            };
-            decadeButton.onmouseout = function() {
-                decadeButton.style.color = "white";
-                decadeButton.style.backgroundImage = "";
-                decadeButton.innerText = allDecades[i];
-                console.log(allDecades[i])
-            };
-            decadeButton.onclick = function() {
-                changeVisibilityOfAll("collapse");
-                changeVisibilitySearch("visible");
-                let searchBox = document.getElementById("search-box");
-                let noAccent = removeAccents(allDecades[i]);
-                searchBox.innerHTML = noAccent;
-                searchBox.value = noAccent;
-                onSearched();
-                showAcervo();
-                inicio();
-            };
-            navegueGrid.appendChild(decadeButton);
-        }
+            console.log(allDecades[i])
+        };
+        decadeButton.onclick = function() {
+            changeVisibilityOfAll("collapse");
+            changeVisibilitySearch("visible");
+            let searchBox = document.getElementById("search-box");
+            let noAccent = removeAccents(allDecades[i]);
+            searchBox.innerHTML = noAccent;
+            searchBox.value = noAccent;
+            onSearched();
+            showAcervo();
+            inicio();
+        };
+        navegueGrid.appendChild(decadeButton);
     } 
     let spacersAmount = allDecades.length % 2;
     for (let i=0; i<spacersAmount; i++) {

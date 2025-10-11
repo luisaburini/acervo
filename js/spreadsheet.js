@@ -347,7 +347,15 @@ function changeVisibilityOfAll(visibility) {
 }
 
 function changeVisibilitySearch(visibility) {
-    elementsToHide = ["search", "search-box", "search-button", 
+    search = document.getElementById("search")
+    if (visibility == "collapse") {
+        search.style.display = "none";
+    } else {
+        search.style.display = "block";
+    }
+
+
+    elementsToHide = ["search-box", "search-button", 
         "outer-container", "sidebar", "pagination", "img-column",
         "img-container"];
     for (let i=0; i<elementsToHide.length; i++) {
@@ -355,8 +363,10 @@ function changeVisibilitySearch(visibility) {
         elem.style.visibility = visibility;
         if (visibility == "collapse") {
             elem.style.maxHeight = "0";
+            elem.style.maxWidth = "0";
         } else {
             elem.style.maxHeight = "none";
+            elem.style.maxWidth = "none";
         }
     }
 }
@@ -786,4 +796,20 @@ function updateZoomedImage() {
 
 function inicio() {
     window.scrollTo(0, 0);
+}
+
+function fotoCarrossel1(){
+    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrossel.jpg')";
+}
+
+function fotoCarrossel2(){
+    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrosse2.jpg')";
+}
+
+function fotoCarrossel3(){
+    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrosse3.jpg')";
+}
+
+function fotoCarrossel4(){
+    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrosse4.jpg')";
 }

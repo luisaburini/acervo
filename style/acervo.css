@@ -1,6 +1,8 @@
 body {
     width: 100vw;
     overflow: auto;
+    margin: 0;
+    padding: 0;
 }
 
 #upper {
@@ -17,7 +19,8 @@ body {
   z-index: 0;
   content: ""; /* Create a pseudo-element */
   display: block;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .home::before{
@@ -63,55 +66,24 @@ body {
   position: relative;
   z-index: 10;
   height: 100%;
-  width: 80vw;
-  left: 10vw;
+  width: 100%;
   display: grid;
-  grid-template-rows: 20vh 1px 1fr;
-  grid-template-columns: 1fr 9vw 9vw 9vw 1fr;
-  margin-top: 10vh;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr; 
 }
 
 
-#header {
-    font-family: "Viaoda Libre", serif;
-    font-size: 8vw;
-    font-weight: lighter;
-    text-align: center;
-    color: white;
-    grid-column: 1 / 6;
-    width: 100%;
-    grid-row: 1;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-
-#subheader {
-  font-family: "Viaoda Libre", serif;
-  font-size: 6vh;
-  font-weight: lighter;
-  text-align: center;
-  grid-column: 2 / 1;
-  color: white;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-
-#subsubheader {
-  font-family: "Mr Dafoe", cursive;
-  font-size: 20vh;
-  text-align: center;
-  color: white;
-  grid-column: 1 / 6;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */  
+.logo-home{
+  width: 80%;
+  height: auto;
+  margin: auto;
 }
 
 #navegue {
   background-color:#26361c;
   position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 #navegue-header{
@@ -211,7 +183,15 @@ body {
 
 #bolinhas-grid{
   display: grid;
-  grid-template-rows: ;
+  grid-template-columns: repeat(4, 60px);
+  bottom: 0;
+  text-align: center;
+  z-index: 100;
+  background-color: red;
+}
+
+#bolinha{
+  background-image: url('../imgs/bolinha.png');
 }
 
 #search {
@@ -220,6 +200,7 @@ body {
   height: 35vh;
   background-color: black;
   visibility: collapse;
+  display: none;
 }
 
 #search-grid{

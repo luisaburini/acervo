@@ -324,11 +324,11 @@ body {
 }
 
 .img-column{
-  width: 89vw;
+  width: 85vw;
 }
   
 .pagination{
-  width: 89vw;
+  width: 85vw;
   height: 7vh;
   font-family: GothamLight;
   font-size: 5vh;
@@ -340,7 +340,7 @@ body {
 }
   
 .img-container {
-  width: 89vw;
+  width: 85vw;
   row-gap: 1vw;
   column-gap: 1vw;
   display: grid;
@@ -464,8 +464,8 @@ body {
 .thumbnail {
     object-fit: cover;
     padding-top: 1vh;
-    width: 17vw;
-    height: 17vw;
+    width: 15vw;
+    height: 15vw;
 }
 
 .description {
@@ -483,7 +483,7 @@ body {
 .cardattribute{
     font-family: GothamLight;
     color: black;
-    height: 4vh;
+    height: auto;
     font-size: 2vh;
     text-align: left;
     padding-left: 1vw;

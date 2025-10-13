@@ -323,7 +323,7 @@ function changeVisibilityOfAll(visibility) {
         } else {
             elem.style.maxHeight = "none";
             if (elementsToHide[i] == "home-img") {
-                elem.src = "https://live.staticflickr.com/65535/54526439361_13838f3284_k.jpg"
+                elem.src = "./imgs/Foto Home.jpg"
                 let home = document.getElementById("home-container");
                 home.style.backgroundColor = "#26361c";
                 home.style.height = "auto";
@@ -606,25 +606,25 @@ function createNewImage(imgMetaData, grid) {
     if (imgMetaData.category != "") {
         let categoryAttr = document.createElement("p");
         categoryAttr.className = "cardattribute";
-        categoryAttr.innerHTML = "<b>Categoria:<b> " + imgMetaData.category;
+        categoryAttr.innerHTML = "<b>Categoria:</b> " + imgMetaData.category;
         div.appendChild(categoryAttr);
     }
     if (imgMetaData.region != "" ) {
         let regionAttr = document.createElement("p");
         regionAttr.className = "cardattribute";
-        regionAttr.innerHTML = "<b>Bairro/Região:<b> " + imgMetaData.region;
+        regionAttr.innerHTML = "<b>Bairro/Região:</b> " + imgMetaData.region;
         div.appendChild(regionAttr);
     }
     if (imgMetaData.source != "") {
         let sourceAttr = document.createElement("p");
         sourceAttr.className = "cardattribute";
-        sourceAttr.innerHTML = "<b>Fonte Original:<b> " + imgMetaData.source;
+        sourceAttr.innerHTML = "<b>Fonte Original:</b> " + imgMetaData.source;
         div.appendChild(sourceAttr);
     }
     if (imgMetaData.keywords != "") {
         let keywordsAttr = document.createElement("p");
         keywordsAttr.className = "cardattribute";
-        keywordsAttr.innerHTML = "<b>Palavras-chave:<b> " + imgMetaData.keywords;
+        keywordsAttr.innerHTML = "<b>Palavras-chave:</b> " + imgMetaData.keywords;
         div.appendChild(keywordsAttr);
     }
     div.style.height = "auto";

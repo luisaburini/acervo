@@ -64,22 +64,28 @@ init()
 
 function init() {
     loadImages();
-    document.body.addEventListener('keydown', function (event) {
-        let zoomImage = document.getElementsByClassName("overlay-img")[0];
-        const imgVisibility = zoomImage.style.visibility;
-        if(imgVisibility.localeCompare("visible") == 0) {
-            const key = event.key;
-            switch (key) {
-                case "ArrowLeft":
-                    left();
-                    break;
-                case "ArrowRight":
-                    right();
-                    break;
-            }
-        } 
-        
-    });
+    document.onkeydown = function (e) {
+       processKeys(e);
+    };
+    // document.body.addEventListener('keydown', function (event) {
+    //     processKeys(event);       
+    // });
+}
+
+function processKeys(event) {
+    let zoomImage = document.getElementsByClassName("overlay-img")[0];
+    const imgVisibility = zoomImage.style.visibility;
+    if(imgVisibility.localeCompare("visible") == 0) {
+        const key = event.key;
+        switch (key) {
+            case "ArrowLeft":
+                left();
+                break;
+            case "ArrowRight":
+                right();
+                break;
+        }
+    } 
 }
 
 function mouseMove(e) {
@@ -272,7 +278,7 @@ function populateNavegue() {
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	<img class=\"setinha\" src=\".\/imgs\/\Seta_botao _Explorar acervo_.png\"/>";
-    navegueButton.style.gridColumn = "2 / " + Math.ceil(1+allDecades.length/2).toString();
+    navegueButton.style.gridColumn = "2 / " + Math.ceil(allDecades.length/2).toString();
     navegueButton.onclick = function() {
         searchedImages = data;
         showAcervo();

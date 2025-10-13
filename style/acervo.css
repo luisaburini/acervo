@@ -174,7 +174,7 @@ body {
   width: 50vw;
 }
 
-#bolinhas-grid{
+.bolinhas-grid{
   object-fit: cover;
   display: grid;
   grid-template-columns: repeat(4, 60px);
@@ -183,7 +183,7 @@ body {
   background-color: red;
 }
 
-#bolinha{
+.bolinha{
   background-image: url('../imgs/bolinha.png');
   background-color: purple;
 }

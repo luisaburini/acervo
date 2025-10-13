@@ -532,7 +532,7 @@ body {
 .contato{
   display: grid;
   grid-template-columns: 1fr;
-  height: 20vh;
+  height: 15vh;
   margin-top: 2vh;
 }
 

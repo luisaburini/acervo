@@ -372,6 +372,7 @@ function changeVisibilitySearch(visibility) {
     } else {
         search.style.display = "block";
     }
+    upperBarElems = ["upperbar", "upperbar-item"]
 
 
     elementsToHide = ["search-box", "search-button", "search-logo",
@@ -386,6 +387,12 @@ function changeVisibilitySearch(visibility) {
         } else {
             elem.style.maxHeight = "none";
             elem.style.maxWidth = "none";
+            for (let j=0; j<upperBarElems.length; j++){
+                upper = document.getElementsByClassName(upperBarElems[j]);
+                for (let k=0; k<upper.length; k++){
+                    upper[k].style.visibility = "collapse"
+                }
+            }
         }
     }
 }

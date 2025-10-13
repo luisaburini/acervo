@@ -335,6 +335,9 @@ body {
     font-size: 2vh;
     margin: 1vh;
     cursor: grab;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
   
 
@@ -413,7 +416,7 @@ body {
     padding-right: 0.2em;
     background-color: #f0f194;
     border: 2px double  #818f5c;
-    border-radius: 10%;
+    border-radius: 30%;
     box-shadow: 0 0 0 4px #f0f194, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .1s ease-in-out, .4s color;
     font-family: GothamLight;
@@ -421,7 +424,6 @@ body {
     font-size: 3vh;
     z-index: 20;
     position: relative;
-    width: 35vw;
 }
   
 .explore-button:active {

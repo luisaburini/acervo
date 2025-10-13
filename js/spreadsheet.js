@@ -435,6 +435,9 @@ function changeVisibilitySearch(visibility) {
 }
 
 function populateGrid() {
+    let paginationInput = document.getElementById("pagination-input");
+    paginationInput.innerHTML = currentPage;
+    paginationInput.value = currentPage;
     let grid = document.getElementById('img-container');
     clear(grid);
     let pagination = document.getElementById('pagination');
@@ -1062,8 +1065,6 @@ function validatePagInput() {
     let value = searchBox.value.replace(/^\s+|\s+$/gm,'');
     if (Number.isNaN(Number(value))) {
         currentPage = 1;
-        paginationInput.value = "1";
-        paginationInput.innerHTML = "1";
         populateGrid();
     }
 }

@@ -250,32 +250,51 @@ function getFirstImageFromDecade(decade) {
 function populateNavegue() {
     let navegueGrid = document.getElementById("navegue-grid");
     let gridTemplateColumns = "1fr "
-    navegueGrid.style.gridTemplateColumns = gridTemplateColumns.repeat(1+allDecades.length/2);
-    allDecades.sort();
+    let thisDecades = [
+        "1930",
+        "1940",
+        "1950",
+        "1960",
+        "1970",
+        "1980",
+        "1990",
+        "2000",
+        "2010",
+        "2020",
+    ];
+    navegueGrid.style.gridTemplateColumns = gridTemplateColumns.repeat(1+thisDecades.length/2);
+    let decadesImgs = [
+        "https://live.staticflickr.com/65535/54852409218_547f207b5e_m.jpg", // alt="Foto_1930"
+        "https://live.staticflickr.com/65535/54852409213_2a5a52a163_m.jpg", // alt="Foto_1940"
+        "https://live.staticflickr.com/65535/54851286197_c44ff779af_m.jpg", // alt="Foto_1950"
+        "https://live.staticflickr.com/65535/54851286162_6ef4ec7f90_m.jpg", // alt="Foto_1960"
+        "https://live.staticflickr.com/65535/54852454290_f5c82af5fe_m.jpg", // alt="Foto_1970"
+        "https://live.staticflickr.com/65535/54851286157_c65f0db336_m.jpg", // alt="Foto_1980"
+        "https://live.staticflickr.com/65535/54852454275_a15ffb9a5b_m.jpg", // alt="Foto_1990"
+        "https://live.staticflickr.com/65535/54852153026_ded5fdd273_m.jpg", // alt="Foto_2000"
+        "https://live.staticflickr.com/65535/54852409183_a4bbdf29ce_m.jpg", // alt="Foto_2010"
+        "https://live.staticflickr.com/65535/54852454255_60bfa203df_m.jpg", // alt="Foto_2020"
+    ];
 
-    for (let i=0; i<allDecades.length; i++){
+    for (let i=0; i<thisDecades.length; i++){
         let decadeButton = document.createElement('div');
         decadeButton.className = "navegue-item";
-        decadeButton.innerText = allDecades[i];
+        decadeButton.innerText = thisDecades[i];
         decadeButton.onmouseover = function() {
             decadeButton.innerText = "";
-            imgPath = "url(/imgs/Foto_"+allDecades[i]+".jpg)"
-            decadeButton.style.backgroundImage = imgPath;
-            console.log(allDecades[i]);
-            console.log(imgPath);
-            console.log(decadeButton.style.backgroundImage);
+            decadeButton.style.backgroundImage = decadesImgs[i];
         };
         decadeButton.onmouseout = function() {
             decadeButton.style.color = "white";
             decadeButton.style.backgroundImage = "";
-            decadeButton.innerText = allDecades[i];
-            console.log(allDecades[i])
+            decadeButton.innerText = thisDecades[i];
+            console.log(thisDecades[i])
         };
         decadeButton.onclick = function() {
             changeVisibilityOfAll("collapse");
             changeVisibilitySearch("visible");
             let searchBox = document.getElementById("search-box");
-            let noAccent = removeAccents(allDecades[i]);
+            let noAccent = removeAccents(thisDecades[i]);
             searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
             onSearched();
@@ -284,7 +303,7 @@ function populateNavegue() {
         };
         navegueGrid.appendChild(decadeButton);
     } 
-    let spacersAmount = allDecades.length % 2;
+    let spacersAmount = thisDecades.length % 2;
     for (let i=0; i<spacersAmount; i++) {
         let spacer = document.createElement("spacer");
         navegueGrid.appendChild(spacer);
@@ -292,7 +311,7 @@ function populateNavegue() {
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	<img class=\"setinha\" src=\".\/imgs\/\Seta_botao _Explorar acervo_.png\"/>";
-    navegueButton.style.gridColumn = "1 / " + Math.ceil(1+allDecades.length/2).toString();
+    navegueButton.style.gridColumn = "1 / " + Math.ceil(1+thisDecades.length/2).toString();
     navegueButton.onclick = function() {
         searchedImages = data;
         showAcervo();

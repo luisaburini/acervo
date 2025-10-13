@@ -330,13 +330,12 @@ body {
 }
 
 .sidebarattribute{
-  background-color: red;
-    font-family: GothamBlack;
-    color: black;
-    height: 5vh;
-    font-size: 2vh;
-    margin: 1vh;
-    cursor: grab;
+  font-family: GothamBlack;
+  color: black;
+  height: 5vh;
+  font-size: 2vh;
+  margin: 1vh;
+  cursor: grab;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */

@@ -452,7 +452,7 @@ function populateSidebar(allKeywords) {
     regionHeader.onclick = function() {
         console.log("Clicked region header")
         let regionDiv = document.getElementById("regionDiv");
-        if (regionDiv.style.display.localeCompare("block")) {
+        if (regionDiv.style.display.localeCompare("block") == 0) {
             regionDiv.style.display = "none";
         } else {
             regionDiv.style.display = "block";
@@ -497,7 +497,7 @@ function populateSidebar(allKeywords) {
     categoryHeader.innerText = "Categorias";
     categoryHeader.onclick = function() {
         let categoryDiv = document.getElementById("categoryDiv"); 
-        if (categoryDiv.style.display.localeCompare("block")) {
+        if (categoryDiv.style.display.localeCompare("block") == 0) {
             categoryDiv.style.display = "none";    
         } else {
             document.getElementById("keywordsDiv").style.display = "none";
@@ -542,7 +542,7 @@ function populateSidebar(allKeywords) {
     decadeHeader.innerText = "Década"
     decadeHeader.onclick = function() {
         let decadeDiv = document.getElementById("decadeDiv");
-        if (decadeDiv.style.display.localeCompare("block")) {
+        if (decadeDiv.style.display.localeCompare("block") == 0) {
             decadeDiv.style.display = "none";
         } else {
             decadeDiv.style.display = "block";
@@ -585,7 +585,7 @@ function populateSidebar(allKeywords) {
     keywordsHeader.innerText = "Palavras-chave"
     keywordsHeader.onclick = function() {
         let keywordsDiv = document.getElementById("keywordsDiv");
-        if(keywordsDiv.style.display.localeCompare("block")){
+        if(keywordsDiv.style.display.localeCompare("block") == 0){
             keywordsDiv.style.display = "none";
         } else {
             document.getElementById("decadeDiv")

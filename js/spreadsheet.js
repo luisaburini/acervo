@@ -101,6 +101,12 @@ function processKeys(event) {
                 break;
         }
     } 
+
+    let paginationInput = document.getElementById("pagination-input");
+    const pagVisibility = paginationInput.style.visibility;
+    if (pagVisibility.localeCompare("visible")) {
+        validatePagInput();
+    }
 }
 
 function mouseMove(e) {

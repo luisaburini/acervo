@@ -301,7 +301,7 @@ function populateNavegue() {
         };
         navegueGrid.appendChild(decadeButton);
     } 
-    let spacersAmount = 8;
+    let spacersAmount = 2;
     for (let i=0; i<spacersAmount; i++) {
         let spacer = document.createElement("spacer");
         navegueGrid.appendChild(spacer);

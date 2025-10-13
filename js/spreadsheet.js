@@ -85,7 +85,7 @@ function processKeys(event) {
     } 
 
 
-    let searchBar = document.getElementsById("search-box");
+    let searchBar = document.getElementById("search-box");
     const searchVisibility = searchBar.style.visibility;
     if(searchVisibility.localeCompare("visible") == 0) {
         const key = event.key;

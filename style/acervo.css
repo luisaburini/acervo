@@ -284,6 +284,7 @@ body {
     grid-column: 2 / 2;
     grid-row: 1 / 1;
     visibility: collapse;
+    cursor: auto;
 }
 
  #search-box:focus {
@@ -300,6 +301,7 @@ body {
   text-align: center;
   margin: auto;
   background-color: white;
+  cursor: grab;
 }
 
 #lupa{

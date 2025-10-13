@@ -1006,7 +1006,7 @@ function inicio() {
 }
 
 function fotoCarrossel1(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto1_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853312034_39fc460230_m.jpg')";
     document.getElementById("dot1").style.className = "dot active"
     document.getElementById("dot2").style.className = "dot"
     document.getElementById("dot3").style.className = "dot"
@@ -1014,7 +1014,7 @@ function fotoCarrossel1(){
 }
 
 function fotoCarrossel2(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto2_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853373975_83f42848d3_m.jpg')";
     document.getElementById("dot1").style.className = "dot"
     document.getElementById("dot2").style.className = "dot active"
     document.getElementById("dot3").style.className = "dot"
@@ -1022,7 +1022,7 @@ function fotoCarrossel2(){
 }
 
 function fotoCarrossel3(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto3_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853373955_cba6d1e6be_m.jpg')";
     document.getElementById("dot1").style.className = "dot"
     document.getElementById("dot2").style.className = "dot"
     document.getElementById("dot3").style.className = "dot active"
@@ -1030,7 +1030,7 @@ function fotoCarrossel3(){
 }
 
 function fotoCarrossel4(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto4_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853070411_1ba6a645fd_m.jpg')";
     document.getElementById("dot1").style.className = "dot"
     document.getElementById("dot2").style.className = "dot"
     document.getElementById("dot3").style.className = "dot"

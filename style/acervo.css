@@ -170,22 +170,33 @@ body {
 }
 
 .igrejinha{
-  content: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
+  background-image: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
   width: 50vw;
 }
 
-.bolinhas-grid{
-  object-fit: cover;
-  display: grid;
-  grid-template-columns: repeat(4, 60px);
-  text-align: center;
-  z-index: 100;
-  background-color: red;
+.carousel-dots {
+  top: 10vh;
+  left: 20vw;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-.bolinha{
-  background-image: url('../imgs/bolinha.png');
-  background-color: purple;
+.carousel-dots .dot {
+  --size: 1rem;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  border: 3px solid white;
+  background-color: white;
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+}
+
+.carousel-dots .dot.active {
+  background-color: dodgerblue;
 }
 
 #search {

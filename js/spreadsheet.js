@@ -369,7 +369,7 @@ function changeVisibilityOfAll(visibility) {
     }
     elementsByClass = ["upperbar", "upperbar-item",
         "navegue-item", "iniciativa-container", "explore-button",
-        "iniciativa-header", "iniciativa-text", "igrejinha", "bolinhas-grid", "bolinhas",
+        "iniciativa-header", "iniciativa-text", "igrejinha", "carousel-dots", "dots",
         "bottom-grid", "bottom-logo",
         "contato", "contato-item"];
     for (let i=0; i<elementsToHide.length; i++) {
@@ -1000,13 +1000,13 @@ function fotoCarrossel1(){
 }
 
 function fotoCarrossel2(){
-    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrosse2.jpg')";
+    document.getElementById("igrejinha").style.content = "url('../imgs/Foto2_Carrossel.jpg')";
 }
 
 function fotoCarrossel3(){
-    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrosse3.jpg')";
+    document.getElementById("igrejinha").style.content = "url('../imgs/Foto3_Carrossel.jpg')";
 }
 
 function fotoCarrossel4(){
-    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrosse4.jpg')";
+    document.getElementById("igrejinha").style.content = "url('../imgs/Foto4_Carrossel.jpg')";
 }

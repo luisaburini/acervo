@@ -337,8 +337,7 @@ function changeVisibilityOfAll(visibility) {
                 elem.src = ""
                 let home = document.getElementById("home-container");
                 home.style.backgroundColor = "#000000";
-                home.style.height = "10vh";
-
+                home.style.height = "0";
             }
         } else {
             elem.style.maxHeight = "none";

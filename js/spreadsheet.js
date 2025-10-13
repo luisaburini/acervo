@@ -438,14 +438,14 @@ function populateGrid() {
     clear(grid);
     let pagination = document.getElementById('pagination');
     if (searchedImages.length > 0) {
-        pagination.innerText = "1 de " + searchedImages.length;
+        for (let i=(currentPage-1)*ImagensPorPagina;i<currentPage*ImagensPorPagina;i++) {
+            if (i < searchedImages.length){
+                createNewImage(searchedImages[i], grid);
+            }
+        }
+        pagination.innerText = (currentPage-1)*ImagensPorPagina + " de " + (currentPage*ImagensPorPagina-1);
     } else {
         pagination.innerText = "nenhum resultado encontrado";
-    }
-    for (let i=(currentPage-1)*ImagensPorPagina;i<currentPage*ImagensPorPagina;i++) {
-        if (i < searchedImages.length){
-            createNewImage(searchedImages[i], grid);
-        }
     }
 }
 

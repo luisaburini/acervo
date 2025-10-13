@@ -654,6 +654,12 @@ function populateSidebar(allKeywords) {
         keywordsDiv.appendChild(label)
     }
     sidebar.appendChild(keywordsHeader);
+
+    let filtrosSelecionados = document.createElement('div');
+    filtrosSelecionados.innerText = "Filtros selecionados:";
+    filtrosSelecionados.className = "attribute";
+    sidebar.appendChild(filtrosSelecionados);
+
 }
 
 function clear(grid) {

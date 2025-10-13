@@ -345,8 +345,11 @@ body {
   font-family: GothamBlack;
   color: white;
   background-color: #6d1703;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 2vh;
+  height: 4vh;
+  text-align: center;
+  border-style: dotted;
   cursor: grab;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */

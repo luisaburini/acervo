@@ -301,7 +301,7 @@ function populateNavegue() {
         };
         navegueGrid.appendChild(decadeButton);
     } 
-    let spacersAmount = thisDecades.length % 2;
+    let spacersAmount = 8;
     for (let i=0; i<spacersAmount; i++) {
         let spacer = document.createElement("spacer");
         navegueGrid.appendChild(spacer);
@@ -309,7 +309,6 @@ function populateNavegue() {
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
     navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	<img class=\"setinha\" src=\".\/imgs\/\Seta_botao _Explorar acervo_.png\"/>";
-    navegueButton.style.gridColumn = "1 / " + Math.ceil(1+thisDecades.length/2).toString();
     navegueButton.onclick = function() {
         searchedImages = data;
         showAcervo();

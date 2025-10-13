@@ -3,6 +3,7 @@ body {
     overflow: auto;
     margin: 0;
     padding: 0;
+    background-color:#26361c;
 }
 
 #upper {
@@ -82,7 +83,7 @@ body {
 #navegue {
   background-color:#26361c;
   position: relative;
-  width: 80vw;
+  width: 70vw;
   height: 100vh;
   margin: auto;
 }

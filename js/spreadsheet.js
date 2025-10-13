@@ -511,7 +511,7 @@ function populateSidebar(allKeywords) {
     let decadeHeader = document.createElement('div');
     decadeHeader.className = "attribute";
     decadeHeader.innerText = "Década"
-    decadaHeader.onclick = function() {
+    decadeHeader.onclick = function() {
         let decadeDiv = document.getElementById("decadeDiv");
         if (decadeDiv.style.display.localeCompare("block")) {
             decadeDiv.style.display = "none";

@@ -281,6 +281,7 @@ function populateNavegue() {
 }
 
 function showAcervo() {
+    window.scrollTo(0, 0);
     changeVisibilityOfAll("collapse");
     changeVisibilitySearch("visible");
     populateSidebar(allKeywords);
@@ -301,8 +302,9 @@ function showContato(){
     window.scrollTo(0, document.body.scrollHeight);
 }
 
+
 function changeVisibilityOfAll(visibility) {
-    elementsToHide = ["home-grid", "home-img", 
+    elementsToHide = ["home-grid", "home-img", "home-logo",
         "navegue", "navegue-header", "navegue-grid", 
         "iniciativa", "iniciativa-grid", 
         "bottom"];
@@ -330,8 +332,8 @@ function changeVisibilityOfAll(visibility) {
     }
     elementsByClass = ["upperbar", "upperbar-item",
         "navegue-item", "iniciativa-container", "explore-button",
-        "iniciativa-header", "iniciativa-text", "igrejinha",
-        "bottom-grid", "bottom-header", "bottom-subheader", "bottom-subsubheader", 
+        "iniciativa-header", "iniciativa-text", "igrejinha", "bolinhas-grid", "bolinhas",
+        "bottom-grid", "bottom-logo",
         "contato", "contato-item"];
     for (let i=0; i<elementsToHide.length; i++) {
         elems = document.getElementsByClassName(elementsToHide[i]);
@@ -355,7 +357,7 @@ function changeVisibilitySearch(visibility) {
     }
 
 
-    elementsToHide = ["search-box", "search-button", 
+    elementsToHide = ["search-box", "search-button", "search-logo",
         "outer-container", "sidebar", "pagination", "img-column",
         "img-container"];
     for (let i=0; i<elementsToHide.length; i++) {

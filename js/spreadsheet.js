@@ -802,16 +802,10 @@ function onSearched() {
                 foundID ||
                 hasKeywords(data[i].keywords.toLowerCase(), toSearch)) {
                     searchedImages.push(data[i]);
-                    createNewImage(data[i], grid);
                 }
             }
-            let pagination = document.getElementById('pagination');
-            if (searchedImages.length > 0) {
-                pagination.innerText = "1 de " + searchedImages.length;
-            } else {
-                pagination.innerText = "nenhum resultado encontrado";
-            } 
         }
+        populateGrid(); 
  }
 
 function createNewImage(imgMetaData, grid) {

@@ -483,7 +483,12 @@ function populateSidebar(allKeywords) {
                 onSearched();
                 let selectedFilter = document.createElement("div");
                 selectedFilter.innerText = allRegions[i];
-                selectedFilter.className = "";
+                selectedFilter.className = "selected-filter";
+                selectedFilter.onclick = function() {
+                    selectedFilter.remove();
+                    onSearched();
+
+                }
                 sidebar.appendChild(selectedFilter);
             }
         });
@@ -530,6 +535,15 @@ function populateSidebar(allKeywords) {
                 searchBox.innerHTML = noAccent;
                 searchBox.value = noAccent;
                 onSearched();
+                let selectedFilter = document.createElement("div");
+                selectedFilter.innerText = allCategories[i];
+                selectedFilter.className = "selected-filter";
+                selectedFilter.onclick = function() {
+                    selectedFilter.remove();
+                    onSearched();
+
+                }
+                sidebar.appendChild(selectedFilter);
             }
         });
         label.appendChild(radioInput)
@@ -573,7 +587,15 @@ function populateSidebar(allKeywords) {
             let noAccent = removeAccents(allDecades[i]);
             searchBox.innerHTML = noAccent;
             searchBox.value = noAccent;
-            onSearched()
+            onSearched();
+            let selectedFilter = document.createElement("div");
+            selectedFilter.innerText = allDecades[i];
+            selectedFilter.className = "selected-filter";
+            selectedFilter.onclick = function() {
+                selectedFilter.remove();
+                onSearched();
+            }
+            sidebar.appendChild(selectedFilter);
         });
         label.appendChild(radioInput)
         let span = document.createElement("span");
@@ -615,7 +637,15 @@ function populateSidebar(allKeywords) {
             let searchBox = document.getElementById("search-box");
             searchBox.innerHTML = allKeywords[i];
             searchBox.value = allKeywords[i];
-            onSearched()
+            onSearched();
+            let selectedFilter = document.createElement("div");
+            selectedFilter.innerText = allKeywords[i];
+            selectedFilter.className = "selected-filter";
+            selectedFilter.onclick = function() {
+                selectedFilter.remove();
+                onSearched();
+            }
+            sidebar.appendChild(selectedFilter);
         });
         label.appendChild(radioInput)
         let span = document.createElement("span");

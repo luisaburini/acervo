@@ -438,6 +438,10 @@ function populateGrid() {
 function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar");
     sidebar.innerHTML = "";
+    let filtros = document.createElement('div');
+    filtros.innerText = "Filtros";
+    filtros.className = "attribute";
+    sidebar.appendChild(filtros);
 
     // Adiciona bairro/regiao
     let regionHeader = document.createElement('div');

@@ -47,7 +47,7 @@ const ColunaQ = "Link pequeno"
 let data = [];
 let searchedImages = [];
 let allKeywords = [];
-let allYears = [];
+let allRegions = [];
 let allDecades = [];
 let allCategories = [];
 let zoomLevel = 1;
@@ -192,12 +192,12 @@ function loadImages() {
                                 categoriaColD, descColL, fonteOriginalColI,
                                 estadoColK, resolucaoColM, formatoColN, idColC,
                                 palavraChaveColO, linkBigColP, linkSmallColQ, i);
-            allDecades.push(decadaColF);
-            allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
-            allYears.push(anoColE);
-            allYears = allYears.filter((e, i, self) => i === self.indexOf(e));
             allCategories.push(categoriaColD);
             allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e));
+            allDecades.push(decadaColF);
+            allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
+            allRegions.push(regiaoColG);
+            allRegions = allRegions.filter((e, i, self) => i === self.indexOf(e));
             let kwds = palavraChaveColO.split(separator);
             for (let k = 0; k < kwds.length; k++){
                 allKeywords.push(kwds[k]);
@@ -407,6 +407,39 @@ function populateGrid() {
 function populateSidebar(allKeywords) {
     let sidebar = document.getElementById("sidebar");
     sidebar.innerHTML = "";
+
+    // Adiciona bairro/regiao
+    let regionHeader = document.createElement('div');
+    regionHeader.className = "attribute";
+    regionHeader.innerText = "Bairro/Região"
+    let regionDiv = document.createElement('div');
+    regionDiv.className = "dropdown-menu"
+    regionHeader.appendChild(regionDiv)
+    allRegions.sort();
+    for (let i=0; i<allRegions.length; i++){
+        let label = document.createElement("label")
+        label.innerText = allRegions[i];
+        label.className = "container"
+        let radioInput = document.createElement('input');
+        radioInput.type = "radio";
+        radioInput.value = allRegions[i];
+        radioInput.name = "regions";
+        radioInput.addEventListener('change', function (e) {
+            if (this.checked) {
+                let searchBox = document.getElementById("search-box");
+                let noAccent = removeAccents(allRegions[i]);
+                searchBox.innerHTML = noAccent;
+                searchBox.value = noAccent;
+                onSearched();
+            }
+        });
+        label.appendChild(radioInput)
+        let span = document.createElement("span");
+        span.className = "checkmark"
+        label.appendChild(span)
+        regionDiv.appendChild(label)
+    }
+    sidebar.appendChild(regionHeader);
 
     // Adiciona categoria
     let categoryHeader = document.createElement('div');

@@ -232,42 +232,6 @@ body {
   margin-top: 5vh;
 }
 
-.search-header {
-    font-family: "Viaoda Libre", serif;
-    font-size: 3vw;
-    font-weight: lighter;
-    text-align: center;
-    color: white;
-    grid-column: 1 / 5;
-    grid-row: 1;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */    
-}
-
-.search-subheader {
-  font-family: "Viaoda Libre", serif;
-  font-size: 2vh;
-  font-weight: lighter;
-  grid-column: 1 / 2;
-  text-align: center;
-  color: white;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */  
-}
-
-.search-subsubheader {
-  font-family: "Mr Dafoe", cursive;
-  font-size: 6vh;
-  text-align: center;
-  color: white;
-  grid-column: 1 / 4;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */  
-}
-
 
 #search-box {
     background-color:black;
@@ -301,6 +265,10 @@ body {
   text-align: center;
   margin: auto;
   background-color: white;
+  cursor: grab;
+}
+
+#search-logo{
   cursor: grab;
 }
 
@@ -552,42 +520,6 @@ body {
   grid-template-rows: 10vh 1px 1fr;
   grid-template-columns: 1fr 5vw 5vw 5vw 1fr;
   margin-top: 2vh;
-}
-
-.bottom-header {
-    font-family: "Viaoda Libre", serif;
-    font-size: 3.5vw;
-    font-weight: lighter;
-    text-align: center;
-    color: white;
-    grid-column: 1 / 5;
-    grid-row: 1;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */    
-}
-
-.bottom-subheader {
-  font-family: "Viaoda Libre", serif;
-  font-size: 2vh;
-  font-weight: lighter;
-  grid-column: 1 / 3;
-  text-align: center;
-  color: white;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */  
-}
-
-.bottom-subsubheader {
-  font-family: "Mr Dafoe", cursive;
-  font-size: 6vh;
-  text-align: right;
-  color: white;
-  grid-column: 1 / 3;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */  
 }
 
 .contato{

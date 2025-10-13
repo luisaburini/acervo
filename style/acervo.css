@@ -302,7 +302,6 @@ body {
 }
   
 .pagination{
-  width: 85vw;
   height: 7vh;
   font-family: GothamLight;
   font-size: 5vh;
@@ -311,6 +310,26 @@ body {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+#pagination-controls{
+  display: grid;
+  grid-template-columns: 10vw auto 10vw;
+}
+
+#pagination-input {
+    background-color:black;
+    border: 6px solid white;
+    color: white;
+    font-size: 3vh;
+    font-family: GothamLight;
+    font-weight: lighter;
+    z-index: 20;
+    height: 6vh;
+    width: 30vw;
+    text-align: center;
+    margin: auto;
+    cursor: auto;
 }
   
 .img-container {

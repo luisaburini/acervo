@@ -42,6 +42,9 @@ const ColunaN = "Formato"
 const ColunaO = "Palavras-chave"
 const ColunaP = "Link"
 const ColunaQ = "Link pequeno"
+const ColunasGrid = 4;
+const LinhasGrid = 4;
+const ImagensPorPagina = ColunasGrid*LinhasGrid;
 
 
 let data = [];
@@ -59,6 +62,7 @@ let newPosX = 0,
     startPosX = 0,
     startPosY = 0;
 let current = 0;
+let currentPage = 1;
 
 init()
 
@@ -432,8 +436,10 @@ function populateGrid() {
     } else {
         pagination.innerText = "nenhum resultado encontrado";
     }
-    for (let i=0;i<searchedImages.length;i++) {
-        createNewImage(searchedImages[i], grid);
+    for (let i=(currentPage-1)*ImagensPorPagina;i<currentPage*ImagensPorPagina;i++) {
+        if (i < searchedImages.length){
+            createNewImage(searchedImages[i], grid);
+        }
     }
 }
 
@@ -732,7 +738,11 @@ function onSearched() {
     grid.style.display = "grid";
     clear(grid);
     searchedImages = [];
-    
+    currentPage = 1;
+    let pagInput = document.getElementById("pagination-input")
+    pagInput.innerHTML = "1";
+    pagInput.value = "1";
+
     let searchBox = document.getElementById("search-box");
     let toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
     let splitByWord = toSearch.split(" ");
@@ -1025,4 +1035,18 @@ function fotoCarrossel4(){
     document.getElementById("dot2").style.className = "dot"
     document.getElementById("dot3").style.className = "dot"
     document.getElementById("dot4").style.className = "dot active"
+}
+
+function paginationLeft() {
+    if (currentPage-1 < 0) {
+        currentPage = Math.ceil(searchedImages.length/ImagensPorPagina);
+    } else {
+        currentPage = Math.abs((currentPage-1)%Math.ceil(searchedImages.length/ImagensPorPagina));
+    }
+    populateGrid();
+}
+
+function paginationRight() {
+    currentPage = Math.abs((currentPage+1)%(Math.ceil(searchedImages.length/ImagensPorPagina)));
+    populateGrid();
 }

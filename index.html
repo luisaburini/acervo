@@ -37,7 +37,7 @@
             </div>
         </div>
         <!-- BUSCA -->
-        <div id="search" onkeydown="">
+        <div id="search">
             <div id="search-grid">
                 <img id="search-logo" src="./imgs/LogoSite.png" onclick="showInicio()">
                 <input id="search-box" type="text"> 
@@ -47,6 +47,11 @@
                 <div id="sidebar"></div>
                 <div id="img-column" class="img-column">
                     <div id="pagination" class="pagination"></div>
+                    <div id="pagination-controls" class="pagination-controls">
+                        <img id="pagination-left" class="icon" src="./imgs/left.png" onclick="paginationLeft()">
+                        <input id="pagination-input" type="number">
+                        <img id="pagination-right" class="icon" src="./imgs/right.png" onclick="paginationRight()">
+                    </div>
                     <div id="img-container" class="img-container"></div>
                 </div>
             </div>

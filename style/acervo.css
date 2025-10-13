@@ -82,8 +82,9 @@ body {
 #navegue {
   background-color:#26361c;
   position: relative;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
+  margin: auto;
 }
 
 #navegue-header{

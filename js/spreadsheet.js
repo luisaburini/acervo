@@ -490,8 +490,15 @@ function populateSidebar(allKeywords) {
                 selectedFilter.className = "selected-filter";
                 selectedFilter.onclick = function() {
                     selectedFilter.remove();
+                    let searchStr = "";
+                    let selectedElems = document.getElementsByClassName("selected-filter");
+                    for (let j=0; j<selectedElems.length; j++) {
+                        searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+                    }
+                    let searchBox = document.getElementById("search-box");
+                    searchBox.innerHTML = searchStr;
+                    searchBox.value = searchStr;
                     onSearched();
-
                 }
                 sidebar.appendChild(selectedFilter);
             }
@@ -548,8 +555,15 @@ function populateSidebar(allKeywords) {
                 selectedFilter.className = "selected-filter";
                 selectedFilter.onclick = function() {
                     selectedFilter.remove();
+                    let searchStr = "";
+                    let selectedElems = document.getElementsByClassName("selected-filter");
+                    for (let j=0; j<selectedElems.length; j++) {
+                        searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+                    }
+                    let searchBox = document.getElementById("search-box");
+                    searchBox.innerHTML = searchStr;
+                    searchBox.value = searchStr;
                     onSearched();
-
                 }
                 sidebar.appendChild(selectedFilter);
             }
@@ -605,6 +619,14 @@ function populateSidebar(allKeywords) {
             selectedFilter.className = "selected-filter";
             selectedFilter.onclick = function() {
                 selectedFilter.remove();
+                let searchStr = "";
+                let selectedElems = document.getElementsByClassName("selected-filter");
+                for (let j=0; j<selectedElems.length; j++) {
+                    searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+                }
+                let searchBox = document.getElementById("search-box");
+                searchBox.innerHTML = searchStr;
+                searchBox.value = searchStr;
                 onSearched();
             }
             sidebar.appendChild(selectedFilter);
@@ -660,6 +682,14 @@ function populateSidebar(allKeywords) {
             selectedFilter.className = "selected-filter";
             selectedFilter.onclick = function() {
                 selectedFilter.remove();
+                let searchStr = "";
+                let selectedElems = document.getElementsByClassName("selected-filter");
+                for (let j=0; j<selectedElems.length; j++) {
+                    searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+                }
+                let searchBox = document.getElementById("search-box");
+                searchBox.innerHTML = searchStr;
+                searchBox.value = searchStr;
                 onSearched();
             }
             sidebar.appendChild(selectedFilter);

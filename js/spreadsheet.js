@@ -331,6 +331,7 @@ function showAcervo() {
     changeVisibilityOfAll("collapse");
     changeVisibilitySearch("visible");
     populateSidebar(allKeywords);
+    currentPage = 1;
     populateGrid();
 }
 
@@ -1053,8 +1054,10 @@ function paginationRight() {
 
 function validatePagInput() {
     let paginationInput = document.getElementById("pagination-input");
+    let searchBox = document.getElementById("search-box");
     let value = searchBox.value.replace(/^\s+|\s+$/gm,'');
     if (Number.isNaN(Number(value))) {
+        currentPage = 1;
         paginationInput.value = "1";
         paginationInput.innerHTML = "1";
         populateGrid();

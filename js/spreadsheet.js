@@ -481,6 +481,10 @@ function populateSidebar(allKeywords) {
                 searchBox.innerHTML = noAccent;
                 searchBox.value = noAccent;
                 onSearched();
+                let selectedFilter = document.createElement("div");
+                selectedFilter.innerText = allRegions[i];
+                selectedFilter.className = "";
+                sidebar.appendChild(selectedFilter);
             }
         });
         label.appendChild(radioInput)

@@ -351,6 +351,7 @@ function changeVisibilityOfAll(visibility) {
             elem.style.maxHeight = "0";
             if (elementsToHide[i] == "home-img") {
                 elem.src = ""
+                elem.style.height = "0";
                 let home = document.getElementById("home-container");
                 home.style.backgroundColor = "#000000";
                 home.style.height = "0";
@@ -358,10 +359,11 @@ function changeVisibilityOfAll(visibility) {
         } else {
             elem.style.maxHeight = "none";
             if (elementsToHide[i] == "home-img") {
-                elem.src = "./imgs/Foto Home.jpg"
+                elem.src = "./imgs/Foto Home.jpg";
+                elem.style.height = "100vh";
                 let home = document.getElementById("home-container");
                 home.style.backgroundColor = "#26361c";
-                home.style.height = "auto";
+                home.style.height = "100vh";
             }
         }
     }

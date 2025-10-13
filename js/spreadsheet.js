@@ -196,7 +196,10 @@ function loadImages() {
             allCategories = allCategories.filter((e, i, self) => i === self.indexOf(e));
             allDecades.push(decadaColF);
             allDecades = allDecades.filter((e, i, self) => i === self.indexOf(e));
-            allRegions.push(regiaoColG);
+            let regs = regiaoColG.split(separator);
+            for (let k=0; k<regs.length; k++) {
+                allRegions.push(regs[k]);
+            }
             allRegions = allRegions.filter((e, i, self) => i === self.indexOf(e));
             let kwds = palavraChaveColO.split(separator);
             for (let k = 0; k < kwds.length; k++){

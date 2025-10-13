@@ -171,12 +171,14 @@ body {
 
 .igrejinha{
   background-image: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
+  background-repeat: no-repeat;
   width: 50vw;
 }
 
 .carousel-dots {
-  top: 10vh;
-  left: 20vw;
+  top: 80vh;
+  left: 30vw;
+  width: 40vw;
   position: relative;
   display: flex;
   gap: 1rem;
@@ -196,7 +198,7 @@ body {
 }
 
 .carousel-dots .dot.active {
-  background-color: dodgerblue;
+  background-color: #474546;
 }
 
 #search {

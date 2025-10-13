@@ -996,17 +996,17 @@ function inicio() {
 }
 
 function fotoCarrossel1(){
-    document.getElementById("igrejinha").style.content = "url('../imgs/Foto1_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto1_Carrossel.jpg')";
 }
 
 function fotoCarrossel2(){
-    document.getElementById("igrejinha").style.content = "url('../imgs/Foto2_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto2_Carrossel.jpg')";
 }
 
 function fotoCarrossel3(){
-    document.getElementById("igrejinha").style.content = "url('../imgs/Foto3_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto3_Carrossel.jpg')";
 }
 
 function fotoCarrossel4(){
-    document.getElementById("igrejinha").style.content = "url('../imgs/Foto4_Carrossel.jpg')";
+    document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto4_Carrossel.jpg')";
 }

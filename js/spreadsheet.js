@@ -67,15 +67,12 @@ function init() {
     document.onkeydown = function (e) {
        processKeys(e);
     };
-    // document.body.addEventListener('keydown', function (event) {
-    //     processKeys(event);       
-    // });
 }
 
 function processKeys(event) {
     let zoomImage = document.getElementsByClassName("overlay-img")[0];
-    const imgVisibility = zoomImage.style.visibility;
-    if(imgVisibility.localeCompare("visible") == 0) {
+    const zoomImgVisibility = zoomImage.style.visibility;
+    if(zoomImgVisibility.localeCompare("visible") == 0) {
         const key = event.key;
         switch (key) {
             case "ArrowLeft":
@@ -83,6 +80,20 @@ function processKeys(event) {
                 break;
             case "ArrowRight":
                 right();
+                break;
+        }
+    } 
+
+
+    let searchBar = document.getElementsById("search-box");
+    const searchVisibility = searchBar.style.visibility;
+    if(searchVisibility.localeCompare("visible") == 0) {
+        const key = event.key;
+        switch (key) {
+            case "Enter":
+                // Cancel the default action, if needed
+                event.preventDefault();
+                onSearched();
                 break;
         }
     } 

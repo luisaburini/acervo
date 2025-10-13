@@ -280,7 +280,7 @@ function populateNavegue() {
         decadeButton.innerText = thisDecades[i];
         decadeButton.onmouseover = function() {
             decadeButton.innerText = "";
-            decadeButton.style.backgroundImage = "url(" + decadesImgs[i] + ")";
+            decadeButton.style.backgroundImage = "url(\"" + decadesImgs[i] + "\")";
         };
         decadeButton.onmouseout = function() {
             decadeButton.style.color = "white";

@@ -443,7 +443,7 @@ function populateGrid() {
                 createNewImage(searchedImages[i], grid);
             }
         }
-        pagination.innerText = (currentPage-1)*ImagensPorPagina + " de " + (currentPage*ImagensPorPagina-1);
+        pagination.innerText = (1+(currentPage-1)*ImagensPorPagina) + " de " + (currentPage*ImagensPorPagina-1) + ", total " + searchedImages.length;
     } else {
         pagination.innerText = "nenhum resultado encontrado";
     }

@@ -170,14 +170,15 @@ body {
 }
 
 .igrejinha{
+  position: fixed;
   content: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
   width: 100%;
 }
 
 #bolinhas-grid{
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(4, 60px);
-  bottom: 0;
   text-align: center;
   z-index: 100;
   background-color: red;
@@ -321,7 +322,6 @@ body {
 .attribute{
     font-family: GothamBlack;
     color: black;
-    height: 10vh;
     font-size: 2vh;
     margin: 1vh;
     -webkit-user-select: none; /* Safari */
@@ -334,7 +334,7 @@ body {
   color: black;
   height: 5vh;
   font-size: 2vh;
-  margin: 1vh;
+  padding-left: 2vw;
   cursor: grab;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */

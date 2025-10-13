@@ -271,8 +271,8 @@ function populateNavegue() {
     }
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
-    navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	&#129130;";
-    navegueButton.style.gridColumn = "1 / " + Math.ceil(1+allDecades.length/2).toString();
+    navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	<img class=\"setinha\" src=\".\/imgs\/\Seta_botao _Explorar acervo_.png\"/>";
+    navegueButton.style.gridColumn = "2 / " + Math.ceil(1+allDecades.length/2).toString();
     navegueButton.onclick = function() {
         searchedImages = data;
         showAcervo();

@@ -476,10 +476,14 @@ function populateSidebar(allKeywords) {
         radioInput.name = "regions";
         radioInput.addEventListener('change', function (e) {
             if (this.checked) {
+                let searchStr = removeAccents(allRegions[i]);
+                let selectedElems = document.getElementsByClassName("selected-filter");
+                for (let j=0; j<selectedElems.length; j++) {
+                    searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+                }
                 let searchBox = document.getElementById("search-box");
-                let noAccent = removeAccents(allRegions[i]);
-                searchBox.innerHTML = noAccent;
-                searchBox.value = noAccent;
+                searchBox.innerHTML = searchStr;
+                searchBox.value = searchStr;
                 onSearched();
                 let selectedFilter = document.createElement("div");
                 selectedFilter.innerText = allRegions[i];
@@ -530,10 +534,14 @@ function populateSidebar(allKeywords) {
         radioInput.name = "categories";
         radioInput.addEventListener('change', function (e) {
             if (this.checked) {
+                let searchStr = removeAccents(allCategories[i]);
+                let selectedElems = document.getElementsByClassName("selected-filter");
+                for (let j=0; j<selectedElems.length; j++) {
+                    searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+                }
                 let searchBox = document.getElementById("search-box");
-                let noAccent = removeAccents(allCategories[i]);
-                searchBox.innerHTML = noAccent;
-                searchBox.value = noAccent;
+                searchBox.innerHTML = searchStr;
+                searchBox.value = searchStr;
                 onSearched();
                 let selectedFilter = document.createElement("div");
                 selectedFilter.innerText = allCategories[i];
@@ -583,10 +591,14 @@ function populateSidebar(allKeywords) {
         radioInput.value = allDecades[i];
         radioInput.name = "decades";
         radioInput.addEventListener('change', function (e) {
+            let searchStr = removeAccents(allDecades[i]);
+            let selectedElems = document.getElementsByClassName("selected-filter");
+            for (let j=0; j<selectedElems.length; j++) {
+                searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+            }
             let searchBox = document.getElementById("search-box");
-            let noAccent = removeAccents(allDecades[i]);
-            searchBox.innerHTML = noAccent;
-            searchBox.value = noAccent;
+            searchBox.innerHTML = searchStr;
+            searchBox.value = searchStr;
             onSearched();
             let selectedFilter = document.createElement("div");
             selectedFilter.innerText = allDecades[i];
@@ -634,9 +646,14 @@ function populateSidebar(allKeywords) {
         radioInput.value = allKeywords[i];
         radioInput.name = "keywords";
         radioInput.addEventListener('change', function (e) {
+            let searchStr = removeAccents(allKeywords[i]);
+            let selectedElems = document.getElementsByClassName("selected-filter");
+            for (let j=0; j<selectedElems.length; j++) {
+                searchStr = searchStr + " " + removeAccents(selectedElems[j].innerText);
+            }
             let searchBox = document.getElementById("search-box");
-            searchBox.innerHTML = allKeywords[i];
-            searchBox.value = allKeywords[i];
+            searchBox.innerHTML = searchStr;
+            searchBox.value = searchStr;
             onSearched();
             let selectedFilter = document.createElement("div");
             selectedFilter.innerText = allKeywords[i];

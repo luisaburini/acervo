@@ -1055,7 +1055,12 @@ function paginationLeft() {
 }
 
 function paginationRight() {
-    currentPage = Math.abs((currentPage+1)%(Math.ceil(searchedImages.length/ImagensPorPagina)));
+    if ((current+1)*(searchedImages.length/ImagensPorPagina) > searchedImages.length && (current)*(searchedImages.length/ImagensPorPagina) > searchedImages.length) {
+        currentPage = Math.abs((currentPage+1)%(Math.ceil(searchedImages.length/ImagensPorPagina)));
+    } else {
+        currentPage = currentPage+1;
+    }
+
     populateGrid();
 }
 

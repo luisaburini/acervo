@@ -170,13 +170,12 @@ body {
 }
 
 .igrejinha{
-  position: fixed;
   content: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
-  width: 100%;
+  width: 50vw;
 }
 
 #bolinhas-grid{
-  position: absolute;
+  object-fit: cover;
   display: grid;
   grid-template-columns: repeat(4, 60px);
   text-align: center;
@@ -186,6 +185,7 @@ body {
 
 #bolinha{
   background-image: url('../imgs/bolinha.png');
+  background-color: purple;
 }
 
 #search {

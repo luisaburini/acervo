@@ -172,7 +172,8 @@ body {
 .igrejinha{
   background-image: url("https://live.staticflickr.com/65535/54657787386_4224804069_c.jpg");
   background-repeat: no-repeat;
-  width: 50vw;
+  object-fit: cover;
+  width: 100%;
 }
 
 .carousel-dots {

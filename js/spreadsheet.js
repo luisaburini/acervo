@@ -448,6 +448,7 @@ function populateSidebar(allKeywords) {
     regionHeader.className = "sidebarattribute";
     regionHeader.innerText = "Bairro/Região"
     regionHeader.onclick = function() {
+        console.log("Clicked region header")
         let regionDiv = document.getElementById("regionDiv");
         if (regionDiv.style.display.localeCompare("block")) {
             regionDiv.style.display = "none";

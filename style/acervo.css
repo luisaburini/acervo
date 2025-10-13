@@ -136,7 +136,7 @@ body {
   height: 10vh;
   width: 40vw;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 60%;
   height: max-content;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -159,7 +159,7 @@ body {
 
 .iniciativa-header{
   position: relative;
-  text-align: center;
+  text-align: justify;
   font-family: "Viaoda Libre", serif;
   font-size: 6vh;
   color: #474546;
@@ -172,6 +172,7 @@ body {
 }
 
 .iniciativa-text{
+  text-align: justify;
   position: relative;
   font-family: GothamLight;
   font-size: 3vh;

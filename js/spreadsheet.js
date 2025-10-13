@@ -376,7 +376,7 @@ function changeVisibilityOfAll(visibility) {
         elems = document.getElementsByClassName(elementsToHide[i]);
         for (let j=0; j<elems.length; j++) {
             elems[j].style.visibility = visibility;
-            if (visibility == "collapse") {
+            if (visibility.localeCompare("collapse") == 0) {
                 elems[j].style.maxHeight = "0";
             } else {
                 elems[j].style.maxHeight = "none";

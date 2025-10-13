@@ -421,8 +421,20 @@ function populateSidebar(allKeywords) {
     let regionHeader = document.createElement('div');
     regionHeader.className = "attribute";
     regionHeader.innerText = "Bairro/Região"
+    regionHeader.onclick = function() {
+        let regionDiv = document.getElementById("regionDiv");
+        if (regionDiv.style.display.localeCompare("block")) {
+            regionDiv.style.display = "none";
+        } else {
+            regionDiv.style.display = "block";
+            document.getElementById("decadeDiv").style.display = "none";
+            document.getElementById("keywordsDiv").style.display = "none";
+            document.getElementById("categoryDiv").style.display = "none";
+        }
+    }
     let regionDiv = document.createElement('div');
-    regionDiv.className = "dropdown-menu"
+    regionDiv.setAttribute("id", "regionDiv");
+    regionDiv.className = "dropdown-menu";
     regionHeader.appendChild(regionDiv)
     allRegions.sort();
     for (let i=0; i<allRegions.length; i++){
@@ -453,8 +465,20 @@ function populateSidebar(allKeywords) {
     // Adiciona categoria
     let categoryHeader = document.createElement('div');
     categoryHeader.className = "attribute";
-    categoryHeader.innerText = "Categorias"
+    categoryHeader.innerText = "Categorias";
+    categoryHeader.onclick = function() {
+        let categoryDiv = document.getElementById("categoryDiv"); 
+        if (categoryDiv.style.display.localeCompare("block")) {
+            categoryDiv.style.display = "none";    
+        } else {
+            document.getElementById("keywordsDiv").style.display = "none";
+            document.getElementById("decadeDiv").style.display = "none";
+            document.getElementById("regionDiv").style.display = "none";
+            categoryDiv.style.display = "block";
+        }
+    }
     let categoryDiv = document.createElement('div');
+    categoryDiv.setAttribute("id", "categoryDiv");
     categoryDiv.className = "dropdown-menu"
     categoryHeader.appendChild(categoryDiv)
     allCategories.sort();
@@ -487,8 +511,20 @@ function populateSidebar(allKeywords) {
     let decadeHeader = document.createElement('div');
     decadeHeader.className = "attribute";
     decadeHeader.innerText = "Década"
+    decadaHeader.onclick = function() {
+        let decadeDiv = document.getElementById("decadeDiv");
+        if (decadeDiv.style.display.localeCompare("block")) {
+            decadeDiv.style.display = "none";
+        } else {
+            decadeDiv.style.display = "block";
+            decadeDiv = document.getElementById("categoryDiv").style.display = "none";
+            decadeDiv = document.getElementById("regionDiv").style.display = "none";
+            decadeDiv = document.getElementById("keywordsDiv").style.display = "none";
+        }
+    }
     let decadeDiv = document.createElement('div');
     decadeDiv.className = "dropdown-menu";
+    decadeDiv.setAttribute("id", "decadeDiv");
     decadeHeader.appendChild(decadeDiv);
     allDecades.sort();
     for (let i=0; i<allDecades.length; i++){
@@ -518,7 +554,19 @@ function populateSidebar(allKeywords) {
     let keywordsHeader = document.createElement('div');
     keywordsHeader.className = "attribute";
     keywordsHeader.innerText = "Palavras-chave"
+    keywordsHeader.onclick = function() {
+        let keywordsDiv = document.getElementById("keywordsDiv");
+        if(keywordsDiv.style.display.localeCompare("block")){
+            keywordsDiv.style.display = "none";
+        } else {
+            document.getElementById("decadeDiv")
+            document.getElementById("categoryDiv")
+            document.getElementById("regionDiv")
+            keywordsDiv.style.display = "block";
+        }
+    }
     let keywordsDiv = document.createElement('div');
+    keywordsDiv.setAttribute("id", "keywordsDiv")
     keywordsDiv.className = "dropdown-menu";
     keywordsHeader.appendChild(keywordsDiv);
     allKeywords.sort();

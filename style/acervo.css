@@ -174,8 +174,7 @@ body {
 .igrejinha{
   background-image: url("https://live.staticflickr.com/65535/54853312034_39fc460230_m.jpg");
   background-repeat: no-repeat;
-  object-fit: cover;
-  width: 100%;
+  background-size: 100% 100%;
 }
 
 .carousel-dots {
@@ -189,12 +188,11 @@ body {
 }
 
 .carousel-dots .dot {
-  --size: 1rem;
+  --size: 4rem;
   padding: 0;
   font-size: 0;
   color: transparent;
-  border: 3px solid white;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   width: var(--size);
   height: var(--size);
@@ -315,20 +313,23 @@ body {
 }
 
 #pagination-controls{
+  width: 20vw;
   display: grid;
-  grid-template-columns: 10vw auto 10vw;
+  grid-template-columns: 5vw auto 5vw;
+  margin: auto;
+  text-align: center;
 }
 
 #pagination-input {
     background-color:black;
     border: 6px solid white;
     color: white;
-    font-size: 3vh;
+    font-size: 6vh;
     font-family: GothamLight;
     font-weight: lighter;
     z-index: 20;
-    height: 6vh;
-    width: 30vw;
+    height: 8vh;
+    width: 8vw;
     text-align: center;
     margin: auto;
     cursor: auto;

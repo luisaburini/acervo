@@ -1006,35 +1006,35 @@ function inicio() {
 }
 
 function fotoCarrossel1(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853312034_39fc460230_m.jpg')";
-    document.getElementById("dot1").style.className = "dot active"
-    document.getElementById("dot2").style.className = "dot"
-    document.getElementById("dot3").style.className = "dot"
-    document.getElementById("dot4").style.className = "dot"
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853312034_39fc460230_b.jpg')";
+    document.getElementById("dot1").classList = "dot active"
+    document.getElementById("dot2").classList = "dot"
+    document.getElementById("dot3").classList = "dot"
+    document.getElementById("dot4").classList = "dot"
 }
 
 function fotoCarrossel2(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853373975_83f42848d3_m.jpg')";
-    document.getElementById("dot1").style.className = "dot"
-    document.getElementById("dot2").style.className = "dot active"
-    document.getElementById("dot3").style.className = "dot"
-    document.getElementById("dot4").style.className = "dot"
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853373975_83f42848d3_b.jpg')";
+    document.getElementById("dot1").classList = "dot"
+    document.getElementById("dot2").classList = "dot active"
+    document.getElementById("dot3").classList = "dot"
+    document.getElementById("dot4").classList = "dot"
 }
 
 function fotoCarrossel3(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853373955_cba6d1e6be_m.jpg')";
-    document.getElementById("dot1").style.className = "dot"
-    document.getElementById("dot2").style.className = "dot"
-    document.getElementById("dot3").style.className = "dot active"
-    document.getElementById("dot4").style.className = "dot"
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853373955_cba6d1e6be_b.jpg')";
+    document.getElementById("dot1").classList = "dot"
+    document.getElementById("dot2").classList = "dot"
+    document.getElementById("dot3").classList = "dot active"
+    document.getElementById("dot4").classList = "dot"
 }
 
 function fotoCarrossel4(){
-    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853070411_1ba6a645fd_m.jpg')";
-    document.getElementById("dot1").style.className = "dot"
-    document.getElementById("dot2").style.className = "dot"
-    document.getElementById("dot3").style.className = "dot"
-    document.getElementById("dot4").style.className = "dot active"
+    document.getElementById("igrejinha").style.backgroundImage = "url('https://live.staticflickr.com/65535/54853070411_1ba6a645fd_b.jpg')";
+    document.getElementById("dot1").classList = "dot"
+    document.getElementById("dot2").classList = "dot"
+    document.getElementById("dot3").classList = "dot"
+    document.getElementById("dot4").classList = "dot active"
 }
 
 function paginationLeft() {
@@ -1049,4 +1049,14 @@ function paginationLeft() {
 function paginationRight() {
     currentPage = Math.abs((currentPage+1)%(Math.ceil(searchedImages.length/ImagensPorPagina)));
     populateGrid();
+}
+
+function validatePagInput() {
+    let paginationInput = document.getElementById("pagination-input");
+    let value = searchBox.value.replace(/^\s+|\s+$/gm,'');
+    if (Number.isNaN(Number(value))) {
+        paginationInput.value = "1";
+        paginationInput.innerHTML = "1";
+        populateGrid();
+    }
 }

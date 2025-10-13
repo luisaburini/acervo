@@ -304,7 +304,7 @@ body {
     width: 100vw;
     background-color: whitesmoke;
     display: grid;
-    grid-template-columns: 15vw auto;
+    grid-template-columns: 10vw auto;
     margin: 0;
     padding: 0;
     row-gap: 0;
@@ -323,11 +323,11 @@ body {
   }
 
   .img-column{
-    width: 89vw;
+    width: 70vw;
   }
   
   .pagination{
-    width: 89vw;
+    width: 70vw;
     height: 7vh;
     font-family: GothamLight;
     font-size: 5vh;
@@ -341,7 +341,7 @@ body {
 .img-container {
     row-gap: 1vw;
     column-gap: 1vw;
-    width: 89vw;
+    width: 70vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }

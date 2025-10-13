@@ -469,7 +469,7 @@ body {
     padding-right: 0.2em;
     background-color: #f0f194;
     border: 2px groove  #818f5c;
-    border-radius: 10%;
+    border-radius: 10% 10% 10% 10%;
     width: 40vw;
     box-shadow: 0 0 0 4px #f0f194, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .1s ease-in-out, .4s color;
@@ -479,7 +479,7 @@ body {
     z-index: 20;
     text-align: center;
     margin: auto;
-    grid-column: 1 / 6;
+    grid-column: 2 / 6;
 }
   
 .explore-button:active {

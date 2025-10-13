@@ -249,7 +249,6 @@ function getFirstImageFromDecade(decade) {
 
 function populateNavegue() {
     let navegueGrid = document.getElementById("navegue-grid");
-    let gridTemplateColumns = "1fr "
     let thisDecades = [
         "1930",
         "1940",
@@ -262,7 +261,6 @@ function populateNavegue() {
         "2010",
         "2020",
     ];
-    navegueGrid.style.gridTemplateColumns = gridTemplateColumns.repeat(1+thisDecades.length/2);
     let decadesImgs = [
         "https://live.staticflickr.com/65535/54852409218_547f207b5e_m.jpg", // alt="Foto_1930"
         "https://live.staticflickr.com/65535/54852409213_2a5a52a163_m.jpg", // alt="Foto_1940"

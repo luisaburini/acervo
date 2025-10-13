@@ -84,7 +84,7 @@ body {
 #navegue {
   background-color:#26361c;
   position: relative;
-  width: 65vw;
+  width: 70vw;
   height: 100vh;
   margin: auto;
 }
@@ -105,11 +105,9 @@ body {
 
 #navegue-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
-  gap: 2vh;
-  margin-left: 4vw;
-  margin-right: 4vw;
+  gap: 1vh;
 }
 
 .navegue-item{
@@ -410,13 +408,14 @@ body {
 .explore-button {
     outline: none;
     color: #6d1703;
-    margin: 1vh;
+    margin: auto;
     padding: 0.2em;
     padding-left: 0.2em;
     padding-right: 0.2em;
     background-color: #f0f194;
     border: 2px double  #818f5c;
-    border-radius: 30%;
+    border-radius: 20%;
+    width: 40vw;
     box-shadow: 0 0 0 4px #f0f194, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .1s ease-in-out, .4s color;
     font-family: GothamLight;
@@ -424,6 +423,8 @@ body {
     font-size: 3vh;
     z-index: 20;
     position: relative;
+    text-align: center;
+    grid-column: 1 / 6;
 }
   
 .explore-button:active {

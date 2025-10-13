@@ -997,16 +997,32 @@ function inicio() {
 
 function fotoCarrossel1(){
     document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto1_Carrossel.jpg')";
+    document.getElementById("dot1").style.className = "dot active"
+    document.getElementById("dot2").style.className = "dot"
+    document.getElementById("dot3").style.className = "dot"
+    document.getElementById("dot4").style.className = "dot"
 }
 
 function fotoCarrossel2(){
     document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto2_Carrossel.jpg')";
+    document.getElementById("dot1").style.className = "dot"
+    document.getElementById("dot2").style.className = "dot active"
+    document.getElementById("dot3").style.className = "dot"
+    document.getElementById("dot4").style.className = "dot"
 }
 
 function fotoCarrossel3(){
     document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto3_Carrossel.jpg')";
+    document.getElementById("dot1").style.className = "dot"
+    document.getElementById("dot2").style.className = "dot"
+    document.getElementById("dot3").style.className = "dot active"
+    document.getElementById("dot4").style.className = "dot"
 }
 
 function fotoCarrossel4(){
     document.getElementById("igrejinha").style.backgroundImage = "url('../imgs/Foto4_Carrossel.jpg')";
+    document.getElementById("dot1").style.className = "dot"
+    document.getElementById("dot2").style.className = "dot"
+    document.getElementById("dot3").style.className = "dot"
+    document.getElementById("dot4").style.className = "dot active"
 }

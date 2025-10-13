@@ -386,6 +386,12 @@ function changeVisibilitySearch(visibility) {
         if (visibility == "collapse") {
             elem.style.maxHeight = "0";
             elem.style.maxWidth = "0";
+            for (let j=0; j<upperBarElems.length; j++){
+                upper = document.getElementsByClassName(upperBarElems[j]);
+                for (let k=0; k<upper.length; k++){
+                    upper[k].style.visibility = "visible"
+                }
+            }
         } else {
             elem.style.maxHeight = "none";
             elem.style.maxWidth = "none";

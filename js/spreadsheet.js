@@ -444,7 +444,11 @@ function populateGrid() {
                 createNewImage(searchedImages[i], grid);
             }
         }
-        pagination.innerText = (1+(currentPage-1)*ImagensPorPagina) + " de " + (currentPage*ImagensPorPagina-1) + ", total " + searchedImages.length;
+        let totalPag = (currentPage*ImagensPorPagina-1) ;
+        if ((currentPage*ImagensPorPagina-1)  > searchedImages.length) {
+            totalPag = searchedImages.length
+        }
+        pagination.innerText = (1+(currentPage-1)*ImagensPorPagina) + " de " + totalPag + ", total " + searchedImages.length;
     } else {
         pagination.innerText = "nenhum resultado encontrado";
     }

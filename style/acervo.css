@@ -178,8 +178,8 @@ body {
 
 .carousel-dots {
   top: 80vh;
-  left: 30vw;
-  width: 40vw;
+  left: 20vw;
+  width: 20vw;
   position: relative;
   display: flex;
   gap: 1rem;

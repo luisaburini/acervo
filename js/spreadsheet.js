@@ -239,7 +239,7 @@ function populateNavegue() {
         decadeButton.innerText = allDecades[i];
         decadeButton.onmouseover = function() {
             decadeButton.innerText = "";
-            imgPath = "url(‘../imgs/Foto_"+allDecades[i]+".jpg‘)"
+            imgPath = "url(‘./imgs/Foto_"+allDecades[i]+".jpg‘)"
             decadeButton.src = imgPath;
             console.log(allDecades[i]);
             console.log(imgPath);

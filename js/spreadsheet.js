@@ -419,7 +419,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona bairro/regiao
     let regionHeader = document.createElement('div');
-    regionHeader.className = "attribute";
+    regionHeader.className = "sidebarattribute";
     regionHeader.innerText = "Bairro/Região"
     regionHeader.onclick = function() {
         let regionDiv = document.getElementById("regionDiv");
@@ -464,7 +464,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona categoria
     let categoryHeader = document.createElement('div');
-    categoryHeader.className = "attribute";
+    categoryHeader.className = "sidebarattribute";
     categoryHeader.innerText = "Categorias";
     categoryHeader.onclick = function() {
         let categoryDiv = document.getElementById("categoryDiv"); 
@@ -509,7 +509,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona decada
     let decadeHeader = document.createElement('div');
-    decadeHeader.className = "attribute";
+    decadeHeader.className = "sidebarattribute";
     decadeHeader.innerText = "Década"
     decadeHeader.onclick = function() {
         let decadeDiv = document.getElementById("decadeDiv");
@@ -552,7 +552,7 @@ function populateSidebar(allKeywords) {
 
     // Adiciona palavras-chave
     let keywordsHeader = document.createElement('div');
-    keywordsHeader.className = "attribute";
+    keywordsHeader.className = "sidebarattribute";
     keywordsHeader.innerText = "Palavras-chave"
     keywordsHeader.onclick = function() {
         let keywordsDiv = document.getElementById("keywordsDiv");

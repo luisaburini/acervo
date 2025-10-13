@@ -327,6 +327,15 @@ body {
     font-size: 2vh;
     margin: 1vh;
 }
+
+.sidebarattribute{
+    font-family: GothamBlack;
+    color: black;
+    height: 10vh;
+    font-size: 2vh;
+    margin: 1vh;
+    cursor: grab;
+}
   
 
 .dropdown-menu {

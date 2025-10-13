@@ -74,7 +74,7 @@ body {
 }
 
 
-.logo-home{
+.home-logo{
   width: 65%;
   height: auto;
   margin: auto;
@@ -83,7 +83,7 @@ body {
 #navegue {
   background-color:#26361c;
   position: relative;
-  width: 70vw;
+  width: 65vw;
   height: 100vh;
   margin: auto;
 }

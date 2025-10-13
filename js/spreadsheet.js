@@ -302,7 +302,7 @@ function showContato(){
 }
 
 function changeVisibilityOfAll(visibility) {
-    elementsToHide = ["home-grid", "home-img", "header", "subheader", "subsubheader",
+    elementsToHide = ["home-grid", "home-img", 
         "navegue", "navegue-header", "navegue-grid", 
         "iniciativa", "iniciativa-grid", 
         "bottom"];

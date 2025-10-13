@@ -408,23 +408,23 @@ body {
 .explore-button {
     outline: none;
     color: #6d1703;
-    margin: auto;
+    margin-top: 3vh;
     padding: 0.2em;
     padding-left: 0.2em;
     padding-right: 0.2em;
     background-color: #f0f194;
     border: 2px double  #818f5c;
-    border-radius: 20%;
+    border-radius: 10%;
     width: 40vw;
     box-shadow: 0 0 0 4px #f0f194, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .1s ease-in-out, .4s color;
     font-family: GothamLight;
     font-weight: lighter;
-    font-size: 3vh;
+    font-size: 4vh;
     z-index: 20;
     position: relative;
     text-align: center;
-    grid-column: 1 / 6;
+    grid-column: 2 / 4;
 }
   
 .explore-button:active {

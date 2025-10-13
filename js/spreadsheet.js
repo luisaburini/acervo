@@ -424,37 +424,6 @@ function populateSidebar(allKeywords) {
     }
     sidebar.appendChild(categoryHeader);
 
-    // Adiciona ano
-    let yearHeader = document.createElement('div');
-    yearHeader.className = "attribute";
-    yearHeader.innerText = "Ano"
-    let yearDiv = document.createElement('div');
-    yearDiv.className = "dropdown-menu";
-    yearHeader.appendChild(yearDiv);
-    allYears.sort();
-    for (let i=0; i<allYears.length; i++){
-        let label = document.createElement("label")
-        label.innerText = allYears[i];
-        label.className = "container"
-        let radioInput = document.createElement('input');
-        radioInput.type = "radio";
-        radioInput.value = allYears[i];
-        radioInput.name = "years";
-        radioInput.addEventListener('change', function (e) {
-            let searchBox = document.getElementById("search-box");
-            let noAccent = removeAccents(allYears[i]);
-            searchBox.innerHTML = noAccent;
-            searchBox.value = noAccent;
-            onSearched()
-        });
-        label.appendChild(radioInput)
-        let span = document.createElement("span");
-        span.className = "checkmark"
-        label.appendChild(span)
-        yearDiv.appendChild(label)
-    }
-    sidebar.appendChild(yearHeader);
-
     // Adiciona decada
     let decadeHeader = document.createElement('div');
     decadeHeader.className = "attribute";

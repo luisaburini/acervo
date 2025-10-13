@@ -350,6 +350,7 @@ body {
     width: 160px;
     border-radius: 5px;
     z-index: 1;
+    font-size: 3vh;
 }
 
 .dropdown-menu label {

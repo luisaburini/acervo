@@ -97,16 +97,16 @@ function processKeys(event) {
             case "Enter":
                 // Cancel the default action, if needed
                 event.preventDefault();
+                let paginationInput = document.getElementById("pagination-input");
+                const pagVisibility = paginationInput.style.visibility;
+                if (pagVisibility.localeCompare("visible")) {
+                    validatePagInput();
+                }
                 onSearched();
                 break;
         }
     } 
 
-    let paginationInput = document.getElementById("pagination-input");
-    const pagVisibility = paginationInput.style.visibility;
-    if (pagVisibility.localeCompare("visible")) {
-        validatePagInput();
-    }
 }
 
 function mouseMove(e) {
@@ -1066,9 +1066,8 @@ function paginationRight() {
 
 function validatePagInput() {
     let paginationInput = document.getElementById("pagination-input");
-    let searchBox = document.getElementById("search-box");
-    let value = searchBox.value.replace(/^\s+|\s+$/gm,'');
-    if (Number.isNaN(Number(value))) {
+    let value = paginationInput.value.replace(/^\s+|\s+$/gm,'');
+    if (value != "" && Number.isNaN(Number(value))) {
         currentPage = 1;
         populateGrid();
     }

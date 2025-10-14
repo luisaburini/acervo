@@ -1073,14 +1073,16 @@ function validatePagInput() {
     let valueNumber = Number(value);
     console.log("validate page input " + value + " "+isNaN(valueNumber))
     if (value != "") {
-        if (isNaN(Number(value))) {
+        console.log(valueNumber)
+        currentPage = 1;
+        if (isNaN(valueNumber)) {
             console.log("Reset");
-            currentPage = 1;
         } else {
+            console.log(valueNumber + " " + searchedImages.length/ImagensPorPagina)
             if (valueNumber > 0 && valueNumber < searchedImages.length/ImagensPorPagina) {
                 currentPage = valueNumber;
             }
         }
+        populateGrid();
     } 
-    populateGrid();
 }

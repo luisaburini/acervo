@@ -1046,7 +1046,7 @@ function fotoCarrossel4(){
 }
 
 function paginationLeft() {
-    if (currentPage-1 < 0) {
+    if (currentPage-1 <= 0) {
         currentPage = Math.ceil(searchedImages.length/ImagensPorPagina);
     } else {
         currentPage = Math.abs((currentPage-1)%Math.ceil(searchedImages.length/ImagensPorPagina));
@@ -1055,8 +1055,8 @@ function paginationLeft() {
 }
 
 function paginationRight() {
-    if ((current+1)*(searchedImages.length/ImagensPorPagina) > searchedImages.length && (current)*(searchedImages.length/ImagensPorPagina) > searchedImages.length) {
-        currentPage = Math.abs((currentPage+1)%(Math.ceil(searchedImages.length/ImagensPorPagina)));
+    if ((current-1)*(searchedImages.length/ImagensPorPagina) > searchedImages.length && (current)*(searchedImages.length/ImagensPorPagina) > searchedImages.length) {
+        currentPage = 1;
     } else {
         currentPage = currentPage+1;
     }

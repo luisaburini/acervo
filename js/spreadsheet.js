@@ -332,6 +332,7 @@ function showAcervo() {
     changeVisibilitySearch("visible");
     populateSidebar(allKeywords);
     currentPage = 1;
+    console.log("showAcervo")
     populateGrid();
 }
 
@@ -814,6 +815,7 @@ function onSearched() {
                 }
             }
         }
+        console.log("onSearched")
         populateGrid(); 
  }
 
@@ -1084,6 +1086,7 @@ function validatePagInput() {
                 currentPage = valueNumber;
             }
         }
+        console.log("validate page input");
         populateGrid();
     } 
 }

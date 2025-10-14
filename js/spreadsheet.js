@@ -1056,8 +1056,8 @@ function paginationLeft() {
 }
 
 function paginationRight() {
-    let upperLimit = (currentPage-2)*(searchedImages.length/ImagensPorPagina);
-    console.log(upperLimit + " = ("+(currentPage-2)+")*("+searchedImages.length+")/"+ImagensPorPagina+")");
+    let upperLimit = ImagensPorPagina*(currentPage-2)*(searchedImages.length/ImagensPorPagina);
+    console.log(upperLimit);
     if (upperLimit >= searchedImages.length) {
         currentPage = 1;
     } else {

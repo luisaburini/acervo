@@ -1056,8 +1056,9 @@ function paginationLeft() {
 }
 
 function paginationRight() {
-    console.log((currentPage-2)*(searchedImages.length/ImagensPorPagina) + " = ("+currentPage-2+"*("+searchedImages.length+"/"+ImagensPorPagina)
-    if ((currentPage-2)*(searchedImages.length/ImagensPorPagina) >= searchedImages.length) {
+    let upperLimit = (currentPage-2)*(searchedImages.length/ImagensPorPagina);
+    console.log(upperLimit + " = ("+(currentPage-2)+")*("+searchedImages.length+")/"+ImagensPorPagina+")");
+    if (upperLimit >= searchedImages.length) {
         currentPage = 1;
     } else {
         currentPage = currentPage+1;

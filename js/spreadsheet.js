@@ -354,7 +354,8 @@ function changeVisibilityOfAll(visibility) {
     elementsToHide = ["home-grid", "home-img", "home-logo",
         "navegue", "navegue-header", "navegue-grid", 
         "iniciativa", "iniciativa-grid", 
-        "carousel-dots"];
+        "carousel-dots",
+        "bottom", "bottom-grid", "bottom-logo", "contato", "termos", "contato-item", "inicio"];
     for (let i=0; i<elementsToHide.length; i++) {
         let elem = document.getElementById(elementsToHide[i]);
         elem.style.visibility = visibility;

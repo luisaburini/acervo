@@ -752,25 +752,25 @@ function hasKeywords(attr, toSearch){
 function onSearched() {
     let grid = document.getElementById('img-container');
     grid.style.display = "grid";
+    
+    let searchBox = document.getElementById("search-box");
+    let toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
+    
+    let paginationInput = document.getElementById("pagination-input");
+    let pag = paginationInput.value.replace(/^\s+|\s+$/gm,'');
+    
+    if (toSearch.localeCompare("") == 0) {
+        if (pag.localeCompare("") != 0) {
+            return
+        }
+    }
+    
     clear(grid);
     searchedImages = [];
     currentPage = 1;
     let pagInput = document.getElementById("pagination-input")
     pagInput.innerHTML = "1";
     pagInput.value = "1";
-
-    let searchBox = document.getElementById("search-box");
-    let toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
-
-    let paginationInput = document.getElementById("pagination-input");
-    let pag = paginationInput.value.replace(/^\s+|\s+$/gm,'');
-
-    if (toSearch.localeCompare("") == 0) {
-        if (pag.localeCompare("") != 0) {
-            return
-        }
-    }
-
     let splitByWord = toSearch.split(" ");
     searchBox.value = "";
     

@@ -761,6 +761,16 @@ function onSearched() {
 
     let searchBox = document.getElementById("search-box");
     let toSearch = searchBox.value.replace(/^\s+|\s+$/gm,'');
+
+    let paginationInput = document.getElementById("pagination-input");
+    let pag = paginationInput.value.replace(/^\s+|\s+$/gm,'');
+
+    if (toSearch.localeCompare("") == 0) {
+        if (pag.localeCompare("") != 0) {
+            return
+        }
+    }
+
     let splitByWord = toSearch.split(" ");
     searchBox.value = "";
     
@@ -815,7 +825,7 @@ function onSearched() {
                 }
             }
         }
-        console.log("onSearched")
+        console.log("onSearched");
         populateGrid(); 
  }
 

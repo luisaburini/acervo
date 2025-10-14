@@ -1049,13 +1049,13 @@ function paginationLeft() {
     if (currentPage-1 <= 0) {
         currentPage = Math.ceil(searchedImages.length/ImagensPorPagina);
     } else {
-        currentPage = Math.abs((currentPage-1)%Math.ceil(searchedImages.length/ImagensPorPagina));
+        currentPage = currentPage-1;
     }
     populateGrid();
 }
 
 function paginationRight() {
-    if ((currentPage-1)*(searchedImages.length/ImagensPorPagina) >= searchedImages.length) {
+    if ((currentPage-2)*(searchedImages.length/ImagensPorPagina) >= searchedImages.length) {
         currentPage = 1;
     } else {
         currentPage = currentPage+1;

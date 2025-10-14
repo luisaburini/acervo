@@ -1051,6 +1051,7 @@ function paginationLeft() {
     } else {
         currentPage = currentPage-1;
     }
+    console.log("current page " + currentPage);
     populateGrid();
 }
 
@@ -1060,6 +1061,7 @@ function paginationRight() {
     } else {
         currentPage = currentPage+1;
     }
+    console.log("current page " + currentPage);
     populateGrid();
 }
 

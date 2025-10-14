@@ -1055,7 +1055,7 @@ function paginationLeft() {
 }
 
 function paginationRight() {
-    if ((current-1)*(searchedImages.length/ImagensPorPagina) > searchedImages.length && (current)*(searchedImages.length/ImagensPorPagina) > searchedImages.length) {
+    if ((currentPage-1)*(searchedImages.length/ImagensPorPagina) > searchedImages.length && (currentPage)*(searchedImages.length/ImagensPorPagina) > searchedImages.length) {
         currentPage = 1;
     } else {
         currentPage = currentPage+1;

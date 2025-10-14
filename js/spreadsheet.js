@@ -354,6 +354,7 @@ function changeVisibilityOfAll(visibility) {
     elementsToHide = ["home-grid", "home-img", "home-logo",
         "navegue", "navegue-header", "navegue-grid", 
         "iniciativa", "iniciativa-grid", 
+        "carousel-dots",
         "bottom"];
     for (let i=0; i<elementsToHide.length; i++) {
         let elem = document.getElementById(elementsToHide[i]);
@@ -382,6 +383,7 @@ function changeVisibilityOfAll(visibility) {
         "navegue-item", "iniciativa-container", "explore-button",
         "iniciativa-header", "iniciativa-text", "igrejinha", "carousel-dots", "dots",
         "bottom-grid", "bottom-logo",
+        "dot",
         "contato", "contato-item"];
     for (let i=0; i<elementsToHide.length; i++) {
         elems = document.getElementsByClassName(elementsToHide[i]);

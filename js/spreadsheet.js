@@ -1070,9 +1070,17 @@ function paginationRight() {
 function validatePagInput() {
     let paginationInput = document.getElementById("pagination-input");
     let value = paginationInput.value.replace(/^\s+|\s+$/gm,'');
-    console.log("validate page input " + value)
-    if (value != "" && isNaN(Number(value))) {
-        currentPage = 1;
-        populateGrid();
-    }
+    let valueNumber = Number(value);
+    console.log("validate page input " + value + " "+isNaN(valueNumber))
+    if (value != "") {
+        if (isNaN(Number(value))) {
+            console.log("Reset");
+            currentPage = 1;
+        } else {
+            if (valueNumber > 0 && valueNumber < searchedImages.length/ImagensPorPagina) {
+                currentPage = valueNumber;
+            }
+        }
+    } 
+    populateGrid();
 }

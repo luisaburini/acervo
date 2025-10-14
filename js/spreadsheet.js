@@ -435,6 +435,7 @@ function changeVisibilitySearch(visibility) {
 }
 
 function populateGrid() {
+    console.log("populate grid " + currentPage);
     let paginationInput = document.getElementById("pagination-input");
     paginationInput.innerHTML = currentPage;
     paginationInput.value = currentPage;

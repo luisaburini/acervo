@@ -1056,6 +1056,7 @@ function paginationLeft() {
 }
 
 function paginationRight() {
+    console.log((currentPage-2)*(searchedImages.length/ImagensPorPagina) + " = ("+currentPage-2+"*("+searchedImages.length+"/"+ImagensPorPagina)
     if ((currentPage-2)*(searchedImages.length/ImagensPorPagina) >= searchedImages.length) {
         currentPage = 1;
     } else {

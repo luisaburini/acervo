@@ -1071,8 +1071,7 @@ function validatePagInput() {
     let paginationInput = document.getElementById("pagination-input");
     let value = paginationInput.value.replace(/^\s+|\s+$/gm,'');
     console.log("validate page input " + value)
-    
-    if (value != "" && Number(value).isNaN()) {
+    if (value != "" && isNaN(Number(value))) {
         currentPage = 1;
         populateGrid();
     }

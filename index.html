@@ -4,11 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Acervo de Monte Sião</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Viaoda+Libre&display=swap" rel="stylesheet"> 
     <style>
-        body {
+body {
     width: 100vw;
     overflow: auto;
     margin: 0;
@@ -63,7 +60,7 @@
 }
 
 .upperbar-item {
-  font-family: GothamBlack;
+  font-family: Gotham;
   color: #cecece;
   margin: auto;
   text-align: center;
@@ -121,7 +118,8 @@
 }
 
 .navegue-item{
-  font-family: GothamBlack;
+  font-family: Gotham;
+  font-weight: 700;
   font-size: 5vh;
   padding-top: 5vh;
   color: #edfbe4;
@@ -146,7 +144,7 @@
   background-color:#dbd9da;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
 }
 
 #iniciativa-grid {
@@ -155,7 +153,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
 }
 
 .iniciativa-header{
@@ -175,7 +173,7 @@
 .iniciativa-text{
   text-align: justify;
   position: relative;
-  font-family: GothamLight;
+  font-family: Gotham;
   font-size: 3vh;
   font-weight: lighter;
   color: #474546;
@@ -188,7 +186,7 @@
 }
 
 .carousel-dots {
-  top: 80vh;
+  top: 90vh;
   left: 20vw;
   width: 20vw;
   position: relative;
@@ -230,7 +228,7 @@
 }
 
 
-.search-acervo-grid{
+.search-acervo-grid {
   z-index: 10;
   display: grid;
   grid-template-rows: 7vh 1px 1fr;
@@ -246,7 +244,7 @@
     border: 6px solid white;
     color: white;
     font-size: 3vh;
-    font-family: GothamLight;
+    font-family: Gotham;
     font-weight: lighter;
     z-index: 20;
     height: 6vh;
@@ -314,7 +312,7 @@
   
 .pagination{
   height: 7vh;
-  font-family: GothamLight;
+  font-family: Gotham;
   font-size: 5vh;
   color: black;
   text-align: center;
@@ -336,7 +334,7 @@
     border: 6px solid white;
     color: white;
     font-size: 6vh;
-    font-family: GothamLight;
+    font-family: Gotham;
     font-weight: lighter;
     z-index: 20;
     height: 8vh;
@@ -363,11 +361,11 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: GothamLight;
+  font-family: Gotham;
 }
 
 .attribute{
-    font-family: GothamBlack;
+    font-family: Gotham;
     color: black;
     font-size: 2vh;
     margin: 1vh;
@@ -377,7 +375,7 @@
 }
 
 .sidebarattribute{
-  font-family: GothamBlack;
+  font-family: Gotham;
   color: black;
   height: 5vh;
   font-size: 2vh;
@@ -389,7 +387,7 @@
 }
 
 .selected-filter {
-  font-family: GothamBlack;
+  font-family: Gotham;
   color: white;
   background-color: #6d1703;
   border-radius: 30px;
@@ -403,7 +401,22 @@
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
-  
+
+.clean-filters{
+  font-family: Gotham;
+  color: white;
+  background-color: #6d1703;
+  border-radius: 30px;
+  font-size: 2vh;
+  height: 3vh;
+  margin: auto;
+  text-align: center;
+  border-style: dotted;
+  cursor: grab;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+} 
 
 .dropdown-menu {
     display: none;
@@ -481,17 +494,20 @@
     padding-right: 0.2em;
     background-color: #f0f194;
     border: none;
-    border-radius: 10%;
+    border-radius: 100px;
     width: 40vw;
     box-shadow: 0 0 0 4px #f0f194, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
     transition: .1s ease-in-out, .4s color;
-    font-family: GothamLight;
+    font-family: Gotham;
     font-weight: lighter;
     font-size: 4vh;
     z-index: 20;
     text-align: center;
-    margin: auto;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
     grid-column: 2 / 6;
+    cursor: grab;
 }
   
 .explore-button:active {
@@ -508,7 +524,7 @@
 }
 
 .description {
-    font-family: GothamBlack;
+    font-family: Gotham;
     font-size: 2vh;
     color: rgb(52, 50, 50);
 }
@@ -520,7 +536,7 @@
 }
 
 .cardattribute{
-    font-family: GothamLight;
+    font-family: Gotham;
     color: black;
     height: auto;
     font-size: 2vh;
@@ -531,8 +547,8 @@
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  width: 100vw; /* Full width (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
@@ -584,6 +600,10 @@
   margin-top: 2vh;
 }
 
+.bottom-logo {
+  height: 100%;
+}
+
 .contato{
   display: grid;
   grid-template-columns: 1fr;
@@ -592,7 +612,7 @@
 }
 
 .contato-item{
-  font-family: GothamBlack;
+  font-family: Gotham;
   color: #cecece;
   font-size: 2vh;
   cursor: grab;
@@ -627,11 +647,11 @@
 <body>
     <div id="overlay">
         <div id="icon-container">
-            <img id="zoom-in-button" class="icon" src="./imgs/zoom-in.png" onclick="onZoomIn()">
-            <img id="zoom-out-button" class="icon" src="./imgs/zoom-out.png" onclick="onZoomOut()">
-            <img id="home" class="icon" src="./imgs/home.png" onclick="goHome()">
-            <img id="left" class="icon" src="./imgs/left.png" onclick="left()">
-            <img id="right" class="icon" src="./imgs/right.png" onclick="right()">
+            <img id="zoom-in-button" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/zoom-in.png" onclick="onZoomIn()">
+            <img id="zoom-out-button" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/zoom-out.png" onclick="onZoomOut()">
+            <img id="home" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/home.png" onclick="goHome()">
+            <img id="left" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/left.png" onclick="left()">
+            <img id="right" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/right.png" onclick="right()">
         </div>
         <img id="overlay-img" class="overlay-img">
     </div>
@@ -639,7 +659,7 @@
     <div id="upper">
         <!-- HOME -->
         <div id="home-container" class="home"> 
-            <img id="home-img" class="home-img" src="./imgs/Foto Home.jpg">
+            <img id="home-img" class="home-img" src="https://acervomontesiao.org/wp-content/uploads/2025/10/Foto-Home-1.jpg">
             <div class="upperbar">
                 <div class="upperbar-item"></div>
                 <div class="upperbar-item"></div>
@@ -648,24 +668,24 @@
                 <div class="upperbar-item" onclick="showContato()">Contato</div>
             </div>
             <div id="home-grid">
-                <img id="home-logo" class="home-logo" src="./imgs/LogoSite.png">
+                <img id="home-logo" class="home-logo" src="https://acervomontesiao.org/wp-content/uploads/2025/10/LogoSite.png">
             </div>
         </div>
         <!-- BUSCA -->
         <div id="search">
             <div id="search-grid">
-                <img id="search-logo" src="./imgs/LogoSite.png" onclick="showInicio()">
+                <img id="search-logo" src="https://acervomontesiao.org/wp-content/uploads/2025/10/LogoSite.png" onclick="showInicio()">
                 <input id="search-box" type="text"> 
-                <div id="search-button" onclick="onSearched()"><img id="lupa" src="./imgs/lupa.png"></div>
+                <div id="search-button" onclick="onSearched()"><img id="lupa" src="https://acervomontesiao.org/wp-content/uploads/2025/10/lupa.png"></div>
             </div>
             <div id="outer-container">
                 <div id="sidebar"></div>
                 <div id="img-column" class="img-column">
                     <div id="pagination" class="pagination"></div>
                     <div id="pagination-controls" class="pagination-controls">
-                        <img id="pagination-left" class="icon" src="./imgs/left.png" onclick="paginationLeft()">
+                        <img id="pagination-left" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/left.png" onclick="paginationLeft()">
                         <input id="pagination-input" type="text" onkeydown="validatePagInput()">
-                        <img id="pagination-right" class="icon" src="./imgs/right.png" onclick="paginationRight()">
+                        <img id="pagination-right" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/right.png" onclick="paginationRight()">
                     </div>
                     <div id="img-container" class="img-container"></div>
                 </div>
@@ -701,7 +721,7 @@
         <!-- BOTTOM -->
         <div id="bottom">
             <div class="bottom-grid" id="bottom-grid">
-                <img class="bottom-logo" id="bottom-logo" src="./imgs/LogoSite.png">
+                <img class="bottom-logo" id="bottom-logo" src="https://acervomontesiao.org/wp-content/uploads/2025/10/LogoSite.png">
             </div>
             <div id="contato" class="contato">
                 <div class="contato-item"></div>
@@ -1035,7 +1055,7 @@ function populateNavegue() {
     }
     let navegueButton = document.createElement("button");
     navegueButton.className = "explore-button";
-    navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	<img class=\"setinha\" src=\".\/imgs\/\Seta_botao _Explorar acervo_.png\"/>";
+    navegueButton.innerHTML = "EXPLORAR ACERVO COMPLETO 	<img class=\"setinha\" src=\"https:\/\/acervomontesiao.org\/wp-content\/uploads\/2025\/10\/Seta_botao-_Explorar-acervo_.png\"\/>";
     navegueButton.onclick = function() {
         searchedImages = data;
         showAcervo();
@@ -1089,7 +1109,7 @@ function changeVisibilityOfAll(visibility) {
         } else {
             elem.style.maxHeight = "none";
             if (elementsToHide[i] == "home-img") {
-                elem.src = "./imgs/Foto Home.jpg";
+                elem.src = "https://acervomontesiao.org/wp-content/uploads/2025/10/Foto-Home-1.jpg";
                 elem.style.height = "100vh";
                 let home = document.getElementById("home-container");
                 home.style.backgroundColor = "#26361c";
@@ -1443,6 +1463,25 @@ function populateSidebar(allKeywords) {
 
     let filtrosSelecionados = document.createElement('div');
     filtrosSelecionados.innerText = "Filtros selecionados:";
+
+   let limparFiltro = document.createElement('div');
+   limparFiltro.innerHTML = "Limpar";
+   limparFiltro.className = 'clean-filters'
+   limparFiltro.onclick = function(){
+                let selectedElems = document.getElementsByClassName("selected-filter");
+                let selectedLen = selectedElems.length;
+                for (let j=0; j<selectedLen; j++) {
+                    document.getElementsByClassName("selected-filter")[0].remove();
+                }
+                let searchBox = document.getElementById("search-box");
+                searchBox.innerHTML = "";
+                searchBox.value = "";
+                searchedImages = data;
+                showAcervo();
+   };
+   sidebar.appendChild(limparFiltro);
+
+
     filtrosSelecionados.className = "attribute";
     sidebar.appendChild(filtrosSelecionados);
 

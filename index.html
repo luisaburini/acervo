@@ -1198,7 +1198,8 @@ function populateSidebar() {
     let sidebar = document.getElementById("sidebar");
     sidebar.innerHTML = "";
     let limparFiltros = document.createElement('div');
-    limparFiltros.innerText = "Limpar"
+    limparFiltros.innerText = "Limpar Filtros"
+    limparFiltros.className = "selected-filter";
     limparFiltros.onclick = function() {
         populateSidebar();
     }

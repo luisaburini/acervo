@@ -387,13 +387,12 @@ body {
 }
 
 .selected-filter {
-  font-family: Gotham;
-  color: white;
-  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 20px;
   border-radius: 30px;
-  font-size: 2vh;
   height: 3vh;
   margin: auto;
+  background-color: black;
   text-align: center;
   border-style: dotted;
   cursor: grab;
@@ -401,8 +400,28 @@ body {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
-  
 
+.filter-text {
+  cursor: grab;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  font-family: Gotham;
+  color: white;
+  font-size: 2vh;
+  text-align: center;
+}
+
+.icon-inline{
+  z-index: 20;
+  max-width: 20px;
+  max-height: 20px;
+  width: 2vw;
+  height: 2vw;
+  cursor: grab;
+  display: inline;
+}
+  
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -563,16 +582,6 @@ body {
   width: 10vw;
   height: 10vw;
   cursor: grab;
-}
-
-.icon-inline{
-  z-index: 20;
-  max-width: 30px;
-  max-height: 30px;
-  width: 3vw;
-  height: 3vw;
-  cursor: grab;
-  display: inline;
 }
 
 #bottom{
@@ -1233,7 +1242,6 @@ function populateSidebar(allKeywords) {
                 searchBox.value = searchStr;
                 onSearched();
                 let selectedFilter = document.createElement("div");
-                selectedFilter.innerText = allRegions[i];
                 selectedFilter.className = "selected-filter";
                 selectedFilter.onclick = function() {
                     selectedFilter.remove();
@@ -1247,6 +1255,10 @@ function populateSidebar(allKeywords) {
                     searchBox.value = searchStr;
                     onSearched();
                 }
+                let filterText = document.createElement("div");
+                filterText.className = "filter-text";
+                filterText.innerText = allRegions[i];
+                selectedFilter.appendChild(filterText);
                 let closeFilter = document.createElement("img");
                 closeFilter.className = "icon-inline";
                 closeFilter.src = 'https://acervomontesiao.org/wp-content/uploads/2025/11/fechar-foto.png';
@@ -1302,7 +1314,6 @@ function populateSidebar(allKeywords) {
                 searchBox.value = searchStr;
                 onSearched();
                 let selectedFilter = document.createElement("div");
-                selectedFilter.innerText = allCategories[i];
                 selectedFilter.className = "selected-filter";
                 selectedFilter.onclick = function() {
                     selectedFilter.remove();
@@ -1316,6 +1327,14 @@ function populateSidebar(allKeywords) {
                     searchBox.value = searchStr;
                     onSearched();
                 }
+                let filterText = document.createElement("div");
+                filterText.className = "filter-text";
+                filterText.innerText = allCategories[i];
+                selectedFilter.appendChild(filterText);
+                let closeFilter = document.createElement("img");
+                closeFilter.className = "icon-inline";
+                closeFilter.src = 'https://acervomontesiao.org/wp-content/uploads/2025/11/fechar-foto.png';
+                selectedFilter.appendChild(closeFilter);
                 sidebar.appendChild(selectedFilter);
             }
         });
@@ -1366,7 +1385,6 @@ function populateSidebar(allKeywords) {
             searchBox.value = searchStr;
             onSearched();
             let selectedFilter = document.createElement("div");
-            selectedFilter.innerText = allDecades[i];
             selectedFilter.className = "selected-filter";
             selectedFilter.onclick = function() {
                 selectedFilter.remove();
@@ -1380,6 +1398,14 @@ function populateSidebar(allKeywords) {
                 searchBox.value = searchStr;
                 onSearched();
             }
+            let filterText = document.createElement("div");
+            filterText.className = "filter-text";
+            filterText.innerText = allDecades[i];
+            selectedFilter.appendChild(filterText);
+            let closeFilter = document.createElement("img");
+            closeFilter.className = "icon-inline";
+            closeFilter.src = 'https://acervomontesiao.org/wp-content/uploads/2025/11/fechar-foto.png';
+            selectedFilter.appendChild(closeFilter);
             sidebar.appendChild(selectedFilter);
         });
         label.appendChild(radioInput)
@@ -1429,7 +1455,6 @@ function populateSidebar(allKeywords) {
             searchBox.value = searchStr;
             onSearched();
             let selectedFilter = document.createElement("div");
-            selectedFilter.innerText = allKeywords[i];
             selectedFilter.className = "selected-filter";
             selectedFilter.onclick = function() {
                 selectedFilter.remove();
@@ -1443,6 +1468,14 @@ function populateSidebar(allKeywords) {
                 searchBox.value = searchStr;
                 onSearched();
             }
+            let filterText = document.createElement("div");
+            filterText.className = "filter-text";
+            filterText.innerText = allKeywords[i];
+            selectedFilter.appendChild(filterText);
+            let closeFilter = document.createElement("img");
+            closeFilter.className = "icon-inline";
+            closeFilter.src = 'https://acervomontesiao.org/wp-content/uploads/2025/11/fechar-foto.png';
+            selectedFilter.appendChild(closeFilter);
             sidebar.appendChild(selectedFilter);
         });
         label.appendChild(radioInput)

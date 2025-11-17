@@ -389,7 +389,7 @@ body {
 .selected-filter {
   font-family: Gotham;
   color: white;
-  background-color: #6d1703;
+  background-color: black;
   border-radius: 30px;
   font-size: 2vh;
   height: 3vh;
@@ -1237,6 +1237,9 @@ function populateSidebar(allKeywords) {
                     searchBox.value = searchStr;
                     onSearched();
                 }
+                let closeFilter = document.createElement("img");
+                closeFilter.src = '';
+                selectedFilter.appendChild(closeFilter);
                 sidebar.appendChild(selectedFilter);
             }
         });

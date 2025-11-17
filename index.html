@@ -388,7 +388,7 @@ body {
 
 .selected-filter {
   display: grid;
-  grid-template-columns: 1fr 20px;
+  grid-template-columns: 1fr 30px;
   border-radius: 30px;
   height: 3vh;
   margin: auto;
@@ -414,12 +414,13 @@ body {
 
 .icon-inline{
   z-index: 20;
-  max-width: 20px;
-  max-height: 20px;
+  max-width: 28px;
+  max-height: 28px;
   width: 2vw;
   height: 2vw;
   cursor: grab;
   display: inline;
+  text-align: center;
 }
   
 .dropdown-menu {
@@ -1064,7 +1065,7 @@ function showAcervo() {
     window.scrollTo(0, 0);
     changeVisibilityOfAll("collapse");
     changeVisibilitySearch("visible");
-    populateSidebar(allKeywords);
+    populateSidebar();
     currentPage = 1;
     console.log("showAcervo")
     populateGrid();
@@ -1193,9 +1194,15 @@ function populateGrid() {
     }
 }
 
-function populateSidebar(allKeywords) {
+function populateSidebar() {
     let sidebar = document.getElementById("sidebar");
     sidebar.innerHTML = "";
+    let limparFiltros = document.createElement('div');
+    limparFiltros.innerText = "Limpar"
+    limparFiltros.onclick = function() {
+        populateSidebar();
+    }
+    sidebar.appendChild(limparFiltros);
     let filtros = document.createElement('div');
     filtros.innerText = "Filtros";
     filtros.className = "attribute";

@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Acervo de Monte Sião</title>
+
     <style>
 body {
     width: 100vw;
@@ -119,7 +120,6 @@ body {
 
 .navegue-item{
   font-family: Gotham;
-  font-weight: 700;
   font-size: 5vh;
   padding-top: 5vh;
   color: #edfbe4;
@@ -228,7 +228,7 @@ body {
 }
 
 
-.search-acervo-grid {
+.search-acervo-grid{
   z-index: 10;
   display: grid;
   grid-template-rows: 7vh 1px 1fr;
@@ -401,22 +401,7 @@ body {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
-
-.clean-filters{
-  font-family: Gotham;
-  color: white;
-  background-color: #6d1703;
-  border-radius: 30px;
-  font-size: 2vh;
-  height: 3vh;
-  margin: auto;
-  text-align: center;
-  border-style: dotted;
-  cursor: grab;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-} 
+  
 
 .dropdown-menu {
     display: none;
@@ -503,11 +488,8 @@ body {
     font-size: 4vh;
     z-index: 20;
     text-align: center;
-    margin-top: 5vh;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     grid-column: 2 / 6;
-    cursor: grab;
 }
   
 .explore-button:active {
@@ -600,10 +582,6 @@ body {
   margin-top: 2vh;
 }
 
-.bottom-logo {
-  height: 100%;
-}
-
 .contato{
   display: grid;
   grid-template-columns: 1fr;
@@ -647,11 +625,11 @@ body {
 <body>
     <div id="overlay">
         <div id="icon-container">
-            <img id="zoom-in-button" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/zoom-in.png" onclick="onZoomIn()">
-            <img id="zoom-out-button" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/zoom-out.png" onclick="onZoomOut()">
-            <img id="home" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/home.png" onclick="goHome()">
-            <img id="left" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/left.png" onclick="left()">
-            <img id="right" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/right.png" onclick="right()">
+            <img id="zoom-in-button" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/11/zoom-mais.png" onclick="onZoomIn()">
+            <img id="zoom-out-button" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/11/zoom-menos.png" onclick="onZoomOut()">
+            <img id="home" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/11/fechar-foto.png" onclick="goHome()">
+            <img id="left" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/11/pagina-anterior-do-acervo.png" onclick="left()">
+            <img id="right" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/11/proxima-pagina-do-acervo.png" onclick="right()">
         </div>
         <img id="overlay-img" class="overlay-img">
     </div>
@@ -683,9 +661,9 @@ body {
                 <div id="img-column" class="img-column">
                     <div id="pagination" class="pagination"></div>
                     <div id="pagination-controls" class="pagination-controls">
-                        <img id="pagination-left" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/left.png" onclick="paginationLeft()">
+                        <img id="pagination-left" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/11/pagina-anterior-do-acervo.png" onclick="paginationLeft()">
                         <input id="pagination-input" type="text" onkeydown="validatePagInput()">
-                        <img id="pagination-right" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/10/right.png" onclick="paginationRight()">
+                        <img id="pagination-right" class="icon" src="https://acervomontesiao.org/wp-content/uploads/2025/11/proxima-pagina-do-acervo.png" onclick="paginationRight()">
                     </div>
                     <div id="img-container" class="img-container"></div>
                 </div>
@@ -1463,25 +1441,6 @@ function populateSidebar(allKeywords) {
 
     let filtrosSelecionados = document.createElement('div');
     filtrosSelecionados.innerText = "Filtros selecionados:";
-
-   let limparFiltro = document.createElement('div');
-   limparFiltro.innerHTML = "Limpar";
-   limparFiltro.className = 'clean-filters'
-   limparFiltro.onclick = function(){
-                let selectedElems = document.getElementsByClassName("selected-filter");
-                let selectedLen = selectedElems.length;
-                for (let j=0; j<selectedLen; j++) {
-                    document.getElementsByClassName("selected-filter")[0].remove();
-                }
-                let searchBox = document.getElementById("search-box");
-                searchBox.innerHTML = "";
-                searchBox.value = "";
-                searchedImages = data;
-                showAcervo();
-   };
-   sidebar.appendChild(limparFiltro);
-
-
     filtrosSelecionados.className = "attribute";
     sidebar.appendChild(filtrosSelecionados);
 

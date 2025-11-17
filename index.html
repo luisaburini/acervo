@@ -222,7 +222,7 @@ body {
 
 #search-grid{
   display: grid;
-  grid-template-columns: 40vw 30vw 8vw 1fr;
+  grid-template-columns: 50vw 30vw 8vw 1fr;
   grid-template-rows: 1;
   padding-left: 1vw;
 }
@@ -1780,6 +1780,7 @@ function paginationLeft() {
         currentPage = currentPage-1;
     }
     console.log("current page " + currentPage);
+    window.scrollTo(0, 0);
     populateGrid();
 }
 
@@ -1792,6 +1793,7 @@ function paginationRight() {
         currentPage = currentPage+1;
     }
     console.log("current page " + currentPage);
+    window.scrollTo(0, 0);
     populateGrid();
 }
 
